@@ -22,7 +22,7 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("deine mooooooooooooooooooom!");
+		System.out.println("dein daaaaaaaaaaaaaaaad!");
 		launch(args);
 	}
 }
