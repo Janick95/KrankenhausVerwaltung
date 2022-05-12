@@ -23,7 +23,6 @@
       </Label>
       <TextField fx:id="txtLoginID" alignment="CENTER" layoutX="818.0" layoutY="372.0" prefHeight="25.0" prefWidth="286.0" promptText="Login ID" />
       <PasswordField fx:id="pfPasswort" alignment="CENTER" layoutX="818.0" layoutY="425.0" prefHeight="25.0" prefWidth="286.0" promptText="Passwort" />
-      <Button fx:id="btnHauptmenü" layoutX="249.0" layoutY="37.0" mnemonicParsing="false" text="Hauptmenü" />
       <Button fx:id="btnAnmelden" layoutX="1033.0" layoutY="487.0" mnemonicParsing="false" text="Anmelden" />
    </children>
 </Pane>
