@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="885.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../owo/hehe.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="775.0" layoutY="305.0" prefHeight="23.0" prefWidth="371.0" text="Anmeldung RIVER Krankenhaus">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtLoginID" alignment="CENTER" layoutX="818.0" layoutY="372.0" prefHeight="25.0" prefWidth="286.0" promptText="Login ID" />
+      <PasswordField fx:id="pfPasswort" alignment="CENTER" layoutX="818.0" layoutY="425.0" prefHeight="25.0" prefWidth="286.0" promptText="Passwort" />
+      <Button fx:id="btnHauptmenü" layoutX="249.0" layoutY="37.0" mnemonicParsing="false" text="Hauptmenü" />
+      <Button fx:id="btnAnmelden" layoutX="1033.0" layoutY="487.0" mnemonicParsing="false" text="Anmelden" />
+   </children>
+</Pane>
