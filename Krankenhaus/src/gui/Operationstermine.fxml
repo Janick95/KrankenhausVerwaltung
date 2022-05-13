@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TVController.java">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TVController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" text="Haupmenü">
+      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenü" text="Haupmenü">
          <font>
             <Font size="18.0" />
          </font>
