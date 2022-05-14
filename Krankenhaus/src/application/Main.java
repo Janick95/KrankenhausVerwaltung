@@ -24,6 +24,9 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
+
+		PersonenVerwaltung.zeigePersonalListe();
+
 		launch(args);
 	}
 }
