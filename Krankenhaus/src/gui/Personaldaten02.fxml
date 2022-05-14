@@ -8,7 +8,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" text="Haupmenü">
+      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
@@ -18,12 +18,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSuche" layoutX="500.0" layoutY="400.0" minWidth="1300.0">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Label layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
+      <Label fx:id="lblUserName" layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
          <font>
             <Font size="18.0" />
          </font>
@@ -78,37 +73,37 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="txtVorname" layoutX="900.0" layoutY="561.0" minWidth="900.0">
+      <TextField fx:id="txtVorname02" layoutX="900.0" layoutY="561.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtNachname" layoutX="900.0" layoutY="600.0" minWidth="900.0">
+      <TextField fx:id="txtNachname02" layoutX="900.0" layoutY="600.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtRang" layoutX="900.0" layoutY="640.0" minWidth="900.0">
+      <TextField fx:id="txtRang02" layoutX="900.0" layoutY="640.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSchule" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtSchule02" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAbteilung" layoutX="900.0" layoutY="760.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtAbteilung02" layoutX="900.0" layoutY="760.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btnBearbeiten" layoutX="1240.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Bearbeiten">
+      <Button fx:id="btnPersonalBearbeiten" layoutX="1240.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Bearbeiten">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnSpeichern" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Speichern">
+      <Button fx:id="btnPersonalSpeichern" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Speichern">
          <font>
             <Font size="18.0" />
          </font>
