@@ -10,7 +10,7 @@ public class PersonenVerwaltung {
 	String aufenthaltsgrund;
 
 	static Scanner scanner;
-	static File file = new File("D://Entwicklung//Java//Repository//KrankenhausVerwaltung//Krankenhaus//src//application//Arzt.txt");
+	static File file = new File("src/application/Arzt.txt");
 	static String text;
 	
 	// Methoden
