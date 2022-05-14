@@ -18,7 +18,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblUserName02" layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
+      <Label fx:id="lblUserPatient02" layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
          <font>
             <Font size="18.0" />
          </font>
