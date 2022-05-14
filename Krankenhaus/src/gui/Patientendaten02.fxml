@@ -8,22 +8,17 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
    <children>
-      <Button layoutX="150.0" layoutY="80.0" mnemonicParsing="false" text="Haupmenü">
+      <Button layoutX="150.0" layoutY="80.0" mnemonicParsing="false" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="400.0" text="Personaldaten verwalten">
+      <Label layoutX="150.0" layoutY="400.0" text="Patientendaten verwalten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSuche" layoutX="500.0" layoutY="400.0" minWidth="1300.0" promptText="Patienten Suchen...">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Label layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
+      <Label fx:id="lblUserName02" layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
          <font>
             <Font size="18.0" />
          </font>
@@ -73,7 +68,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="txtNach" layoutX="900.0" layoutY="600.0" minWidth="900.0">
+      <TextField fx:id="txtNachname02" layoutX="900.0" layoutY="600.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
@@ -83,27 +78,27 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="txtVorname" layoutX="900.0" layoutY="561.0" minWidth="900.0">
+      <TextField fx:id="txtVorname02" layoutX="900.0" layoutY="561.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtFamStatus" layoutX="900.0" layoutY="640.0" minWidth="900.0">
+      <TextField fx:id="txtFamStatus02" layoutX="900.0" layoutY="640.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtDoktor" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtDoktor02" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAufenthalt" layoutX="900.0" layoutY="760.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtAufenthalt02" layoutX="900.0" layoutY="760.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btnBearbeiten" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Bearbeiten">
+      <Button fx:id="btnPatientenBearbeiten" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Bearbeiten">
          <font>
             <Font size="18.0" />
          </font>
@@ -113,7 +108,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtOptermin" layoutX="900.0" layoutY="800.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtOptermin02" layoutX="900.0" layoutY="800.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
