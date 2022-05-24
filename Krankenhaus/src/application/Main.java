@@ -18,7 +18,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Willkommen im River Hospital");
+        primaryStage.setTitle("Willkommen im River Krankenhaus");
         primaryStage.getIcons().add(new Image ("/img/Icon.jpg"));
         primaryStage.show();
 		

@@ -108,8 +108,9 @@ public class RegistrierungController {
 					out.println(cmbPrefixR.getValue() + "," + txtVornameR.getText() + "," + txtNachnameR.getText() + ","
 							+ txtRangR.getText() + "," + txtSchuleR.getText() + "," + txtAbteilungR.getText() + ","
 							+ txtTitelR.getText() + "," + txtEmailR.getText() + "," + cmbGeschlechtR.getValue() + ","
-							+ txtHerkunftR.getText() + "," + txtSprachenR.getText() + txtAusbildungR.getText() + ","
-							+ txtSpezialitätR.getText() + cmbAbgeschlossenR.getValue());
+							+ txtHerkunftR.getText() + "," + txtSprachenR.getText() + "," + rbtnAktivR.isSelected()
+							+ "," + rbtnInaktivR.isSelected() + "," + txtAusbildungR.getText() + ","
+							+ txtSpezialitätR.getText() + "," + cmbAbgeschlossenR.getValue());
 					Alert mesg = new Alert(AlertType.CONFIRMATION);
 					mesg.setContentText("Pfleger hinzugefügt");
 					mesg.showAndWait();
@@ -121,10 +122,11 @@ public class RegistrierungController {
 					try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Arzt.txt", true)))) {
 						out.println(cmbPrefixR.getValue() + "," + txtVornameR.getText() + "," + txtNachnameR.getText()
 								+ "," + txtRangR.getText() + "," + txtSchuleR.getText() + "," + txtAbteilungR.getText()
-								+ "," + txtTitelR.getText() + "," + "," + txtEmailR.getText() + ","
+								+ "," + txtTitelR.getText() + "," + txtEmailR.getText() + ","
 								+ cmbGeschlechtR.getValue() + "," + txtHerkunftR.getText() + ","
-								+ txtSprachenR.getText() + txtAusbildungR.getText() + "," + txtSpezialitätR.getText()
-								+ cmbAbgeschlossenR.getValue());
+								+ txtSprachenR.getText() + "," + rbtnAktivR.isSelected() + ","
+								+ rbtnInaktivR.isSelected() + "," + txtAusbildungR.getText() + ","
+								+ txtSpezialitätR.getText() + "," + cmbAbgeschlossenR.getValue());
 						Alert mesg = new Alert(AlertType.CONFIRMATION);
 						mesg.setContentText("Arzt hinzugefügt");
 						mesg.showAndWait();

@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MainMenuController {
@@ -45,6 +46,8 @@ public class MainMenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Patienten Daten");
+		stage.getIcons().add(new Image ("/img/Icon.jpg"));
 		stage.show();
 	}
 	public void goToOperationsTermine(ActionEvent event) throws IOException // This method loads a new scene in a current window
@@ -53,6 +56,8 @@ public class MainMenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Operationstermine");
+		stage.getIcons().add(new Image ("/img/Icon.jpg"));
 		stage.show();
 	}
 	public void goToRaumbelegung(ActionEvent event) throws IOException // This method loads a new scene in a current window
@@ -61,6 +66,8 @@ public class MainMenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Raumbelgung");
+		stage.getIcons().add(new Image ("/img/Icon.jpg"));
 		stage.show();
 	}
 	public void goToPersonaldaten(ActionEvent event) throws IOException // This method loads a new scene in a current window
@@ -69,6 +76,8 @@ public class MainMenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Personal Daten");
+		stage.getIcons().add(new Image ("/img/Icon.jpg"));
 		stage.show();
 	}
 	
@@ -78,6 +87,8 @@ public class MainMenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Registrierung");
+		stage.getIcons().add(new Image ("/img/Icon.jpg"));
 		stage.show();
 	}
 	public void logout(ActionEvent event) throws IOException // This method loads a new scene in a current window
@@ -86,6 +97,8 @@ public class MainMenuController {
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Willkommen im River Krankenhaus");
+		stage.getIcons().add(new Image ("/img/Icon.jpg"));
 		stage.show();
 	}
 	
