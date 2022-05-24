@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 
 public class Main extends Application {
@@ -17,6 +18,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Willkommen im River Hospital");
+        primaryStage.getIcons().add(new Image ("/img/Icon.jpg"));
         primaryStage.show();
 		
 		
