@@ -25,7 +25,7 @@ public class TVController {
 	@FXML
 	public void goToHauptmenü(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
