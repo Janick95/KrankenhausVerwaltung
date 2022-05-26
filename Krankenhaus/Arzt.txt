@@ -1,10 +1,10 @@
-Jessika Michi
-Henrik Tom
-Ulli Kunigunde
-Elma Reinhold
-Suse Johann
-Bernadette Ulf
-Jupp Lothar
-Grete Lies
-Meinhard Lamprecht
-Sofie Falk
+Frau,Jessika,Michi,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,jessika.michi@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2018
+Herr,Henrik,Tom,Arzt,Gymnasium LoremIpsum,Radiologie,Dr. med.,henrik.tom@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Radiologie,2010
+Herr,Ulrich,Kunigunde,Arzt,Gymnasium LoremIpsum,Orthopädie,Dr. med.,ulrich.kunigunde@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Orthopädie,1998
+Frau,Nathalie,Bülow,Arzt,Gymnasium LoremIpsum,Anästhesie,Dr. med.,nathalie.bülow@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Anästhesie,2019
+Frau,Susanne,Johann,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,susanne.johann@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2006
+Frau,Julia,Grüßing,Arzt,Gymnasium LoremIpsum,Pathologie,Dr. med.,julia.grüßing@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Pathologie,2011
+Herr,Marcel,Lothar,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,marcel.lothar@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2018
+Herr,Wolfgang,Hammerich,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,wolfgang.hammerich@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2001
+Herr,Meinhard,Lamprecht,Arzt,Gymnasium LoremIpsum,Anästhesie,Dr. med.,meinhard.lamprecht@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Anästhesie,1996
+Frau,Sofie,Falk,Arzt,Gymnasium LoremIpsum,Orthopädie,Dr. med.,sofie.falk@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Orthopädie,2013
