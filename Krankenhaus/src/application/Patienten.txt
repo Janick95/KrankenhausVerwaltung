@@ -1,0 +1,15 @@
+Herr,Martin,Schmidt,verheiratet,Dr.Platzhalter,Corona
+Faru,Sina,Adenauer,ledig,Dr.Platzhalter,Knochenbruch
+Herr,Sven,Beese,ledig,Dr.Platzhalter,Herzprobleme
+Herr,Hannes,Steinhöfer,geschieden,Dr.Platzhalter,Krebs
+Frau,Carmen,Jung,verheiratet,Dr.Platzhalter,Herzprobleme
+Frau,Isabelle,André,verheiratet,Dr.Platzhalter,Knieverletzung
+Frau,Xenia,Reuters,ledig,Dr.Platzhalter,Corona
+Frau,Nora,Reinfelder,ledig,Dr.Platzhalter,Corona
+Herr,Robin,Grohmann,verheiratet,Dr.Platzhalter,Herzprobleme
+Frau,Nathalie,Kempke,geschieden,Dr.Platzhalter,Blinddarm
+Herr,Ingo,Hartung,verheiratet,Dr.Platzhalter,Corona
+Herr,Peter,Kurz,verheiratet,Dr.Platzhalter,Krebs
+Frau,Ursula,Hübscher,verwitwet,Dr.Platzhalter,Krebs
+Herr,Ilja,Baumer,verheiratet,Dr.Platzhalter,Knochenbruch
+Herr,Jasper,Erichsen,ledig,Dr.Platzhalter,Corona
