@@ -2,15 +2,15 @@ package application;
 
 public class Benutzer {
 
-	private static String userID;
+	private static String Email;
 	private static String password;
 
-	public static String getUserID() {
-		return userID;
+	public static String getEmail() {
+		return Email;
 	}
 
-	public static void setUserID(String userID) {
-		Benutzer.userID = userID;
+	public static void setEmail(String email) {
+		Email = email;
 	}
 
 	public static String getPassword() {
