@@ -1,6 +1,9 @@
 package application;
 
 import gui.LoginController;
+
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -34,9 +37,18 @@ public class Main extends Application {
 		 **/
 	}
 
-	public static void main(String[] args) {
 
+
+
+	public static void main(String[] args) throws IOException {
 		PersonenVerwaltung.zeigePersonalListe();
+
+		
+		String [] text = ReaderWriter.readToArray("src/application/Patienten.txt");
+		
+		for(int i = 0; i < text.length; i++) {
+		System.out.println(text[i]);
+		}
 
 		launch(args);
 	}
