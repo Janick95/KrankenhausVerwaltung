@@ -1,33 +1,17 @@
 package application;
 
-import java.io.File;
-import java.util.Scanner;
-
 public class PersonenVerwaltung {
 
 	// Attribute
 
 	String aufenthaltsgrund;
 
-	static Scanner scanner;
-	static File file = new File("src/application/Arzt.txt");
 	static String text;
 	
 	// Methoden
 
 	public static void zeigePersonalListe() {
 
-		try {
-			scanner = new Scanner(file);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		while(scanner.hasNext()) {
-			text += scanner.next();
-		}
-		System.out.println(text);
 	}
 
 	public static void zeigePatientenListe() {

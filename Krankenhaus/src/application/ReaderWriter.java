@@ -41,7 +41,12 @@ public class ReaderWriter {
 		
 		FileWriter writer = new FileWriter(file, true);
 		BufferedWriter bufferedWriter = new BufferedWriter(writer);
+		FileReader reader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(reader);
 		
+		if(bufferedReader.readLine() != null) {
+			bufferedWriter.newLine();
+		}
 		bufferedWriter.write(text);
 		
 		bufferedWriter.close();
