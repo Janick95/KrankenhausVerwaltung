@@ -44,17 +44,19 @@ public class Main extends Application {
 	public static void main(String[] args) throws IOException {
 		
 		//Test/Beispiel Daten auslesen
-		String [] text = ReaderWriter.readToArray("Patienten.txt");
+		/*String [] text = ReaderWriter.readToArray("Patienten.txt");
 		
 		for(int i = 0; i < text.length; i++) {
 		System.out.println(text[i]);
-		}
+		}*/
 
-		
 		//Test/Beispiel Daten reinschreiben
-		String testtext = "Haben Sie schon probiert ihren Rechner neu zu starten?";
+		String testtext = "Donut";
 		
-		ReaderWriter.writeStringIntoTxt(testtext, "Test.txt");
+		//ReaderWriter.writeStringIntoTxt(testtext, "Test.txt");
+		
+		//Test Daten löschen
+		ReaderWriter.deleteFromTxt(testtext, "Test.txt");
 		
 		launch(args);
 	}
