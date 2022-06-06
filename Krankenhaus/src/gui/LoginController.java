@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.regex.Pattern;
 
 import application.Benutzer;
 import application.Main;
@@ -18,17 +19,17 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class LoginController {
 
-	// Variablen um neue Scene zu erzeugen
-	private Stage stage;
-	private Scene scene;
-
 	// Zugriff auf FXML Elemente
 	@FXML
-	TextField txtLoginID;
+	ImageView imgLogo;
+
+	@FXML
+	TextField txtEmail;
 
 	@FXML
 	PasswordField pfPasswort;
@@ -38,7 +39,7 @@ public class LoginController {
 
 	// Button Event
 	@FXML
-	public void login(ActionEvent event) throws IOException // This method loads a new scene in a current window
+	public void handleLoginAction(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
 		// Pfad zur Text Datei
 		Path path = Paths.get("Benutzer.txt");
@@ -50,69 +51,75 @@ public class LoginController {
 		for (int i = 0; i < count; i++) {
 			String line = Files.readAllLines(path).get(i);
 			if (!line.trim().equals("")) {
-				// Betreffendes Datei Format User-ID, Passwort
-				String[] user = line.split(",");
+				// Betreffendes Datei Format Email, Passwort
+				String[] benutzer = line.split(",");
 
-				String userID = user[0];
-				String password = user[1];
+				String email = benutzer[0];
+				String password = benutzer[1];
 
 				// User vorhanden
-				if (userID.trim().equals(txtLoginID.getText())) {
+				if (email.trim().equals(txtEmail.getText())) {
 					// Passwort Überprüfung
 					if (password.trim().equals(pfPasswort.getText())) {
 						Alert msg = new Alert(AlertType.CONFIRMATION);
-						msg.setTitle(txtLoginID.getText());
-						msg.setContentText("User-ID und Passwort vorhanden");
+						msg.setTitle(txtEmail.getText());
+						msg.setContentText("Email und Passwort vorhanden");
 						msg.showAndWait();
 
 						// Werte speichern
-						Benutzer.setUserID(userID);
+						Benutzer.setEmail(email);
 						Benutzer.setPassword(password);
 
 						// Fenster öffnen
 						checkAdmin();
+						System.out.println(benutzer[0] +" ," + benutzer[1]);
 						openWindow();
 
 						break; // User ID und Passwort stimmen, Schleife geschlossen
 					}
 				}
 			}
-		}
 
-		if (Benutzer.getUserID() == null) {
-			System.out.println("Dieser Benutzer existiert nicht");
-			Alert msg = new Alert(AlertType.ERROR);
-			msg.setTitle(txtLoginID.getText());
-			msg.setContentText("Der User: " + txtLoginID.getText() + " existiert nicht!");
-			msg.showAndWait();
-		} else if (Benutzer.getPassword() == null) {
-			System.out.println("Dieses Passwort existiert nicht");
-			Alert msg = new Alert(AlertType.ERROR);
-			msg.setTitle(pfPasswort.getText());
-			msg.setContentText("Das Passwort: " + pfPasswort.getText() + " existiert nicht!");
-			msg.showAndWait();
+		}
+		if(validateData()) {
+			if (Benutzer.getEmail() == null) {
+				System.out.println("Diese Email gibt es nicht!");
+
+				Alert msg = new Alert(AlertType.ERROR);
+				msg.setTitle(txtEmail.getText());
+				msg.setContentText("Diese Email gibt es nicht: " + txtEmail.getText());
+				msg.showAndWait();
+			} else if (Benutzer.getPassword() == null) {
+				System.out.println("Dieses Passwort gibt es nicht!");
+				Alert msg = new Alert(AlertType.ERROR);
+				msg.setTitle(pfPasswort.getText());
+				msg.setContentText("Falsches Passwort " + pfPasswort.getText());
+				msg.showAndWait();
+			}
 		}
 	}
 
-	//Hier evtl nur gucken ob man den einen Button nur ausblendet
-	
+
+	// Hier evtl nur gucken ob man den einen Button nur ausblendet
+
 	public boolean checkAdmin() {
 		Alert msg = new Alert(AlertType.ERROR);
 		boolean result;
-		if (Benutzer.getUserID().contains("Admin")) {
+		if (Benutzer.getEmail().contains("Admin")) {
 			System.out.println("Dieser Benutzer ist ein Admin");
 			result = true;
-		}else {
+		} else {
 			result = false;
 		}
 		return result;
 	}
 
+	@FXML
 	private void openWindow() {
 		System.out.println("Benutzer eingeloggt");
 		if (checkAdmin() == false) {
 			try {
-				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen01.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen02.fxml"));
 				Main.stage.setScene(new Scene(root));
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -126,4 +133,30 @@ public class LoginController {
 			}
 		}
 	}
+
+	private boolean validateData() {
+		Alert msg = new Alert(AlertType.ERROR);
+		boolean result = true;
+		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"+ "A-Z]{2,7}$";
+		Pattern pat = Pattern.compile(emailRegex);
+		if (txtEmail.getText().equals("")) {
+			msg.setContentText("Bitte füllen Sie das E-Mail Feld aus!");
+			msg.showAndWait();
+			result = false;
+		} else {
+			if (pfPasswort.getText().equals("")) {
+				msg.setContentText("Bitte füllen Sie das Passwort Feld aus!");
+				msg.showAndWait();
+				result = false;
+			} else {
+				if (!pat.matcher(txtEmail.getText()).matches()) {
+					msg.setContentText("Sie haben eine ungültige E-Mail Adresse angegeben!");
+					msg.showAndWait();
+					result = false;
+				}
+			}
+		}
+		return result;
+	}
+
 }
