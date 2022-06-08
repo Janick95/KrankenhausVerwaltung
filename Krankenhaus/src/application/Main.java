@@ -41,14 +41,14 @@ public class Main extends Application {
 
 
 	public static void main(String[] args) throws IOException {
-		PersonenVerwaltung.zeigePersonalListe();
+//		PersonenVerwaltung.zeigePersonalListe();
 
 		
-		String [] text = ReaderWriter.readToArray("src/application/Patienten.txt");
+		/*String [] text = ReaderWriter.readToArray("src/application/Patienten.txt");
 		
 		for(int i = 0; i < text.length; i++) {
 		System.out.println(text[i]);
-		}
+		}*/
 
 		launch(args);
 	}

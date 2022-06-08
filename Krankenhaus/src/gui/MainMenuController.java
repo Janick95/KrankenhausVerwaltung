@@ -54,6 +54,7 @@ public class MainMenuController extends LoginController {
 		stage.setTitle("Patienten Daten");
 		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
+		PVController.zeigePatientenListe();
 	}
 
 	public void goToOperationsTermine(ActionEvent event) throws IOException // This method loads a new scene in a
