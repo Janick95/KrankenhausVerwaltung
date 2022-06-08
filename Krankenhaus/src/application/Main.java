@@ -17,14 +17,31 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-
-		stage = primaryStage;
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
-		Scene scene = new Scene(root);
-		primaryStage.setScene(scene);
-		primaryStage.setTitle("Willkommen im River Krankenhaus");
-		primaryStage.getIcons().add(new Image("/img/Herz_KrankenhausVerwaltung_Logo.png"));
-		primaryStage.show();
+		
+        stage = primaryStage;
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Willkommen im River Krankenhaus");
+        primaryStage.getIcons().add(new Image ("/img/Icon.jpg"));
+        primaryStage.show();
+		
+		
+		
+		
+		
+		/**try {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
+			
+			Scene scene = new Scene (root, 1920, 1080);
+			
+			stage.setTitle("Willkommen im River Hospital");
+			stage.setScene(scene);
+			stage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}**/
+	}
 
 		/**
 		 * try { Parent root =
@@ -35,7 +52,6 @@ public class Main extends Application {
 		 * stage.setTitle("Willkommen im River Hospital"); stage.setScene(scene);
 		 * stage.show(); } catch(Exception e) { e.printStackTrace(); }
 		 **/
-	}
 
 
 
@@ -43,13 +59,15 @@ public class Main extends Application {
 	public static void main(String[] args) throws IOException {
 //		PersonenVerwaltung.zeigePersonalListe();
 
-		
-		/*String [] text = ReaderWriter.readToArray("src/application/Patienten.txt");
-		
-		for(int i = 0; i < text.length; i++) {
-		System.out.println(text[i]);
-		}*/
 
+
+		//Test/Beispiel Daten reinschreiben
+		String testtext = "Donut";
+		
+		//ReaderWriter.writeStringIntoTxt(testtext, "Test.txt");
+		
+		//Test Daten löschen
+		ReaderWriter.deleteFromTxt(testtext, "Test.txt");
 		launch(args);
 	}
 }
