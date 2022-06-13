@@ -1,10 +1,10 @@
-Frau,Jessika,Michi,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,jessika.michi@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2018
-Herr,Henrik,Tom,Arzt,Gymnasium LoremIpsum,Radiologie,Dr. med.,henrik.tom@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Radiologie,2010
-Herr,Ulrich,Kunigunde,Arzt,Gymnasium LoremIpsum,Orthopädie,Dr. med.,ulrich.kunigunde@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Orthopädie,1998
-Frau,Nathalie,Bülow,Arzt,Gymnasium LoremIpsum,Anästhesie,Dr. med.,nathalie.bülow@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Anästhesie,2019
-Frau,Susanne,Johann,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,susanne.johann@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2006
-Frau,Julia,Grüßing,Arzt,Gymnasium LoremIpsum,Pathologie,Dr. med.,julia.grüßing@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Pathologie,2011
-Herr,Marcel,Lothar,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,marcel.lothar@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2018
-Herr,Wolfgang,Hammerich,Arzt,Gymnasium LoremIpsum,Chirurgie,Dr. med.,wolfgang.hammerich@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Chirurgie,2001
-Herr,Meinhard,Lamprecht,Arzt,Gymnasium LoremIpsum,Anästhesie,Dr. med.,meinhard.lamprecht@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Anästhesie,1996
-Frau,Sofie,Falk,Arzt,Gymnasium LoremIpsum,Orthopädie,Dr. med.,sofie.falk@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,Universität Beispielstadt,Orthopädie,2013
+1047,Jessika,Michi,Chirurgie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,jessika.michi@rk.de
+1672,Henrik,Tom,Radiologie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,henrik.tom@rk.de
+1088,Ulrich,Kunigunde,Orthopädie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,ulrich.kunigunde@rk.de
+1732,Nathalie,Bülow,Anästhesie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,nathalie.bülow@rk.de
+1138,Susanne,Johann,Chirurgie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,susanne.johann@rk.de
+1990,Julia,Grüßing,Pathologie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,julia.grüßing@rk.de
+1980,Marcel,Lothar,Chirurgie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,marcel.lothar@rk.de
+1758,Wolfgang,Hammerich,Chirurgie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,wolfgang.hammerich@rk.de
+1611,Meinhard,Lamprecht,Anästhesie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,meinhard.lamprecht@rk.de
+1869,Sofie,Falk,Orthopädie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,sofie.falk@rk.de

@@ -68,12 +68,30 @@ public class Main extends Application {
 		}*/
 
 		//Test/Beispiel Daten reinschreiben
-		String testtext = "Donut";
-		
+		//String testtext = "Donut";
 		//ReaderWriter.writeStringIntoTxt(testtext, "Test.txt");
 		
-		//Test Daten löschen
-		ReaderWriter.deleteFromTxt(testtext, "Test.txt");
+		//Test/Beispiel Daten löschen
+		//ReaderWriter.deleteFromTxt(testtext, "Test.txt");
+		
+		//Test/Beispiel mergeSort
+		/*String[] patienten = ReaderWriter.readToArray("Patienten.txt");
+		
+		String[] sorted = Sortieren.sortIDAscending(patienten);
+		
+		for(int i = 0; i < sorted.length; i++) {
+			System.out.println(sorted[i]);
+		}
+		
+		String[] sorted2 = Sortieren.sortIDDescending(patienten);
+		
+		for(int i = 0; i < sorted2.length; i++) {
+			System.out.println(sorted2[i]);
+		}*/
+		
+		
+		
+		
 		
 		launch(args);
 	}
