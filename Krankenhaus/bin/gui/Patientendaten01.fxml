@@ -27,14 +27,14 @@
          </font>
       </TextField>
       <ComboBox fx:id="cmbPatientenSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <TableView fx:id="tblPatient" layoutX="150.0" layoutY="460.0" prefHeight="550.0" prefWidth="1600.0">
+      <TableView fx:id="tblPatient01" layoutX="150.0" layoutY="460.0" prefHeight="550.0" prefWidth="1600.0">
         <columns>
-          <TableColumn prefWidth="267.0" text="ID" />
-          <TableColumn prefWidth="267.0" text="Vorname" />
-            <TableColumn prefWidth="267.0" text="Nachname" />
-            <TableColumn prefWidth="267.0" text="Aufenthaltsgrund" />
-            <TableColumn prefWidth="267.0" text="Raum-Nr." />
-            <TableColumn prefWidth="267.0" text="Op-Datum" />
+          <TableColumn fx:id="colId01" prefWidth="267.0" text="ID" />
+          <TableColumn fx:id="colVorname01" prefWidth="267.0" text="Vorname" />
+            <TableColumn fx:id="colNachname01" prefWidth="267.0" text="Nachname" />
+            <TableColumn fx:id="colAufenthalt01" prefWidth="267.0" text="Aufenthaltsgrund" />
+            <TableColumn fx:id="colRaum01" prefWidth="267.0" text="Raum-Nr." />
+            <TableColumn fx:id="colOpDat01" prefWidth="267.0" text="Op-Datum" />
         </columns>
       </TableView>
    </children>

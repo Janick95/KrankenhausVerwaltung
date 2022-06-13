@@ -1,7 +1,5 @@
 package application;
 
-import gui.LoginController;
-
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -57,20 +55,15 @@ public class Main extends Application {
 
 
 	public static void main(String[] args) throws IOException {
-		PersonenVerwaltung.zeigePersonalListe();
+//		PersonenVerwaltung.zeigePersonalListe();
 
-		
-		//Test/Beispiel Daten auslesen
-		/*String [] text = ReaderWriter.readToArray("Patienten.txt");
-		
-		for(int i = 0; i < text.length; i++) {
-		System.out.println(text[i]);
-		}*/
+
 
 		//Test/Beispiel Daten reinschreiben
 		//String testtext = "Donut";
 		//ReaderWriter.writeStringIntoTxt(testtext, "Test.txt");
 		
+
 		//Test/Beispiel Daten löschen
 		//ReaderWriter.deleteFromTxt(testtext, "Test.txt");
 		
@@ -89,10 +82,10 @@ public class Main extends Application {
 			System.out.println(sorted2[i]);
 		}*/
 		
-		
-		
-		
-		
+
+		//Test Daten löschen
+		//ReaderWriter.deleteFromTxt(testtext, "Test.txt");
+
 		launch(args);
 	}
 }
