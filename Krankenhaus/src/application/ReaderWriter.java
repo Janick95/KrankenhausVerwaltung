@@ -2,8 +2,6 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -48,6 +46,28 @@ public class ReaderWriter {
 			bufferedWriter.newLine();
 		}
 		bufferedWriter.write(text);
+		bufferedWriter.close();
+		bufferedReader.close();
+	}
+	
+	//die Methode nimmt alle Einträge einer Zeile im Textdokument als Array entgegen, fügt sie zu einem String zusammen und schreibt diesen in das Textdokument
+	public static void writeStringIntoTxt(String[] text, String file) throws IOException {
+		
+		FileWriter writer = new FileWriter(file, true);
+		BufferedWriter bufferedWriter = new BufferedWriter(writer);
+		FileReader reader = new FileReader(file);
+		BufferedReader bufferedReader = new BufferedReader(reader);
+		
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		for(int i = 0; i < text.length; i++) {
+		stringBuilder.append(text[i]);
+		}
+		
+		if(bufferedReader.readLine() != null) {
+			bufferedWriter.newLine();
+		}
+		bufferedWriter.write(stringBuilder.toString());
 		bufferedWriter.close();
 		bufferedReader.close();
 	}

@@ -1,10 +1,10 @@
-Herr,Matthias,Ullrich,Pfleger,Beispielschule,matthias.ulrich@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,2010
-Frau,Karla,Mund,Pfleger,Beispielschule,karla.mund@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,1999
-Frau,Sibylle,Stelling,Pfleger,Beispielschule,sibylle.stelling@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,2005
-Herr,Andreas,Travnik,Pfleger,Beispielschule,andreas.travnik@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,2017
-Herr,Alexander,Wall,Pfleger,Beispielschule,alexander.wall@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,2015
-Herr,Jan-Philipp,Enders,Pfleger,Beispielschule,jan-philipp@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,2020
-Frau,Christina,Engels,Pfleger,Beispielschule,christina.engels@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,2014
-Herr,Niklas,Heermann,Pfleger,Beispielschule,niklas.heermann@rk.de,männlich,Deutschland,Deutsch und Englisch,aktiv,2015
-Frau,Jana,Miessner,Pfleger,Beispielschule,jana.miessner@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,2012
-Frau,Florentin,Bailly,Pfleger,Beispielschule,florentin.bailly@rk.de,weiblich,Deutschland,Deutsch und Englisch,aktiv,2002
+2813,Matthias,Ullrich,Pfleger,Beispielschule,matthias.ulrich@rk.de
+2564,Karla,Mund,Pfleger,Beispielschule,karla.mund@rk.de
+2913,Sibylle,Stelling,Pfleger,Beispielschule,sibylle.stelling@rk.de
+2247,Andreas,Travnik,Pfleger,Beispielschule,andreas.travnik@rk.de
+2020,Alexander,Wall,Pfleger,Beispielschule,alexander.wall@rk.de
+2469,Jan-Philipp,Enders,Pfleger,Beispielschule,jan-philipp@rk.de
+2730,Christina,Engels,Pfleger,Beispielschule,christina.engels@rk.de
+2924,Niklas,Heermann,Pfleger,Beispielschule,niklas.heermann@rk.de
+2163,Jana,Miessner,Pfleger,Beispielschule,jana.miessner@rk.de
+2390,Florentin,Bailly,Pfleger,Beispielschule,florentin.bailly@rk.de
