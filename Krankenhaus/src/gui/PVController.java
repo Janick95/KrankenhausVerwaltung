@@ -93,6 +93,7 @@ public class PVController {
 			
 			
 			//Gibt die Daten der Text Datei aus..
+			//Test Comment fürs commiten
 			
 			System.out.println(patients[i]);
 			//System.out.println(Arrays.toString(patientendaten)); //gibt den inhalt der txt datei wieder
