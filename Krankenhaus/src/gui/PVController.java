@@ -90,10 +90,7 @@ public class PVController {
 			patBsp.addAll(id, vorname, nachname, aufenthaltsgrund, arzt);
 			 // Fehler -->Cannot invoke "javafx.scene.control.ListView.getItems()" because "gui.PVController.lvPatDat01" is null
 			//System.out.println(vorname);
-			
-			
-			//Gibt die Daten der Text Datei aus..
-			
+
 			System.out.println(patients[i]);
 			//System.out.println(Arrays.toString(patientendaten)); //gibt den inhalt der txt datei wieder
 			lvPatDat01.getItems().addAll(patBsp); //müsste eigentlich die patientendaten in die listview eintragen
