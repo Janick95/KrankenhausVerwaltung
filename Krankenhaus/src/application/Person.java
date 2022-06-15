@@ -1,11 +1,15 @@
 package application;
 
+
+
 public abstract class Person {
 
-	String name;
-	String vorname;
+	String  name;
+	String  vorname;
 	int alter;
-	String geschlecht;
+	String  geschlecht;
 	int id;
+	
+	
 	
 }

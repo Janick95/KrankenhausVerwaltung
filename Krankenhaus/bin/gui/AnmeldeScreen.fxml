@@ -17,5 +17,10 @@
       <TextField fx:id="txtEmail" alignment="CENTER" layoutX="818.0" layoutY="372.0" prefHeight="25.0" prefWidth="286.0" promptText="E-Mail" />
       <PasswordField fx:id="pfPasswort" alignment="CENTER" layoutX="818.0" layoutY="425.0" prefHeight="25.0" prefWidth="286.0" promptText="Passwort" />
       <Button fx:id="btnAnmelden" layoutX="1033.0" layoutY="487.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Anmelden" />
+      <Label fx:id="lblPasswort" layoutX="818.0" layoutY="470.0" onMouseClicked="#handlePasswVerg" text="Passwort vergessen?" textFill="#2799eb">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

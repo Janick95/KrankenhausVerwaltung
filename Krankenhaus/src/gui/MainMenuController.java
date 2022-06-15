@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -43,7 +44,7 @@ public class MainMenuController extends LoginController {
 	private Button btnLogout02;
 
 	// Button Events
-
+	@FXML
 	public void goToPatientendaten(ActionEvent event) throws IOException // This method loads a new scene in a current
 																			// window
 	{
@@ -52,11 +53,12 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Patienten Daten");
-		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
-		PVController.zeigePatientenListe();
+		PVController pvc = new PVController();
+		pvc.zeigePatientenListe();
 	}
-
+	@FXML
 	public void goToOperationsTermine(ActionEvent event) throws IOException // This method loads a new scene in a
 																			// current window
 	{
@@ -68,7 +70,7 @@ public class MainMenuController extends LoginController {
 		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
-
+	@FXML
 	public void goToRaumbelegung(ActionEvent event) throws IOException // This method loads a new scene in a current
 																		// window
 	{
@@ -80,7 +82,7 @@ public class MainMenuController extends LoginController {
 		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
-
+	@FXML
 	public void goToPersonaldaten(ActionEvent event) throws IOException // This method loads a new scene in a current
 																		// window
 	{
@@ -92,7 +94,7 @@ public class MainMenuController extends LoginController {
 		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
-
+	@FXML
 	public void goToRegistrierung(ActionEvent event) throws IOException // This method loads a new scene in a current
 																		// window
 	{
@@ -104,7 +106,7 @@ public class MainMenuController extends LoginController {
 		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
-
+	@FXML
 	public void logout(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));

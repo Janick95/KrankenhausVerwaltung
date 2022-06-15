@@ -19,11 +19,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Willkommen im River Krankenhaus");
-        primaryStage.getIcons().add(new Image ("/img/Icon.jpg"));
+        //primaryStage.getIcons().add(new Image ("/img/Icon.JPG")); funktioniert nicht mehr seitdem die module-info.java reintigriert wurde :(
         primaryStage.show();
 		
 		
