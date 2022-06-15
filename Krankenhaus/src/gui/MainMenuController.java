@@ -21,7 +21,7 @@ public class MainMenuController extends LoginController {
 
 	// Zugriff auf die Buttons
 	@FXML
-	private Button btnRegistrierung02;
+	public Button btnRegistrierung02;
 	@FXML
 	private Button btnOpTermine01;
 	@FXML
