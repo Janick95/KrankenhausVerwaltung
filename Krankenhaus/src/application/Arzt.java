@@ -5,7 +5,6 @@ public class Arzt extends Personal {
 	// Getter und Setter
 
 	// Person Getter & Setter
-
 	public String getName() {
 		return name;
 	}
