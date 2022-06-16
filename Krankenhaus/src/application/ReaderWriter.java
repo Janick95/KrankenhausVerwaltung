@@ -94,6 +94,8 @@ public class ReaderWriter {
 		for(int i = 0; i < data.length; i++) {
 			if((data[i] = bufferedReader2.readLine()) != null) {}
 		}
+		bufferedReader2.close();
+		
 		
 		//Löscht die zu entfernende Zeile aus dem Array
 		boolean hit = false;
@@ -113,20 +115,19 @@ public class ReaderWriter {
 			}
 		}
 		
-		bufferedReader2.close();
-		
 		//Löscht den Inhalt des Textdokumentes
 		FileWriter writer = new FileWriter(file, false);
 		BufferedWriter bufferedWriter = new BufferedWriter(writer);
 		
 		bufferedWriter.write("");
+		
 		bufferedWriter.close();
 		
 		//Schreibt restliche Daten wieder in das Textdokument
-		FileWriter writer2 = new FileWriter(file, true);
+		FileWriter writer2 = new FileWriter(file, false);
 		BufferedWriter bufferedWriter2 = new BufferedWriter(writer2);
-		FileReader reader3 = new FileReader(file);
-		BufferedReader bufferedReader3 = new BufferedReader(reader3);
+		
+		
 		
 		for(int i = 0; i < data.length; i++) {
 			
@@ -138,7 +139,5 @@ public class ReaderWriter {
 			}
 		}
 		bufferedWriter2.close();
-		bufferedReader3.close();
-		
 	}
 }

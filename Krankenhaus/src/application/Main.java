@@ -58,33 +58,53 @@ public class Main extends Application {
 //		PersonenVerwaltung.zeigePersonalListe();
 
 
-
 		//Test/Beispiel Daten reinschreiben
 		//String testtext = "Donut";
 		//ReaderWriter.writeStringIntoTxt(testtext, "Test.txt");
 		
-
 		//Test/Beispiel Daten löschen
 		//ReaderWriter.deleteFromTxt(testtext, "Test.txt");
 		
 		//Test/Beispiel mergeSort
-		/*String[] patienten = ReaderWriter.readToArray("Patienten.txt");
+		String[] patienten = ReaderWriter.readToArray("Patienten.txt");
 		
-		String[] sorted = Sortieren.sortIDAscending(patienten);
+		String[] sorted = Sortieren.sortNameDescending(patienten);
 		
 		for(int i = 0; i < sorted.length; i++) {
 			System.out.println(sorted[i]);
 		}
 		
-		String[] sorted2 = Sortieren.sortIDDescending(patienten);
+		/*String[] sorted2 = Sortieren.sortIDDescending(patienten);
 		
 		for(int i = 0; i < sorted2.length; i++) {
 			System.out.println(sorted2[i]);
 		}*/
 		
-
 		//Test Daten löschen
 		//ReaderWriter.deleteFromTxt(testtext, "Test.txt");
+		
+		
+		/*String[] test = new String[10];
+		test[0] = "Haus";
+		test[1] = "Hund";
+		test[2] = "Blume";
+		test[3] = "Pizza";
+		test[4] = "Auto";
+		test[5] = "mehr Pizza";
+		test[6] = "PC";
+		test[7] = "Mathe";
+		test[8] = "Pc";
+		test[9] = "Uni";
+		System.out.println("");
+				
+		for(int i = 0; i < test.length; i++) {
+			System.out.println(test[i]);
+		}
+		Sortieren.sortiereAlphabetisch(test);
+		for(int i = 0; i < test.length; i++) {
+			System.out.println(test[i]);
+		}*/
+		
 
 		launch(args);
 	}
