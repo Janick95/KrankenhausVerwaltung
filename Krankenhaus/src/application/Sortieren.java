@@ -5,7 +5,7 @@ public class Sortieren {
 	// Methoden
 
 	//SortierAlgorythmen
-	//mergeSort
+	
 	//Patienten, Pfleger, Ärzte, Räume, Termine
 	public static String[] sortIDAscending(String[] array) {
 		
@@ -49,7 +49,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = false;
-		mergeSort(array, 0, array.length - 1, index, number);
+		quickSort(array, 0, array.length - 1, index, number);
 		return array;
 	}
 	
@@ -58,7 +58,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = false;
-		mergeSort(array, 0, array.length - 1, index, number);
+		quickSort(array, 0, array.length - 1, index, number);
 		String[] reversed = reverse(array);
 		return reversed;
 	}
@@ -68,7 +68,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = true;
-		mergeSort(array, 0, array.length - 1, index, number);
+		quickSort(array, 0, array.length - 1, index, number);
 		return array;
 	}
 	
@@ -77,7 +77,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = true;
-		mergeSort(array, 0, array.length - 1, index, number);
+		quickSort(array, 0, array.length - 1, index, number);
 		String[] reversed = reverse(array);
 		return reversed;
 	}
@@ -124,13 +124,8 @@ public class Sortieren {
 		}
 	}
 	
+	//merge für Strings
 	public static void mergeString(String[] array, int l, int q, int r, int index) {
-		System.out.println("Merge");
-		System.out.println("//////////////");
-		System.out.println(l);
-		System.out.println(q);
-		System.out.println(r);
-		System.out.println("//////////////");
 		
 		int leftProgress,rightProgress,overallProgress;
 		
@@ -152,8 +147,10 @@ public class Sortieren {
 		rightProgress = 0;
 		overallProgress = l;
 		
+		//vergleicht die Worte
 		while(leftProgress < leftLength && rightProgress < rightLength) {
 			
+			//Nachnamen werden auf chars herunter gebrochen
 			String[] leftLine = leftArray[leftProgress].split(",");
 			String[] rightLine = rightArray[rightProgress].split(",");
 			String leftWord = leftLine[index].toLowerCase();
@@ -162,7 +159,7 @@ public class Sortieren {
 			char[] rightLetters = rightWord.toCharArray();
 			int i = 0;
 			
-				
+			//Nachnamen werden verglichen
 			while(true) {
 				if(i < leftLetters.length && i < rightLetters.length) {
 					if(leftLetters[i] < rightLetters[i]) {
@@ -181,14 +178,18 @@ public class Sortieren {
 					}else {
 						break;
 					}
+				
+				//wenn die Nachnamen identisch sind
 				}else {
 					
+					//Vornamen werden auf chars herunter gebrochen
 					String leftWordFN = leftLine[index - 1].toLowerCase();
 					String rightWordFN = rightLine[index - 1].toLowerCase();
 					char[] leftLettersFN = leftWordFN.toCharArray();
 					char[] rightLettersFN = rightWordFN.toCharArray();
 					int j = 0;
 					
+					//vergleicht die Vornamen
 					while(true) {
 						if(j < leftLettersFN.length && j < rightLettersFN.length) {
 							if(leftLettersFN[j] < rightLettersFN[j]) {
@@ -207,6 +208,8 @@ public class Sortieren {
 							}else {
 								break;
 							}
+							
+						//wenn auch die Vornamen identisch sind
 						}else {
 							array[overallProgress] = leftArray[leftProgress];
 							leftProgress++;
@@ -221,13 +224,15 @@ public class Sortieren {
 			}
 			overallProgress++;
 		}
-			
+		
+		//füllt das Gesamtarray mit den restlichen Werten des linke Teilarrays
 		while(leftProgress < leftLength) {
 			array[overallProgress] = leftArray[leftProgress];
 			leftProgress++;
 			overallProgress++;
 		}
 		
+		//füllt das Gesamtarray mit den restlichen Werten des linke Teilarrays
 		while(rightProgress < rightLength) {
 			array[overallProgress] = rightArray[rightProgress];
 			rightProgress++;
@@ -235,7 +240,7 @@ public class Sortieren {
 		}
 	}
 	
-	//merge für zahlen
+	//merge für Zahlen
 	public static void mergeInt(String[] array, int l, int q, int r, int index) {
 		
 		int leftProgress,rightProgress,overallProgress;
@@ -274,7 +279,7 @@ public class Sortieren {
 			overallProgress++;
 		}
 		
-		//Wenn nur noch ein Teilarray Werte enthält, wird das gemergte Array mit diesen aufgefüllt
+		//wenn nur noch ein Teilarray Werte enthält, wird das gemergte Array mit diesen aufgefüllt
 		while(leftProgress < leftLength) {
 			array[overallProgress] = leftArray[leftProgress];
 			leftProgress++;
@@ -288,6 +293,141 @@ public class Sortieren {
 		}
 	}
 	
+	
+	public static void quickSort(String[] array, int l, int r, int index, boolean number) {
+		int i, j;
+		String pivot, note;
+		
+		if(l < r) {
+			i = l;
+			j = r - 1;
+			pivot = array[r];
+			
+			System.out.println("///////////////////////////");
+			System.out.println(pivot);
+			
+			for(int x = 0; x < array.length; x++) {
+				System.out.println(array[x]);
+			}
+			System.out.println("///////////////////////////");
+			
+			while(i <= j) {
+				System.out.println("wieder in der while");
+				System.out.println(i);
+				System.out.println(j);
+				while(check(array, pivot, i - 1, "<", index, number)) {
+					i++;
+				}
+				while(j >= l && check(array, pivot, j - 1, ">", index, number)) {
+					j--;
+				}
+				if(i >= j) {
+					partition(array, l, i, r, index, number);
+				}else {
+					System.out.println(array[i]);
+					System.out.println(array[j]);
+					note = array[i];
+					array[i] = array[j];
+					array[j] = note;
+					System.out.println(array[i]);
+					System.out.println(array[j]);
+				}
+				
+			}
+		}
+	}
+	
+	public static void partition (String[] array, int l, int i, int r, int index, boolean number) {
+		System.out.println("in partition");
+		String note;
+		note = array[i];
+		array[i] = array[r];
+		array[r] = note;
+		quickSort(array, l, i - 1, index, number);
+		quickSort(array, i + 1, r, index, number);
+	}
+	
+	public static boolean check(String[] array, String pivot, int counter, String sign, int index, boolean number) {
+		System.out.println("in check");
+		boolean check = false;
+		
+		System.out.println(counter);
+		String[] leftSide = array[counter].split(",");
+		String[] rightSide = pivot.split(",");
+		
+		
+		if(number) {
+			if(sign.equals("<")) {
+				if(Integer.parseInt(leftSide[index]) < Integer.parseInt(rightSide[index])){
+					check = true;
+				}
+			}else if(sign.equals(">")) {
+				if(Integer.parseInt(leftSide[index]) > Integer.parseInt(rightSide[index])) {
+					check = true;
+				}
+			}else {
+				check = false;
+			}
+		}
+		
+		if(!number) {
+			System.out.println("im stringbereich");
+			String leftWord = leftSide[index].toLowerCase();
+			String rightWord = rightSide[index].toLowerCase();
+			char[] leftLetters = leftWord.toCharArray();
+			char[] rightLetters = rightWord.toCharArray();
+			int i = 0;
+			
+			System.out.println(leftWord);
+			System.out.println(rightWord);
+			
+			
+			if(sign.equals("<")) {
+				while(i < leftLetters.length || i < rightLetters.length) {
+					if(leftLetters[i] < rightLetters[i]){
+						System.out.println("<");
+						System.out.println(leftLetters[i]);
+						System.out.println(rightLetters[i]);
+						check = true;
+						break;
+					}else if(leftLetters[i] > rightLetters[i]){
+						System.out.println(">");
+						System.out.println(leftLetters[i]);
+						System.out.println(rightLetters[i]);
+						check = false;
+						break;
+					}else {
+						i++;
+					}
+				}
+				System.out.println(check);
+			}else if(sign.equals(">")) {
+				while(i < leftLetters.length || i < rightLetters.length) {
+					if(leftLetters[i] > rightLetters[i]){
+						System.out.println(">");
+						System.out.println(leftLetters[i]);
+						System.out.println(rightLetters[i]);
+						check = true;
+						break;
+					}else if(leftLetters[i] < rightLetters[i]){
+						System.out.println("<");
+						System.out.println(leftLetters[i]);
+						System.out.println(rightLetters[i]);
+						check = false;
+						break;
+					}else {
+						i++;
+					}
+				}
+				System.out.println(check);
+			}else {
+				check = false;
+			}
+		}
+		return check;
+	}
+	
+	//kehrt das Array um
 	public static String[] reverse(String[] array) {
 		String[] reversed = new String[array.length];
 		int count = array.length;;
