@@ -44,8 +44,8 @@ public class MainMenuController extends LoginController {
 
 	// Button Events
 
-	public void goToPatientendaten(ActionEvent event) throws IOException // This method loads a new scene in a current
-																			// window
+	public void goToPatientendaten(ActionEvent event) throws IOException // Diese Methode lädt den Patientendatenbildschirm in dem aktuellen Fenster
+																			
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Patientendaten01.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -58,62 +58,64 @@ public class MainMenuController extends LoginController {
 		pvc.zeigePatientenListe();
 	}
 
-	public void goToOperationsTermine(ActionEvent event) throws IOException // This method loads a new scene in a
-																			// current window
+	public void goToOperationsTermine(ActionEvent event) throws IOException // Diese Methode lädt den Operations-Terminbildschirm in dem aktuellen Fenster
+																			
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Operationstermine.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Operationstermine");
-		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
+		TVController tvc = new TVController();
+		tvc.zeigeOpListAn();
 	}
 
-	public void goToRaumbelegung(ActionEvent event) throws IOException // This method loads a new scene in a current
-																		// window
+	public void goToRaumbelegung(ActionEvent event) throws IOException // Diese Methode lädt den Raumbelegungsbildschirm in dem aktuellen Fenster
+																		
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Raumbelegung.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Raumbelgung");
-		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
+		RVController rvc = new RVController();
+		rvc.zeigeRaumListAn();
 	}
 
-	public void goToPersonaldaten(ActionEvent event) throws IOException // This method loads a new scene in a current
-																		// window
+	public void goToPersonaldaten(ActionEvent event) throws IOException // Diese Methode lädt den Personaldatenbildschirm in dem aktuellen Fenster
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Personaldaten01.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Personal Daten");
-		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
-	public void goToRegistrierung(ActionEvent event) throws IOException // This method loads a new scene in a current
-																		// window
+	public void goToRegistrierung(ActionEvent event) throws IOException // Diese Methode lädt den Registrierungsbildschirm in dem aktuellen Fenster
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Registrierung.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Registrierung");
-		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
-	public void logout(ActionEvent event) throws IOException // This method loads a new scene in a current window
+	public void logout(ActionEvent event) throws IOException // Diese Methode lädt den Loginbildschirm in dem aktuellen Fenster
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Willkommen im River Krankenhaus");
-		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 }

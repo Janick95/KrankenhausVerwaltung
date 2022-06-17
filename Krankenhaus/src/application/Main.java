@@ -17,39 +17,14 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
         stage = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml")); //hier wird die fxml Datei geladen
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Willkommen im River Krankenhaus");
-       // primaryStage.getIcons().add(new Image ("/img/Icon.jpg"));
+        primaryStage.setTitle("Willkommen im River Krankenhaus");//Titel des Fensters
+       // primaryStage.getIcons().add(new Image ("/img/Icon.jpg")); //Eigentlich sollte hier das Explorer Icon gesetzt werden, allerdings führt dies seit der Integrierung der module-info.java zu Fehlern  
         primaryStage.show();
-		
-		
-		
-		
-		
-		/**try {
-			Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
-			
-			Scene scene = new Scene (root, 1920, 1080);
-			
-			stage.setTitle("Willkommen im River Hospital");
-			stage.setScene(scene);
-			stage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}**/
 	}
 
-		/**
-		 * try { Parent root =
-		 * FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
-		 * 
-		 * Scene scene = new Scene (root, 1920, 1080);
-		 * 
-		 * stage.setTitle("Willkommen im River Hospital"); stage.setScene(scene);
-		 * stage.show(); } catch(Exception e) { e.printStackTrace(); }
-		 **/
 
 
 

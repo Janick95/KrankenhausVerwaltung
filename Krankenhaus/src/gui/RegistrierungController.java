@@ -1,9 +1,11 @@
 package gui;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import javafx.event.ActionEvent;
@@ -20,6 +22,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.shape.Path;
 
 public class RegistrierungController {
 
@@ -104,40 +107,89 @@ public class RegistrierungController {
 	private void handleButtonRegistrationAction(ActionEvent event) throws IOException {
 		if (validateData()) {
 			if (txtRangR.getText().equals("Pfleger")) {
-				try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Pfleger.txt", true)))) {
-					out.println(cmbPrefixR.getValue() + "," + txtVornameR.getText() + "," + txtNachnameR.getText() + ","
-							+ txtRangR.getText() + "," + txtSchuleR.getText() + "," + txtAbteilungR.getText() + ","
-							+ txtTitelR.getText() + "," + txtEmailR.getText() + "," + cmbGeschlechtR.getValue() + ","
-							+ txtHerkunftR.getText() + "," + txtSprachenR.getText() + "," + rbtnAktivR.isSelected()
-							+ "," + rbtnInaktivR.isSelected() + "," + txtAusbildungR.getText() + ","
-							+ txtSpezialitätR.getText() + "," + cmbAbgeschlossenR.getValue());
+ /*
+						 * (PrintWriter out = new PrintWriter(new BufferedWriter(new
+						 * FileWriter("Pfleger.txt", true)))) { out.println(cmbPrefixR.getValue() + ","
+						 * + txtVornameR.getText() + "," + txtNachnameR.getText() + "," +
+						 * txtRangR.getText() + "," + txtSchuleR.getText() + "," +
+						 * txtAbteilungR.getText() + "," + txtTitelR.getText() + "," +
+						 * txtEmailR.getText() + "," + cmbGeschlechtR.getValue() + "," +
+						 * txtHerkunftR.getText() + "," + txtSprachenR.getText() + "," +
+						 * rbtnAktivR.isSelected() + "," + rbtnInaktivR.isSelected() + "," +
+						 * txtAusbildungR.getText() + "," + txtSpezialitätR.getText() + "," +
+						 * cmbAbgeschlossenR.getValue());
+						 */
+					String[] pfleger = new String[6];
+					int lower = 2000;
+					int upper = 2999;
+					
+					String id = String.valueOf((int) (Math.random() * (upper - lower)));
+					String vorname = txtVornameR.getText();
+					String nachname = txtNachnameR.getText();
+					String rang = txtRangR.getText();
+					String schule = txtSchuleR.getText();
+					String email = txtEmailR.getText();
+
+					pfleger[0] = id;
+					pfleger[1] = vorname;
+					pfleger[2] = nachname;
+					pfleger[3] = rang;
+					pfleger[4] = schule;
+					pfleger[5] = email;
+					
+					
+					
+					System.out.println(pfleger[3]);
+					//File pflegertxt = new File("Pfleger.txt");
+										
+					application.ReaderWriter.writeStringIntoTxt(pfleger, "Pfleger.txt");
+					
 					Alert mesg = new Alert(AlertType.CONFIRMATION);
 					mesg.setContentText("Pfleger hinzugefügt");
 					mesg.showAndWait();
-				} catch (IOException ioe) {
-					ioe.printStackTrace();
-				}
+
 			} else {
 				if (txtRangR.getText().equals("Arzt")) {
-					try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Arzt.txt", true)))) {
+					/*try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Arzt.txt", true)))) {
 						out.println(cmbPrefixR.getValue() + "," + txtVornameR.getText() + "," + txtNachnameR.getText()
 								+ "," + txtRangR.getText() + "," + txtSchuleR.getText() + "," + txtAbteilungR.getText()
 								+ "," + txtTitelR.getText() + "," + txtEmailR.getText() + ","
 								+ cmbGeschlechtR.getValue() + "," + txtHerkunftR.getText() + ","
 								+ txtSprachenR.getText() + "," + rbtnAktivR.isSelected() + ","
 								+ rbtnInaktivR.isSelected() + "," + txtAusbildungR.getText() + ","
-								+ txtSpezialitätR.getText() + "," + cmbAbgeschlossenR.getValue());
+								+ txtSpezialitätR.getText() + "," + cmbAbgeschlossenR.getValue());*/
+					String[] arzt = new String[6];
+					int lower = 1000;
+					int upper = 1999;
+					String id = String.valueOf((int) (Math.random() * (upper - lower))) + lower;
+					
+					String vorname = txtVornameR.getText();
+					String nachname = txtNachnameR.getText();
+					String rang = txtRangR.getText();
+					String schule = txtSchuleR.getText();
+					String email = txtEmailR.getText();
+
+					arzt[0] = id;
+					arzt[1] = vorname;
+					arzt[2] = nachname;
+					arzt[3] = rang;
+					arzt[4] = schule;
+					arzt[5] = email;
+					
+					//File pflegertxt = new File("Pfleger.txt");
+										
+					application.ReaderWriter.writeStringIntoTxt(arzt, "Arzt.txt");
+					
 						Alert mesg = new Alert(AlertType.CONFIRMATION);
 						mesg.setContentText("Arzt hinzugefügt");
 						mesg.showAndWait();
-					} catch (IOException ioe) {
-						ioe.printStackTrace();
-					}
+
 				}
 			}
 		}
 	}
 
+//Valdierung der TextFelder
 	private boolean validateData() {
 		Alert msg = new Alert(AlertType.ERROR);
 		boolean result = true;
