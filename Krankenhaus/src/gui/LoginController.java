@@ -79,7 +79,7 @@ public class LoginController {
 					}
 				}
 			}
-
+			
 		}
 		if(validateData()) {
 			if (Benutzer.getEmail() == null) {
