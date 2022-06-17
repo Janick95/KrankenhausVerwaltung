@@ -2,7 +2,7 @@
 3782,Sina,Adenauer,28,Knochenbruch,ledig,Dr.Platzhalter
 3591,Sven,Beese,35,Herzprobleme,ledig,Dr.Platzhalter
 3657,Hannes,Steinhöfer,52,Krebs,geschieden,Dr.Platzhalter
-3100,Carmen,Jung,verheiratet,43,Herzprobleme,Dr.Platzhalter
+3100,Carmen,Jung,43,verheiratet,Herzprobleme,Dr.Platzhalter
 3409,Isabelle,André,32,Knieverletzung,verheiratet,Dr.Platzhalter
 3512,Xenia,Reuters,38,Corona,ledig,Dr.Platzhalter
 3824,Nora,Reinfelder,40,Corona,ledig,Dr.Platzhalter

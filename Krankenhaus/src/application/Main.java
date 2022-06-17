@@ -66,9 +66,11 @@ public class Main extends Application {
 		//ReaderWriter.deleteFromTxt(testtext, "Test.txt");
 		
 		//Test/Beispiel mergeSort
-		String[] patienten = ReaderWriter.readToArray("Patienten.txt");
+		//String[] patienten = ReaderWriter.readToArray("Patienten.txt");
+		//String[] arzt = ReaderWriter.readToArray("Arzt.txt");
+		String[] test = ReaderWriter.readToArray("Test.txt");
 		
-		String[] sorted = Sortieren.sortNameDescending(patienten);
+		String[] sorted = Sortieren.sortAgeAscending(test);
 		
 		for(int i = 0; i < sorted.length; i++) {
 			System.out.println(sorted[i]);
