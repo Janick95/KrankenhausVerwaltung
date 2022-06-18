@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RVController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenü" text="Hauptmenü">
+      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
@@ -26,6 +26,36 @@
          </font>
       </TextField>
       <ComboBox fx:id="cmbRaumSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <ListView fx:id="lvRaum" layoutX="150.0" layoutY="460.0" prefHeight="550.0" prefWidth="1600.0" />
+      <ListView fx:id="lvRaum" layoutX="150.0" layoutY="460.0" prefHeight="204.0" prefWidth="1600.0" />
+      <Button fx:id="btnLoescheRaum" layoutX="1138.0" layoutY="908.0" mnemonicParsing="false" onAction="#loescheRaum" text="Raum löschen">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRaumErstellen" layoutX="313.0" layoutY="908.0" mnemonicParsing="false" onAction="#erstelleRaum" text="Raum erstellen">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="152.0" layoutY="730.0" text="Anzahl Betten:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="804.0" text="Anzahl Patienten:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBetten" layoutX="494.0" layoutY="724.0" minWidth="188.0" prefHeight="39.0" prefWidth="188.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPatAnz" layoutX="494.0" layoutY="798.0" minWidth="188.0" prefHeight="39.0" prefWidth="188.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>

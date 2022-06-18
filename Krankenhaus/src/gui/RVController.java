@@ -1,6 +1,7 @@
 package gui;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import application.ReaderWriter;
 import javafx.collections.FXCollections;
@@ -11,8 +12,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class RVController {
@@ -24,9 +29,27 @@ public class RVController {
 	// Zugriff auf FXML Elemente
 	@FXML
 	Button btnHauptmenü;
-	@FXML
-	ListView<ObservableList> lvRaum = new ListView<ObservableList>();
 	
+	@FXML
+	Button btnErstelleRaum;
+	
+	@FXML
+	Button btnLoescheRaum;
+
+	@FXML
+	ListView<String> lvRaum = new ListView<String>();
+	@FXML
+	ComboBox<String> cmbRaumSort;
+	@FXML
+	TextField txtBetten;
+	@FXML
+	TextField txtPatAnz;
+	
+	
+	@FXML
+	public void initialize() throws IOException {
+		zeigeRaumListAn();
+	}
 
 	// Methode um die roomientendaten aus der Text Datei in die TableView einzufügen
 	@FXML
@@ -42,56 +65,50 @@ public class RVController {
 	public void zeigeRaumListAn() throws IOException {
 
 		String[] rooms = ReaderWriter.readToArray("Räume.txt");
-
-		ObservableList<String> room = FXCollections.observableArrayList(rooms);
-		
-		ObservableList<String> roomBsp = FXCollections.observableArrayList();
-		
-		for (int i = 0; i < room.size(); i++) {
-			
-		
-			String[] roomdaten = rooms[i].split(",");
-			
-			
-			String id = roomdaten[0];
-			String bettenanz = roomdaten[1];
-			String patanz = roomdaten[2];
-
-			roomBsp.addAll(id, bettenanz, patanz);
-			 // Fehler -->Cannot invoke "javafx.scene.control.ListView.getItems()" because "gui.PVController.lvRaum" is null
-			//System.out.println(vorname);
-			
-			
-			//Gibt die Daten der Text
-
-			System.out.println(rooms[i]);
-			
-			//System.out.println(Arrays.toString(roomientendaten)); //gibt den inhalt der txt datei wieder
-			lvRaum.getItems().addAll(roomBsp); //müsste eigentlich die roomientendaten in die listview eintragen
-			
-			}
-		lvRaum.getItems().addAll(roomBsp);
-		//lvRaum.setCellFactory((Callback<ListView<ObservableList>, ListCell<ObservableList>>) roomBsp);
-		lvRaum.getItems();
-		String temp = "";
-		
-		
-		
-		for(String item: roomBsp) {
-			//System.out.println(item);
-			temp+=item;
-		}
+		ObservableList<String> roomList = FXCollections.observableArrayList(rooms);
+		lvRaum.setItems(roomList);
 		
 		
 		}
 	// Events
 	@FXML
-	public void goToHauptmenü(ActionEvent event) throws IOException // This method loads a new scene in a current window
+	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	@FXML
+	public void erstelleRaum(ActionEvent event) throws IOException {
+		String[] raum = new String[3];
+		int lower = 4000;
+		int upper = 4999;
+
+		String id = String.valueOf((int) (Math.random() * (upper - lower) + lower));
+		String betten = txtBetten.getText();
+		String patAnz = txtPatAnz.getText();
+
+		raum[0] = id;
+		raum[1] = betten;
+		raum[2] = patAnz;
+
+		for (int i = 0; i < raum.length; i++) {
+			raum[i].trim();
+			raum[i].toString().split(",");
+		}
+		Alert mesg = new Alert(AlertType.CONFIRMATION);
+		mesg.setContentText("Raum hinzugefügt");
+		mesg.showAndWait();
+		application.ReaderWriter.writeStringIntoTxt(Arrays.toString(raum), "Räume.txt");
+	}
+	@FXML
+	public void loescheRaum(ActionEvent event) throws IOException {
+		String[] raeume = ReaderWriter.readToArray("Räume.txt");
+		ObservableList<String> deleteRaum;
+		//deleteRaum = lvRaum.getSelectionModel().getSelectedItem();
+		//application.ReaderWriter.deleteFromTxt(deleteRaum.toString(), "Patienten.txt");
 	}
 }

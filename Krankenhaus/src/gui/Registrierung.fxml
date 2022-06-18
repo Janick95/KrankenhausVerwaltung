@@ -12,7 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistrierungController">
    <children>
-      <Button fx:id="btnHauptmenüR" layoutX="200.0" layoutY="75.0" mnemonicParsing="false" onAction="#goToHauptmenü" text="Hauptmenü">
+      <Button fx:id="btnHauptmenüR" layoutX="200.0" layoutY="75.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>

@@ -6,24 +6,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PersoController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" text="Hauptmenü">
+      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <Label layoutX="150.0" layoutY="400.0" text="Personaldaten verwalten">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblPersonalUser" layoutX="150.0" layoutY="480.0" text="Vorname Nachname Person">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="150.0" layoutY="520.0" text="Prefix">
          <font>
             <Font size="18.0" />
          </font>
@@ -48,62 +38,37 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="720.0" text="Profil">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
       <Label layoutX="150.0" layoutY="760.0" text="Abteilung">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnFrau" layoutX="900.0" layoutY="480.0" mnemonicParsing="false" prefWidth="275.0" text="Frau">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnHerr" layoutX="1215.0" layoutY="480.0" mnemonicParsing="false" prefWidth="275.0" text="Herr">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnDivers" layoutX="1525.0" layoutY="480.0" mnemonicParsing="false" prefWidth="275.0" text="Divers">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <TextField fx:id="txtVorname02" layoutX="900.0" layoutY="561.0" minWidth="900.0">
+      <TextField fx:id="txtPersoVorname" layoutX="900.0" layoutY="561.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtNachname02" layoutX="900.0" layoutY="600.0" minWidth="900.0">
+      <TextField fx:id="txtPersoNachname" layoutX="900.0" layoutY="600.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtRang02" layoutX="900.0" layoutY="640.0" minWidth="900.0">
+      <TextField fx:id="txtPersoRang" layoutX="900.0" layoutY="640.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSchule02" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtPersoSchule" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAbteilung02" layoutX="900.0" layoutY="760.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtPersoAbteilung" layoutX="900.0" layoutY="760.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btnPersonalBearbeiten" layoutX="1240.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Bearbeiten">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnPersonalSpeichern" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" text="Speichern">
+      <Button fx:id="btnPersonalBearbeiten" layoutX="1240.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" onAction="#personalErstellen" text="Bearbeiten">
          <font>
             <Font size="18.0" />
          </font>
