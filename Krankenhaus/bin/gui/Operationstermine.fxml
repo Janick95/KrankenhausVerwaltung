@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TVController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenü" text="Hauptmenü">
+      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
@@ -26,16 +26,76 @@
          </font>
       </TextField>
       <ComboBox fx:id="cmbOpTermineSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <Button fx:id="btnBearbeiten" layoutX="1180.0" layoutY="1020.0" mnemonicParsing="false" text="Termin bearbeiten">
+      <Button fx:id="btnTerminErstellen" layoutX="911.0" layoutY="1013.0" mnemonicParsing="false" onAction="#erstelleTermin" text="Termin erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnHinzufügen" layoutX="1460.0" layoutY="1020.0" mnemonicParsing="false" text="Termin hinzufügen">
+      <Button fx:id="btnTerminLoeschen" layoutX="1528.0" layoutY="1013.0" mnemonicParsing="false" onAction="#loescheTermin" text="Termin löschen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ListView fx:id="lvOpT" layoutX="150.0" layoutY="477.0" prefHeight="520.0" prefWidth="1600.0" />
+      <ListView fx:id="lvOpT" layoutX="150.0" layoutY="477.0" prefHeight="350.0" prefWidth="1600.0" />
+      <Label layoutX="150.0" layoutY="849.0" text="Patient Vorname:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPatVorn" layoutX="386.0" layoutY="843.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="150.0" layoutY="900.0" text="Patient Nachname:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPatNachn" layoutX="386.0" layoutY="894.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="637.0" layoutY="855.0" text="Arzt Vorname:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtArztVorn" layoutX="873.0" layoutY="849.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="637.0" layoutY="906.0" text="Arzt Nachname:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtArztNachn" layoutX="873.0" layoutY="900.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1168.0" layoutY="906.0" text="Op Datum:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOpDatum" layoutX="1404.0" layoutY="900.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="1172.0" layoutY="855.0" text="Op Grund:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOpGrund" layoutX="1404.0" layoutY="849.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </Pane>

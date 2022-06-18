@@ -54,8 +54,6 @@ public class MainMenuController extends LoginController {
 		stage.setTitle("Patienten Daten");
 		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
-		PVController pvc = new PVController();
-		pvc.zeigePatientenListe();
 	}
 
 	public void goToOperationsTermine(ActionEvent event) throws IOException // Diese Methode lädt den Operations-Terminbildschirm in dem aktuellen Fenster
@@ -68,8 +66,6 @@ public class MainMenuController extends LoginController {
 		stage.setTitle("Operationstermine");
 		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
-		TVController tvc = new TVController();
-		tvc.zeigeOpListAn();
 	}
 
 	public void goToRaumbelegung(ActionEvent event) throws IOException // Diese Methode lädt den Raumbelegungsbildschirm in dem aktuellen Fenster
@@ -82,8 +78,6 @@ public class MainMenuController extends LoginController {
 		stage.setTitle("Raumbelgung");
 		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
-		RVController rvc = new RVController();
-		rvc.zeigeRaumListAn();
 	}
 
 	public void goToPersonaldaten(ActionEvent event) throws IOException // Diese Methode lädt den Personaldatenbildschirm in dem aktuellen Fenster

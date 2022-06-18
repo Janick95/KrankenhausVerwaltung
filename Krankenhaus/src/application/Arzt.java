@@ -62,4 +62,9 @@ public class Arzt extends Personal {
 		this.passwort = passwort;
 	}
 
+	/*public Arzt() {
+		super();
+		// TODO Auto-generated constructor stub
+	}*/
+
 }

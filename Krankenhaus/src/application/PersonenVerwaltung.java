@@ -1,73 +1,76 @@
 package application;
 
+import gui.PVController;
+
 public class PersonenVerwaltung {
 
 	// Attribute
 
 	String aufenthaltsgrund;
 
-	static String text;
+	 String text;
 	
 	// Methoden
 
-	public static void zeigePersonalListe() {
+	public  void zeigePersonalListe() {
 
 	}
 
-	public static void zeigePatientenListe() {
+	public  void zeigePatientenListe() {
 
 	}
 
-	public static void sucheID() {
+	public  void sucheID() {
 
 	}
 
-	public static void sucheName() {
+	public  void sucheName() {
 
 	}
 
-	public static void sucheVorname() {
+	public  void sucheVorname() {
 
 	}
 
-	public static void sucheTätigkeitsbereich() {
+	public  void sucheTätigkeitsbereich() {
 
 	}
 
-	public static void sucheAufenthaltsgrund() {
+	public  void sucheAufenthaltsgrund() {
 
 	}
 
-	public static void sortiereID() {
+	public  void sortiereID() {
 
 	}
 
-	public static void sortiereName() {
+	public  void sortiereName() {
 
 	}
 
-	public static void sortiereVorname() {
+	public  void sortiereVorname() {
 
 	}
 
-	public static void sortiereTätigkeitsbereich() {
+	public  void sortiereTätigkeitsbereich() {
 
 	}
 
-	public static void sortiereBerufsbezeichnung() {
+	public  void sortiereBerufsbezeichnung() {
 
 	}
 
-	public static void erstellePatient() {
+	public  void erstellePatient() {
 
 	}
 
-	public static void bearbeitePatient() {
+	public  void bearbeitePatient() {
 
 	}
 
-	public static void löschePatient() {
-
+	public  void löschePatient() {
+		/*gui.PVController pvc = new PVController();
+		pvc.loeschePat(null);*/
 	}
 	
 	

@@ -49,7 +49,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = false;
-		quickSort(array, 0, array.length - 1, index, number);
+		mergeSort(array, 0, array.length - 1, index, number);
 		return array;
 	}
 	
@@ -58,7 +58,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = false;
-		quickSort(array, 0, array.length - 1, index, number);
+		mergeSort(array, 0, array.length - 1, index, number);
 		String[] reversed = reverse(array);
 		return reversed;
 	}
@@ -68,7 +68,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = true;
-		quickSort(array, 0, array.length - 1, index, number);
+		mergeSort(array, 0, array.length - 1, index, number);
 		return array;
 	}
 	

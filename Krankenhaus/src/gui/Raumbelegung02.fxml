@@ -13,7 +13,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="400.0" text="Personaldaten verwalten">
+      <Label layoutX="150.0" layoutY="400.0" text="Raumdaten verwalten">
          <font>
             <Font size="18.0" />
          </font>

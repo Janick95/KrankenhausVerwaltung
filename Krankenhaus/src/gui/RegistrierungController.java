@@ -123,7 +123,7 @@ public class RegistrierungController {
 					int lower = 2000;
 					int upper = 2999;
 					
-					String id = String.valueOf((int) (Math.random() * (upper - lower)));
+					String id = String.valueOf((int) (Math.random() * (upper - lower)+ lower));
 					String vorname = txtVornameR.getText();
 					String nachname = txtNachnameR.getText();
 					String rang = txtRangR.getText();
@@ -137,13 +137,15 @@ public class RegistrierungController {
 					pfleger[4] = schule;
 					pfleger[5] = email;
 					
-					
-					
-					System.out.println(pfleger[3]);
+					for(int i = 0; i<pfleger.length; i++) {
+						pfleger[i].trim();
+					pfleger[i].toString().split(",");
+					}	
+					System.out.println(Arrays.toString(pfleger));
 					//File pflegertxt = new File("Pfleger.txt");
-										
-					application.ReaderWriter.writeStringIntoTxt(pfleger, "Pfleger.txt");
-					
+		
+					application.ReaderWriter.writeStringIntoTxt(Arrays.toString(pfleger), "Pfleger.txt");
+
 					Alert mesg = new Alert(AlertType.CONFIRMATION);
 					mesg.setContentText("Pfleger hinzugefügt");
 					mesg.showAndWait();
@@ -175,7 +177,9 @@ public class RegistrierungController {
 					arzt[3] = rang;
 					arzt[4] = schule;
 					arzt[5] = email;
-					
+					for(int i = 0; i<arzt.length; i++) {
+					arzt[i].toString().split(",");
+					}
 					//File pflegertxt = new File("Pfleger.txt");
 										
 					application.ReaderWriter.writeStringIntoTxt(arzt, "Arzt.txt");
@@ -268,7 +272,7 @@ public class RegistrierungController {
 	}
 
 	@FXML
-	public void goToHauptmenü(ActionEvent event) throws IOException // This method loads a new scene in a current window
+	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

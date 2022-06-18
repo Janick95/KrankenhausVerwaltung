@@ -7,15 +7,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#passwReset" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginController">
    <children>
+      <Label fx:id="lblPasswReset" layoutX="818.0" layoutY="470.0" text="Passwort vergessen?" textFill="#008cff">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
        <Label alignment="CENTER" layoutX="775.0" layoutY="305.0" prefHeight="23.0" prefWidth="371.0" text="Anmeldung RIVER Krankenhaus">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmail" alignment="CENTER" layoutX="818.0" layoutY="372.0" prefHeight="25.0" prefWidth="286.0" promptText="E-Mail" />
+      <TextField fx:id="txtLoginId" alignment="CENTER" layoutX="818.0" layoutY="372.0" prefHeight="25.0" prefWidth="286.0" promptText="E-Mail" />
       <PasswordField fx:id="pfPasswort" alignment="CENTER" layoutX="818.0" layoutY="425.0" prefHeight="25.0" prefWidth="286.0" promptText="Passwort" />
-      <Button fx:id="btnAnmelden" layoutX="1033.0" layoutY="487.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Anmelden" />
+      <Button fx:id="btnAnmelden" layoutX="998.0" layoutY="497.0" mnemonicParsing="false" onAction="#handleLoginAction" text="Anmelden">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
    </children>
 </Pane>

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import application.Benutzer;
@@ -17,26 +18,42 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class LoginController {
 
+	// Variablen um neue Scene zu erzeugen
+	private Stage stage;
+	private Scene scene;
+
+	
 	// Zugriff auf FXML Elemente
 	@FXML
 	ImageView imgLogo;
 
 	@FXML
-	TextField txtEmail;
-
+	TextField txtLoginId;
 	@FXML
+	TextField txtNeuLoginId;
+	@FXML 
 	PasswordField pfPasswort;
+	@FXML
+	PasswordField pfNeuPassw;
+	
+	@FXML
+	Label lblPasswReset;
 
 	@FXML
 	Button btnAnmelden;
-
+	
+	@FXML
+	Button btnResetOk;
+	
 	// Button Event
 	@FXML
 	public void handleLoginAction(ActionEvent event) throws IOException // This method loads a new scene in a current window
@@ -58,11 +75,11 @@ public class LoginController {
 				String password = benutzer[1];
 
 				// User vorhanden
-				if (email.trim().equals(txtEmail.getText())) {
+				if (email.trim().equals(txtLoginId.getText())) {
 					// Passwort Überprüfung
 					if (password.trim().equals(pfPasswort.getText())) {
 						Alert msg = new Alert(AlertType.CONFIRMATION);
-						msg.setTitle(txtEmail.getText());
+						msg.setTitle(txtLoginId.getText());
 						msg.setContentText("Email und Passwort vorhanden");
 						msg.showAndWait();
 
@@ -86,8 +103,8 @@ public class LoginController {
 				System.out.println("Diese Email gibt es nicht!");
 
 				Alert msg = new Alert(AlertType.ERROR);
-				msg.setTitle(txtEmail.getText());
-				msg.setContentText("Diese Email gibt es nicht: " + txtEmail.getText());
+				msg.setTitle(txtLoginId.getText());
+				msg.setContentText("Diese Email gibt es nicht: " + txtLoginId.getText());
 				msg.showAndWait();
 			} else if (Benutzer.getPassword() == null) {
 				System.out.println("Dieses Passwort gibt es nicht!");
@@ -101,7 +118,7 @@ public class LoginController {
 
 
 	// Hier evtl nur gucken ob man den einen Button nur ausblendet
-
+	@FXML
 	public boolean checkAdmin() {
 		Alert msg = new Alert(AlertType.ERROR);
 		boolean result;
@@ -133,13 +150,13 @@ public class LoginController {
 			}
 		}
 	}
-
+	@FXML
 	private boolean validateData() {
 		Alert msg = new Alert(AlertType.ERROR);
 		boolean result = true;
 		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"+ "A-Z]{2,7}$";
 		Pattern pat = Pattern.compile(emailRegex);
-		if (txtEmail.getText().equals("")) {
+		if (txtLoginId.getText().equals("")) {
 			msg.setContentText("Bitte füllen Sie das E-Mail Feld aus!");
 			msg.showAndWait();
 			result = false;
@@ -149,7 +166,7 @@ public class LoginController {
 				msg.showAndWait();
 				result = false;
 			} else {
-				if (!pat.matcher(txtEmail.getText()).matches()) {
+				if (!pat.matcher(txtLoginId.getText()).matches()) {
 					msg.setContentText("Sie haben eine ungültige E-Mail Adresse angegeben!");
 					msg.showAndWait();
 					result = false;
@@ -158,5 +175,34 @@ public class LoginController {
 		}
 		return result;
 	}
+	@FXML
+	public void passwReset(MouseEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/gui/PasswReset.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setTitle("Passwort Reset");
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.show();
+	}
+	@FXML
+	public void resetPassw (ActionEvent event) throws IOException {
+		String[] user = new String[2];
 
+		String loginId = txtNeuLoginId.getText();
+		String passw = pfNeuPassw.getText();
+		
+		user [0] = loginId;
+		user [1] = passw;
+
+		application.ReaderWriter.writeStringIntoTxt(Arrays.toString(user).split(","), "Benutzer.txt");
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.setTitle("Herzlich Willkommen im River Krankenhaus");
+		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.show();
+	}
 }
