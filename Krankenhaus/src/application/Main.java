@@ -42,14 +42,18 @@ public class Main extends Application {
 		
 		//Test/Beispiel mergeSort
 		//String[] patienten = ReaderWriter.readToArray("Patienten.txt");
-		//String[] arzt = ReaderWriter.readToArray("Arzt.txt");
-		String[] test = ReaderWriter.readToArray("Test.txt");
 		
-		String[] sorted = Sortieren.sortAgeAscending(test);
+		
+		///////////////////////////////////////////////////////////////////////////
+		/*String[] arzt = ReaderWriter.readToArray("Arzt.txt");
+		//String[] test = ReaderWriter.readToArray("Test.txt");
+		
+		String[] sorted = Sortieren.sortSpecialFieldAscending(arzt);
 		
 		for(int i = 0; i < sorted.length; i++) {
 			System.out.println(sorted[i]);
-		}
+		}*/
+		///////////////////////////////////////////////////////////////////////////
 		
 		/*String[] sorted2 = Sortieren.sortIDDescending(patienten);
 		
@@ -83,6 +87,17 @@ public class Main extends Application {
 		}*/
 		
 
+		//Test/Beispiel Suchen
+		String[] patienten = ReaderWriter.readToArray("Patienten.txt");
+		
+		String[] sorted = Sortieren.sortIDAscending(patienten);
+		
+		String[] searched = Suchen.searchReasonForStay("Corona", sorted);
+		
+		for(int i = 0; i < searched.length; i++) {
+		System.out.println(searched[i]);
+		}
+		
 		launch(args);
 	}
 }

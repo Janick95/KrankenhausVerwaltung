@@ -49,7 +49,7 @@ public class Sortieren {
 		
 		int index = 3;
 		boolean number = false;
-		quickSort(array, 0, array.length - 1, index, number);
+		quickSort(array, 1, array.length - 1, index, number);
 		return array;
 	}
 	
@@ -295,35 +295,39 @@ public class Sortieren {
 	
 	
 	public static void quickSort(String[] array, int l, int r, int index, boolean number) {
+		System.out.println("in quick sort");
 		int i, j;
 		String pivot, note;
-		
 		if(l < r) {
-			i = l;
-			j = r - 1;
+			i = l - 1;
+			j = r;
 			pivot = array[r];
 			
 			System.out.println("///////////////////////////");
 			System.out.println(pivot);
-			
+			System.out.println(r);
+			System.out.println("///////////////////////////");
 			for(int x = 0; x < array.length; x++) {
 				System.out.println(array[x]);
 			}
 			System.out.println("///////////////////////////");
 			
 			while(i <= j) {
-				System.out.println("wieder in der while");
+				System.out.println("in der while");
 				System.out.println(i);
 				System.out.println(j);
-				while(check(array, pivot, i - 1, "<", index, number)) {
+				while(check(array, pivot, i, "<=", index, number)) {
 					i++;
 				}
-				while(j >= l && check(array, pivot, j - 1, ">", index, number)) {
+				System.out.println("zweite while");
+				while(j >= l && check(array, pivot, j, ">=", index, number)) {
 					j--;
 				}
 				if(i >= j) {
 					partition(array, l, i, r, index, number);
 				}else {
+					System.out.println("§§§§§§§§§§§§§§§§§§§§");
+					System.out.println("tausch");
 					System.out.println(array[i]);
 					System.out.println(array[j]);
 					note = array[i];
@@ -331,38 +335,57 @@ public class Sortieren {
 					array[j] = note;
 					System.out.println(array[i]);
 					System.out.println(array[j]);
+					System.out.println("§§§§§§§§§§§§§§§§§§§§");
 				}
-				
 			}
 		}
 	}
 	
 	public static void partition (String[] array, int l, int i, int r, int index, boolean number) {
+		
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%");
 		System.out.println("in partition");
+		System.out.println("i ist " + i);
+		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%");
+		
 		String note;
-		note = array[i];
-		array[i] = array[r];
-		array[r] = note;
+		if(i < array.length) {
+			System.out.println("i ist verdammt nochmal " + i);
+			note = array[i];
+			array[i] = array[r];
+			array[r] = note;
+			System.out.println(note);
+		}else {
+			i--;
+			note = array[i];
+			array[i] = array[r];
+			array[r] = note;
+		}
+		System.out.println(l);
+		System.out.println(i);
+		System.out.println(r);
+		
 		quickSort(array, l, i - 1, index, number);
+		System.out.println("unteres quicksort array");
 		quickSort(array, i + 1, r, index, number);
 	}
 	
 	public static boolean check(String[] array, String pivot, int counter, String sign, int index, boolean number) {
-		System.out.println("in check");
 		boolean check = false;
+		if(counter >= array.length) {
+			return false;
+		}
 		
-		System.out.println(counter);
-		String[] leftSide = array[counter].split(",");
-		String[] rightSide = pivot.split(",");
-		
+			String[] leftSide = array[counter].split(",");
+			String[] rightSide = pivot.split(",");
 		
 		if(number) {
-			if(sign.equals("<")) {
-				if(Integer.parseInt(leftSide[index]) < Integer.parseInt(rightSide[index])){
+			if(sign.equals("<=")) {
+				if(Integer.parseInt(leftSide[index]) <= Integer.parseInt(rightSide[index])){
 					check = true;
 				}
-			}else if(sign.equals(">")) {
-				if(Integer.parseInt(leftSide[index]) > Integer.parseInt(rightSide[index])) {
+			}else if(sign.equals(">=")) {
+				if(Integer.parseInt(leftSide[index]) >= Integer.parseInt(rightSide[index])) {
 					check = true;
 				}
 			}else {
@@ -371,59 +394,47 @@ public class Sortieren {
 		}
 		
 		if(!number) {
-			System.out.println("im stringbereich");
 			String leftWord = leftSide[index].toLowerCase();
 			String rightWord = rightSide[index].toLowerCase();
 			char[] leftLetters = leftWord.toCharArray();
 			char[] rightLetters = rightWord.toCharArray();
 			int i = 0;
 			
+			System.out.println("################################");
+			System.out.println(sign);
 			System.out.println(leftWord);
 			System.out.println(rightWord);
+			System.out.println("################################");
 			
-			
-			if(sign.equals("<")) {
+			if(sign.equals("<=")) {
 				while(i < leftLetters.length || i < rightLetters.length) {
-					if(leftLetters[i] < rightLetters[i]){
-						System.out.println("<");
-						System.out.println(leftLetters[i]);
-						System.out.println(rightLetters[i]);
+					if(leftLetters[i] <= rightLetters[i]){
 						check = true;
 						break;
 					}else if(leftLetters[i] > rightLetters[i]){
-						System.out.println(">");
-						System.out.println(leftLetters[i]);
-						System.out.println(rightLetters[i]);
 						check = false;
 						break;
 					}else {
 						i++;
 					}
 				}
-				System.out.println(check);
-			}else if(sign.equals(">")) {
+			}else if(sign.equals(">=")) {
 				while(i < leftLetters.length || i < rightLetters.length) {
-					if(leftLetters[i] > rightLetters[i]){
-						System.out.println(">");
-						System.out.println(leftLetters[i]);
-						System.out.println(rightLetters[i]);
+					if(leftLetters[i] >= rightLetters[i]){
 						check = true;
 						break;
 					}else if(leftLetters[i] < rightLetters[i]){
-						System.out.println("<");
-						System.out.println(leftLetters[i]);
-						System.out.println(rightLetters[i]);
 						check = false;
 						break;
 					}else {
 						i++;
 					}
 				}
-				System.out.println(check);
 			}else {
 				check = false;
 			}
 		}
+		System.out.println(check);
 		return check;
 	}
 	
@@ -440,7 +451,7 @@ public class Sortieren {
 	}
 	
 	//BubbleSort Alphabetisch
-	public static String[] sortiereAlphabetisch(String[] array) {
+	/*public static String[] sortiereAlphabetisch(String[] array) {
 		String memory;
 		
 		for(int k = 0; k <= array.length - 2; k++) {
@@ -484,6 +495,6 @@ public class Sortieren {
 		}
 		
 		return array;
-	}
+	}*/
 
 }
