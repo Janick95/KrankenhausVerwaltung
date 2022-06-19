@@ -252,10 +252,17 @@ public class RegistrierungController {
 	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current
 																		// window
 	{
+		if(LoginController.isAdmin==true) {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.show();
+		stage.show();}else {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
 	}
 }

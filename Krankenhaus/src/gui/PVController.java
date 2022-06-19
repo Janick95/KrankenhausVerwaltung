@@ -87,11 +87,18 @@ public class PVController {
 	public void goToMainmenu(ActionEvent event) throws IOException // Diese Methode lädt den Hauptmenübildschirm in dem
 																	// aktuellen Fenster
 	{
+		if(LoginController.isAdmin==true) {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.show();
+		stage.show();}else {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
 	}
 	
 	
@@ -100,8 +107,8 @@ public class PVController {
 		pickSearch();
 	}
 
-	// Nach der Auswahl des gewünschten Sortierparameters wird der
-		// Sortieralgorithmus auf das Element angewandt
+	// Nach der Auswahl des gewünschten Suchparameters wird der
+		// Suchalgorithmus auf das Element angewandt
 		@FXML
 		public void pickSearch() throws IOException {
 			String[] patients1 = ReaderWriter.readToArray("Patienten.txt");

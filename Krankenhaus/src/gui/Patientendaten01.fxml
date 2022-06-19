@@ -8,40 +8,40 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
    <children>
-      <Button fx:id="btnMainmenu" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
+      <Button fx:id="btnMainmenu" layoutX="31.0" layoutY="38.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="400.0" text="Patientendaten verwalten">
+      <Label layoutX="31.0" layoutY="165.0" text="Patientendaten verwalten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchPatient" layoutX="388.0" layoutY="400.0" minWidth="956.0" prefHeight="35.0" prefWidth="950.0" promptText="Patienten suchen...">
+      <TextField fx:id="txtSearchPatient" layoutX="269.0" layoutY="165.0" minWidth="318.0" prefHeight="39.0" prefWidth="318.0" promptText="Patienten suchen...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbPatientSort" layoutX="1600.0" layoutY="400.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <ListView fx:id="lvPatDat01" layoutX="150.0" layoutY="490.0" prefHeight="500.0" prefWidth="1600.0" />
-      <Button fx:id="btnCreatePat" layoutX="1266.0" layoutY="1026.0" mnemonicParsing="false" onAction="#patientCreator" prefHeight="39.0" prefWidth="234.0" text="Neuen Patienten erstellen">
+      <ComboBox fx:id="cmbPatientSort" layoutX="853.0" layoutY="165.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <ListView fx:id="lvPatDat01" layoutX="31.0" layoutY="220.0" prefHeight="361.0" prefWidth="971.0" />
+      <Button fx:id="btnCreatePat" layoutX="254.0" layoutY="649.0" mnemonicParsing="false" onAction="#patientCreator" prefHeight="39.0" prefWidth="234.0" text="Neuen Patienten erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnPatDelete" layoutX="1600.0" layoutY="1026.0" mnemonicParsing="false" onAction="#deletePat" prefHeight="25.0" prefWidth="150.0" text="Löschen">
+      <Button fx:id="btnPatDelete" layoutX="588.0" layoutY="649.0" mnemonicParsing="false" onAction="#deletePat" prefHeight="25.0" prefWidth="150.0" text="Löschen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnSearch" layoutX="1500.0" layoutY="400.0" mnemonicParsing="false" onAction="#patientSearch" prefHeight="39.0" prefWidth="90.0" text="Search">
+      <Button fx:id="btnSearch" layoutX="753.0" layoutY="165.0" mnemonicParsing="false" onAction="#patientSearch" prefHeight="39.0" prefWidth="90.0" text="Suche">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ComboBox fx:id="cmbPatientSearch" layoutX="1360.0" layoutY="400.0" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
+      <ComboBox fx:id="cmbPatientSearch" layoutX="613.0" layoutY="165.0" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
    </children>
 </Pane>

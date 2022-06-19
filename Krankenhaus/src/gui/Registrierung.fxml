@@ -10,211 +10,211 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistrierungController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RegistrierungController">
    <children>
-      <Button fx:id="btnHauptmenüR" layoutX="200.0" layoutY="75.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
+      <Button fx:id="btnHauptmenüR" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="800.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="200.0" layoutY="140.0" text="Personal Registration RIVER Krankenhaus">
+      <ImageView fitHeight="132.0" fitWidth="200.0" layoutX="399.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="28.0" layoutY="89.0" text="Personal Registration RIVER Krankenhaus">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="180.0" text="Personenbezogene Daten">
+      <Label layoutX="28.0" layoutY="129.0" text="Personenbezogene Daten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="220.0" text="Prefix">
+      <Label layoutX="28.0" layoutY="169.0" text="Prefix">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="260.0" text="Vorname">
+      <Label layoutX="28.0" layoutY="209.0" text="Vorname">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="300.0" text="Nachname">
+      <Label layoutX="28.0" layoutY="249.0" text="Nachname">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="340.0" text="Rang (z.B. Doktor)">
+      <Label layoutX="28.0" layoutY="289.0" text="Rang (z.B. Doktor)">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="380.0" text="Schule">
+      <Label layoutX="28.0" layoutY="329.0" text="Schule">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="407.0">
+      <Label layoutX="28.0" layoutY="356.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="460.0" text="Abteilung">
+      <Label layoutX="28.0" layoutY="409.0" text="Abteilung">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="500.0" text="Titel">
+      <Label layoutX="28.0" layoutY="449.0" text="Titel">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="540.0" text="Interne E-mail">
+      <Label layoutX="28.0" layoutY="489.0" text="Interne E-mail">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="580.0" text="Geschlecht">
+      <Label layoutX="28.0" layoutY="529.0" text="Geschlecht">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="620.0" text="Herkunft">
+      <Label layoutX="28.0" layoutY="569.0" text="Herkunft">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="660.0" text="Sprachen">
+      <Label layoutX="28.0" layoutY="609.0" text="Sprachen">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="700.0" text="Status">
+      <Label layoutX="28.0" layoutY="649.0" text="Status">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="740.0" text="Sachverstand">
+      <Label layoutX="28.0" layoutY="689.0" text="Sachverstand">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="780.0" text="Ausbildung Hochschule">
+      <Label layoutX="28.0" layoutY="729.0" text="Ausbildung Hochschule">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="820.0" text="Spezialität/Hauptfach">
+      <Label layoutX="28.0" layoutY="769.0" text="Spezialität/Hauptfach">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="860.0" text="Hochschule abgeschlossen">
+      <Label layoutX="28.0" layoutY="809.0" text="Hochschule abgeschlossen">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="900.0" text="Login Daten">
+      <Label layoutX="28.0" layoutY="849.0" text="Login Daten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="940.0" text="Login ID">
+      <Label layoutX="28.0" layoutY="889.0" text="Login ID">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="200.0" layoutY="980.0" text="Passwort">
+      <Label layoutX="28.0" layoutY="929.0" text="Passwort">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSurnameR" layoutX="900.0" layoutY="260.0" minWidth="550.0">
+      <TextField fx:id="txtSurnameR" layoutX="336.0" layoutY="198.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtNameR" layoutX="900.0" layoutY="300.0" minWidth="550.0">
+      <TextField fx:id="txtNameR" layoutX="336.0" layoutY="238.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtRankR" layoutX="900.0" layoutY="340.0" minWidth="550.0">
+      <TextField fx:id="txtRankR" layoutX="336.0" layoutY="278.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSchoolR" layoutX="900.0" layoutY="380.0" minWidth="550.0">
+      <TextField fx:id="txtSchoolR" layoutX="336.0" layoutY="318.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="200.0" layoutY="420.0" text="Profil">
+      <Label layoutX="28.0" layoutY="369.0" text="Profil">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDepartmentR" layoutX="900.0" layoutY="460.0" minWidth="550.0">
+      <TextField fx:id="txtDepartmentR" layoutX="336.0" layoutY="398.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtTitelR" layoutX="900.0" layoutY="500.0" minWidth="550.0">
+      <TextField fx:id="txtTitelR" layoutX="336.0" layoutY="438.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtEmailR" layoutX="900.0" layoutY="540.0" minWidth="550.0">
+      <TextField fx:id="txtEmailR" layoutX="336.0" layoutY="478.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtOriginR" layoutX="900.0" layoutY="620.0" minWidth="550.0">
+      <TextField fx:id="txtOriginR" layoutX="336.0" layoutY="558.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtLanguagesR" layoutX="900.0" layoutY="660.0" minWidth="550.0">
+      <TextField fx:id="txtLanguagesR" layoutX="336.0" layoutY="598.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <RadioButton fx:id="rbtnAktivR" layoutX="1000.0" layoutY="700.0" mnemonicParsing="false" text="Aktiv">
+      <RadioButton fx:id="rbtnAktivR" layoutX="436.0" layoutY="638.0" mnemonicParsing="false" text="Aktiv">
          <font>
             <Font size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="rbtnInaktivR" layoutX="1200.0" layoutY="700.0" mnemonicParsing="false" text="Inaktiv">
+      <RadioButton fx:id="rbtnInaktivR" layoutX="636.0" layoutY="638.0" mnemonicParsing="false" text="Inaktiv">
          <font>
             <Font size="18.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="txtEducationR" layoutX="900.0" layoutY="780.0" minWidth="550.0">
+      <TextField fx:id="txtEducationR" layoutX="336.0" layoutY="718.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSpecialityR" layoutX="900.0" layoutY="820.0" minWidth="550.0">
+      <TextField fx:id="txtSpecialityR" layoutX="336.0" layoutY="758.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtLoginR" layoutX="900.0" layoutY="940.0" minWidth="550.0">
+      <TextField fx:id="txtLoginR" layoutX="336.0" layoutY="878.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="pfPasswortR" layoutX="900.0" layoutY="980.0" minWidth="550.0">
+      <PasswordField fx:id="pfPasswortR" layoutX="336.0" layoutY="918.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <ComboBox fx:id="cmbSchoolFinishedR" layoutX="900.0" layoutY="860.0" prefHeight="40.0" prefWidth="150.0" promptText="2022" />
-      <Button fx:id="btnRegistrationR" layoutX="900.0" layoutY="1030.0" mnemonicParsing="false" onAction="#handleButtonRegistrationAction" text="Registrieren">
+      <ComboBox fx:id="cmbSchoolFinishedR" layoutX="336.0" layoutY="798.0" prefHeight="40.0" prefWidth="150.0" promptText="2022" />
+      <Button fx:id="btnRegistrationR" layoutX="440.0" layoutY="971.0" mnemonicParsing="false" onAction="#handleButtonRegistrationAction" text="Registrieren">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ComboBox fx:id="cmbPrefixR" layoutX="900.0" layoutY="220.0" prefHeight="40.0" prefWidth="150.0" promptText="Frau" />
-      <ComboBox fx:id="cmbGenderR" layoutX="900.0" layoutY="580.0" prefHeight="40.0" prefWidth="150.0" promptText="Weiblich" />
+      <ComboBox fx:id="cmbPrefixR" layoutX="336.0" layoutY="158.0" prefHeight="40.0" prefWidth="150.0" promptText="Frau" />
+      <ComboBox fx:id="cmbGenderR" layoutX="336.0" layoutY="518.0" prefHeight="40.0" prefWidth="150.0" promptText="Weiblich" />
    </children>
 </Pane>

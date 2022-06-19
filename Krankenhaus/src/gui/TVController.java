@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import application.ReaderWriter;
+import application.Sortieren;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -55,9 +56,17 @@ public class TVController {
 	ListView<String> lvOpT = new ListView<String>();
 	@FXML
 	ComboBox<String> cmbOpDateSort;
+	@FXML
+	ComboBox<String> cmbOpSearch;
+	@FXML
+	Button btnOpSearch;
 	
 	@FXML
 	public void initialize() throws IOException {
+		// Sortieren ComboBox Inhalte:
+		cmbOpSearch.getItems().removeAll(cmbOpSearch.getItems());
+		cmbOpSearch.getItems().addAll("Suchen nach", "ID", "Op-Datum");
+		cmbOpSearch.getSelectionModel().select("Suchen nach");
 		// Sortieren ComboBox Inhalte:
 		cmbOpDateSort.getItems().removeAll(cmbOpDateSort.getItems());
 		cmbOpDateSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend", "Name-absteigend", "age-aufsteigend", "age-absteigend", "Aufenthaltsreason-aufsteigend", "Aufenthaltsreason-absteigend");
@@ -77,12 +86,44 @@ public class TVController {
 	@FXML
 	public void goToMainmenu(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
+		if(LoginController.isAdmin==true) {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.show();
+		stage.show();}else {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
 	}
+	@FXML
+	public void opSearch(ActionEvent evt)throws IOException {
+		pickSearch();
+	}
+
+	// Nach der Auswahl des gewünschten Suchparameters wird der
+		// Suchalgorithmus auf das Element angewandt
+		@FXML
+		public void pickSearch() throws IOException {
+			String[] ops1 = ReaderWriter.readToArray("Termine.txt");
+			ObservableList<String> opTs = FXCollections.observableArrayList(ops1);
+			String search = txtSearchOpDate.getText();
+			if (cmbOpSearch.getValue().contains("ID")) {
+				String[] sortedOpId1 = Sortieren.sortIDAscending(ops1);
+				String searchID = application.Suchen.searchID(search, sortedOpId1);
+				opTs = FXCollections.observableArrayList(searchID);
+				lvOpT.setItems(opTs);
+			} else if (cmbOpSearch.getValue().contains("Op-Datum")) {
+				String[] searchOpDate = application.Suchen.searchOperationDate(search, ops1);
+				opTs = FXCollections.observableArrayList(searchOpDate);
+				lvOpT.setItems(opTs);
+			}
+
+		}
+	
 	@FXML
 	public void erstelleTermin(ActionEvent event) throws IOException {
 		String[] opD = new String[8];

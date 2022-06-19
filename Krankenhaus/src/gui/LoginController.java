@@ -30,6 +30,7 @@ public class LoginController {
 	// Variablen um neue Scene zu erzeugen
 	private Stage stage;
 	private Scene scene;
+	public static boolean isAdmin;
 
 	// Zugriff auf FXML Elemente
 	@FXML
@@ -111,27 +112,27 @@ public class LoginController {
 	@FXML
 	public boolean checkAdmin() {
 		Alert msg = new Alert(AlertType.CONFIRMATION);
-		boolean result;
+
 		if (txtLoginId.getText().contains("Admin")) {
-			System.out.println("Dieser Benutzer ist ein Admin");
-			result = true;
+			isAdmin = true;
+			msg.setContentText("Dieser Benutzer ist ein Admin");
 		} else {
-			result = false;
+			isAdmin = false;
 		}
-		return result;
+		return isAdmin;
 	}
 
 	@FXML
 	private void openWindow() {
 		System.out.println("Benutzer eingeloggt");
-		if (checkAdmin() == false) {
+		if (isAdmin==false) {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen01.fxml"));
 				Main.stage.setScene(new Scene(root));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		} else if (checkAdmin() == true) {
+		} else if (isAdmin==true) {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen02.fxml"));
 				Main.stage.setScene(new Scene(root));

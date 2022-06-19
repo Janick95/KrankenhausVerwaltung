@@ -8,5 +8,3 @@
 1758,Wolfgang,Hammerich,Chirurgie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,wolfgang.hammerich@rk.de
 1611,Meinhard,Lamprecht,Anästhesie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,meinhard.lamprecht@rk.de
 1869,Sofie,Falk,Orthopädie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,sofie.falk@rk.de
-1869,Sofie,Falk,Orthopädie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,sofie.falk@rk.de
-1869,Sofie,Falk,Orthopädie,Arzt,Dr. med.,Gymnasium LoremIpsum,Universität Beispielstadt,sofie.falk@rk.de

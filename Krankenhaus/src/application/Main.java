@@ -50,10 +50,10 @@ public class Main extends Application {
 		String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
 		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
 		String[] rooms = ReaderWriter.readToArray("Räume.txt");
-		String[] meetings = ReaderWriter.readToArray("Termine.txt");
+		String[] meetings = ReaderWriter.readToArray("Termine.txt");*/
 		
 		
-		String[] sortedPatients1 = Sortieren.sortIDAscending(patients);
+		/*String[] sortedPatients1 = Sortieren.sortIDAscending(patients);
 		String[] sortedPatients2 = Sortieren.sortIDDescending(patients);*/
 		/*String[] sortedPatients3 = Sortieren.sortNameAscending(patients);
 		String[] sortedPatients4 = Sortieren.sortNameDescending(patients);
@@ -192,20 +192,13 @@ public class Main extends Application {
 		
 
 		//Test/Beispiel Suchen
-		String[] patients = ReaderWriter.readToArray("Patienten.txt");
+		
 		/*String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
 		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
 		String[] rooms = ReaderWriter.readToArray("Räume.txt");
 		String[] meetings = ReaderWriter.readToArray("Termine.txt");*/
-		
-		String[] sortedPatients1 = Sortieren.sortIDAscending(patients);
-		/*String[] sortedNurses1 = Sortieren.sortIDAscending(nurses);
-		String[] sortedDoctors1 = Sortieren.sortIDAscending(doctors);
-		String[] sortedRooms1 = Sortieren.sortIDAscending(rooms);
-		String[] sortedMeetings1 = Sortieren.sortIDAscending(meetings);*/
-		
-		String searchedPatients1 = Suchen.searchID("3512", sortedPatients1);
-		System.out.println(searchedPatients1);
+
+		//System.out.println(sortedDocs);
 		/*String[] searchedPatients2 = Suchen.searchFirstName("Robin", patients);
 		String[] searchedPatients3 = Suchen.searchLastName("Schmidt", patients);
 		String[] searchedPatients4 = Suchen.searchReasonForStay("Herzprobleme", patients);

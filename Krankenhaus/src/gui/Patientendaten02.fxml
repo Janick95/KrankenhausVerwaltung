@@ -6,79 +6,79 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController02">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController02">
    <children>
-      <Button fx:id="btnMainmenu02" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
+      <Button fx:id="btnMainmenu02" layoutX="38.0" layoutY="47.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="458.0" text="Patientendaten verwalten">
+      <Label layoutX="61.0" layoutY="197.0" text="Patientendaten verwalten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="560.0" text="Vorname">
+      <Label layoutX="61.0" layoutY="299.0" text="Vorname">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="600.0" text="Nachname">
+      <Label layoutX="61.0" layoutY="339.0" text="Nachname">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="640.0" text="Alter">
+      <Label layoutX="61.0" layoutY="379.0" text="Alter">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="680.0" text="Grund für Aufenthalt">
+      <Label layoutX="61.0" layoutY="419.0" text="Grund für Aufenthalt">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="732.0" text="Familienstatus">
+      <Label layoutX="61.0" layoutY="471.0" text="Familienstatus">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtName02" layoutX="900.0" layoutY="600.0" minWidth="900.0">
+      <TextField fx:id="txtName02" layoutX="263.0" layoutY="336.0" minWidth="671.0" prefHeight="35.0" prefWidth="671.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSurname02" layoutX="900.0" layoutY="560.0" minWidth="900.0">
+      <TextField fx:id="txtSurname02" layoutX="263.0" layoutY="296.0" minWidth="671.0" prefHeight="35.0" prefWidth="671.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAge02" layoutX="900.0" layoutY="640.0" minWidth="900.0">
+      <TextField fx:id="txtAge02" layoutX="263.0" layoutY="376.0" minWidth="671.0" prefHeight="35.0" prefWidth="671.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtReasonForStay" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtReasonForStay" layoutX="263.0" layoutY="416.0" minWidth="671.0" prefHeight="35.0" prefWidth="671.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtFamstat02" layoutX="900.0" layoutY="732.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtFamstat02" layoutX="263.0" layoutY="468.0" minWidth="671.0" prefHeight="35.0" prefWidth="671.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btnCreate02" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" onAction="#goToPatList" text="Erstellen">
+      <Button fx:id="btnCreate02" layoutX="437.0" layoutY="636.0" minWidth="150.0" mnemonicParsing="false" onAction="#goToPatList" text="Erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="772.0" text="Behandelnder Arzt">
+      <Label layoutX="61.0" layoutY="511.0" text="Behandelnder Arzt">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDoctor02" accessibleRole="DATE_PICKER" layoutX="900.0" layoutY="772.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtDoctor02" accessibleRole="DATE_PICKER" layoutX="263.0" layoutY="508.0" minWidth="671.0" prefHeight="35.0" prefWidth="671.0">
          <font>
             <Font size="16.0" />
          </font>

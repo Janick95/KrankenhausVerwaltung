@@ -8,45 +8,41 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PersoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PersoController">
    <children>
-      <Button fx:id="btnMainmenu" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
+      <Button fx:id="btnMainmenu" layoutX="28.0" layoutY="35.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="400.0" text="Personaldaten verwalten">
+      <Label layoutX="28.0" layoutY="99.0" text="Personaldaten verwalten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchStaff" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Suche Personal...">
+      <TextField fx:id="txtSearchStaff" layoutX="256.0" layoutY="93.0" minWidth="356.0" prefHeight="39.0" prefWidth="356.0" promptText="Suche Personal...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbStaffSort" layoutX="1600.0" layoutY="400.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <ListView fx:id="lvDocDat" layoutX="147.0" layoutY="494.0" prefHeight="233.0" prefWidth="1600.0" />
-      <ListView fx:id="lvNurseDat" layoutX="147.0" layoutY="770.0" prefHeight="233.0" prefWidth="1600.0" />
-      <Button fx:id="btnCreateStaff" layoutX="1290.0" layoutY="1025.0" mnemonicParsing="false" onAction="#goToStaffCreator" prefHeight="39.0" prefWidth="219.0" text="Neues Personal erstellen">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnDeleteStaff" layoutX="1590.0" layoutY="1025.0" mnemonicParsing="false" onAction="#loeschePerso" prefHeight="39.0" prefWidth="157.0" text="Lösche Personal">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label layoutX="147.0" layoutY="467.0" text="Ärzte">
+      <ComboBox fx:id="cmbStaffSort" layoutX="866.0" layoutY="93.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <ListView fx:id="lvDocDat" layoutX="28.0" layoutY="160.0" prefHeight="233.0" prefWidth="985.0" />
+      <ListView fx:id="lvNurseDat" layoutX="28.0" layoutY="436.0" prefHeight="233.0" prefWidth="985.0" />
+      <Label layoutX="28.0" layoutY="133.0" text="Ärzte">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="147.0" layoutY="743.0" text="Pfleger">
+      <Label layoutX="28.0" layoutY="409.0" text="Pfleger">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="btnSearch" layoutX="758.0" layoutY="93.0" mnemonicParsing="false" onAction="#staffSearch" prefHeight="39.0" prefWidth="90.0" text="Suche">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbStaffSearch" layoutX="618.0" layoutY="93.0" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
    </children>
 </Pane>

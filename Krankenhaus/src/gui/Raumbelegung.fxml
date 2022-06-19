@@ -8,54 +8,60 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RVController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RVController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
+      <Button fx:id="btnHauptmenü" layoutX="16.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="400.0" text="Raumverwaltung">
+      <Label layoutX="18.0" layoutY="100.0" text="Raumverwaltung">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchRoom" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Raum suchen...">
+      <TextField fx:id="txtSearchRoom" layoutX="163.0" layoutY="94.0" minWidth="322.0" prefHeight="39.0" prefWidth="322.0" promptText="Raum suchen...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbRoomSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <ListView fx:id="lvRooms" layoutX="150.0" layoutY="460.0" prefHeight="204.0" prefWidth="1600.0" />
-      <Button fx:id="btnLoescheRaum" layoutX="1138.0" layoutY="908.0" mnemonicParsing="false" onAction="#loescheRaum" text="Raum löschen">
+      <ComboBox fx:id="cmbRoomSort" layoutX="793.0" layoutY="94.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <ListView fx:id="lvRooms" layoutX="18.0" layoutY="160.0" prefHeight="204.0" prefWidth="931.0" />
+      <Button fx:id="btnLoescheRaum" layoutX="590.0" layoutY="608.0" mnemonicParsing="false" onAction="#loescheRaum" text="Raum löschen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnRaumErstellen" layoutX="313.0" layoutY="908.0" mnemonicParsing="false" onAction="#erstelleRaum" text="Raum erstellen">
+      <Button fx:id="btnRaumErstellen" layoutX="216.0" layoutY="608.0" mnemonicParsing="false" onAction="#erstelleRaum" text="Raum erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="152.0" layoutY="730.0" text="Anzahl Betten:">
+      <Label layoutX="222.0" layoutY="430.0" text="Anzahl Betten:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="148.0" layoutY="804.0" text="Anzahl Patienten:">
+      <Label layoutX="218.0" layoutY="504.0" text="Anzahl Patienten:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtBetten" layoutX="494.0" layoutY="724.0" minWidth="188.0" prefHeight="39.0" prefWidth="188.0">
+      <TextField fx:id="txtBetten" layoutX="564.0" layoutY="424.0" minWidth="188.0" prefHeight="39.0" prefWidth="188.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtPatAnz" layoutX="494.0" layoutY="798.0" minWidth="188.0" prefHeight="39.0" prefWidth="188.0">
+      <TextField fx:id="txtPatAnz" layoutX="564.0" layoutY="498.0" minWidth="188.0" prefHeight="39.0" prefWidth="188.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
+      <Button fx:id="btnRoomSearch" layoutX="690.0" layoutY="94.0" mnemonicParsing="false" onAction="#roomSearch" prefHeight="39.0" prefWidth="90.0" text="Suche">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbRoomSearch" layoutX="550.0" layoutY="94.0" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
    </children>
 </Pane>

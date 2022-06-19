@@ -8,114 +8,120 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TVController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TVController">
    <children>
-      <Button fx:id="btnMainmenu" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
+      <Button fx:id="btnMainmenu" layoutX="31.0" layoutY="42.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="150.0" layoutY="400.0" text="Operationstermine">
+      <Label layoutX="31.0" layoutY="129.0" text="Operationstermine">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchOpDate" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Operationen suchen...">
+      <TextField fx:id="txtSearchOpDate" layoutX="236.0" layoutY="129.0" minWidth="292.0" prefHeight="39.0" prefWidth="292.0" promptText="Operationen suchen...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbOpDateSort" layoutX="1600.0" layoutY="400.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <Button fx:id="btnCreateDate" layoutX="674.0" layoutY="1013.0" mnemonicParsing="false" onAction="#erstelleTermin" text="Termin erstellen">
+      <ComboBox fx:id="cmbOpDateSort" layoutX="820.0" layoutY="129.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <Button fx:id="btnCreateDate" layoutX="139.0" layoutY="894.0" mnemonicParsing="false" onAction="#erstelleTermin" text="Termin erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteDate" layoutX="1255.0" layoutY="1013.0" mnemonicParsing="false" onAction="#loescheTermin" text="Termin löschen">
+      <Button fx:id="btnDeleteDate" layoutX="720.0" layoutY="894.0" mnemonicParsing="false" onAction="#loescheTermin" text="Termin löschen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ListView fx:id="lvOpT" layoutX="150.0" layoutY="477.0" prefHeight="350.0" prefWidth="1600.0" />
-      <Label layoutX="150.0" layoutY="861.0" prefHeight="40.0" text="Patient Vorname:">
+      <ListView fx:id="lvOpT" layoutX="31.0" layoutY="179.0" prefHeight="350.0" prefWidth="941.0" />
+      <Label layoutX="31.0" layoutY="543.0" prefHeight="40.0" text="Patient Vorname:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtPatSur" layoutX="386.0" layoutY="855.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
+      <TextField fx:id="txtPatSur" layoutX="267.0" layoutY="537.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="150.0" layoutY="912.0" text="Patient Nachname:">
+      <Label layoutX="31.0" layoutY="594.0" text="Patient Nachname:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtPatName" layoutX="386.0" layoutY="905.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
+      <TextField fx:id="txtPatName" layoutX="267.0" layoutY="587.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="637.0" layoutY="855.0" prefHeight="40.0" text="Arzt Vorname:">
+      <Label layoutX="518.0" layoutY="537.0" prefHeight="40.0" text="Arzt Vorname:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDocSur" layoutX="873.0" layoutY="855.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
+      <TextField fx:id="txtDocSur" layoutX="754.0" layoutY="537.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="637.0" layoutY="906.0" text="Arzt Nachname:">
+      <Label layoutX="518.0" layoutY="588.0" text="Arzt Nachname:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDocName" layoutX="873.0" layoutY="905.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+      <TextField fx:id="txtDocName" layoutX="754.0" layoutY="587.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="1168.0" layoutY="906.0" text="Op Datum:">
+      <Label layoutX="35.0" layoutY="717.0" text="Op Datum:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtOpDate" layoutX="1404.0" layoutY="905.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+      <TextField fx:id="txtOpDate" layoutX="271.0" layoutY="716.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="1172.0" layoutY="855.0" prefHeight="40.0" text="Op Grund:">
+      <Label layoutX="35.0" layoutY="666.0" prefHeight="40.0" text="Op Grund:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtOpReason" layoutX="1404.0" layoutY="855.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
+      <TextField fx:id="txtOpReason" layoutX="271.0" layoutY="666.0" minWidth="228.0" prefHeight="40.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="1168.0" layoutY="957.0" text="Op ID:">
+      <Label layoutX="35.0" layoutY="768.0" text="Op ID:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtOpId" layoutX="1404.0" layoutY="950.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+      <TextField fx:id="txtOpId" layoutX="271.0" layoutY="761.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="637.0" layoutY="957.0" text="Arzt ID:">
+      <Label layoutX="518.0" layoutY="639.0" text="Arzt ID:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDocId" layoutX="873.0" layoutY="950.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
+      <TextField fx:id="txtDocId" layoutX="754.0" layoutY="632.0" minWidth="228.0" prefHeight="39.0" prefWidth="228.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
+      <Button fx:id="btnOpSearch" layoutX="696.0" layoutY="129.0" mnemonicParsing="false" onAction="#opSearch" prefHeight="39.0" prefWidth="90.0" text="Suche">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbOpSearch" layoutX="556.0" layoutY="129.0" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
    </children>
 </Pane>

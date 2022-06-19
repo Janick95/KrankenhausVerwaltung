@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import application.ReaderWriter;
+import application.Sortieren;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,6 +41,10 @@ public class RVController {
 	@FXML
 	ListView<String> lvRooms = new ListView<String>();
 	@FXML
+	ComboBox<String> cmbRoomSearch;
+	@FXML
+	Button btnRoomSearch;
+	@FXML
 	ComboBox<String> cmbRoomSort;
 	@FXML
 	TextField txtBetten;
@@ -49,6 +54,11 @@ public class RVController {
 	
 	@FXML
 	public void initialize() throws IOException {
+		// Suchen ComboBox Inhalte:
+		cmbRoomSearch.getItems().removeAll(cmbRoomSearch.getItems());
+		cmbRoomSearch.getItems().addAll("Suchen nach", "ID", "Freie-Betten");
+		cmbRoomSearch.getSelectionModel().select("Suchen nach");
+		
 		// Sortieren ComboBox Inhalte:
 		cmbRoomSort.getItems().removeAll(cmbRoomSort.getItems());
 		cmbRoomSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend");
@@ -70,12 +80,43 @@ public class RVController {
 	@FXML
 	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
+		if(LoginController.isAdmin==true) {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.show();
+		stage.show();}else {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
 	}
+	@FXML
+	public void roomSearch(ActionEvent evt)throws IOException {
+		pickSearch();
+	}
+
+	// Nach der Auswahl des gewünschten Suchparameters wird der
+		// Suchalgorithmus auf das Element angewandt
+		@FXML
+		public void pickSearch() throws IOException {
+			String[] rooms1 = ReaderWriter.readToArray("Räume.txt");
+			ObservableList<String> pat = FXCollections.observableArrayList(rooms1);
+			String search = txtSearchRoom.getText();
+			if (cmbRoomSearch.getValue().contains("ID")) {
+				String[] sortedRoomID1 = Sortieren.sortIDAscending(rooms1);
+				String searchID = application.Suchen.searchID(search, sortedRoomID1);
+				pat = FXCollections.observableArrayList(searchID);
+				lvRooms.setItems(pat);
+			} else if (cmbRoomSearch.getValue().contains("Freie-Betten")) {
+				String[] searchEmptyRooms = application.Suchen.searchFreeRooms(rooms1);
+				pat = FXCollections.observableArrayList(searchEmptyRooms);
+				lvRooms.setItems(pat);
+			}
+
+		}
 	
 	@FXML
 	public void erstelleRaum(ActionEvent event) throws IOException {

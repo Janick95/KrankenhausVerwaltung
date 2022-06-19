@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import application.ReaderWriter;
+import application.Sortieren;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -39,12 +40,20 @@ public class PersoController {
 	@FXML
 	ComboBox<String> cmbStaffSort;
 	@FXML
+	ComboBox<String> cmbStaffSearch;
+	@FXML
+	Button btnSearch;
+	@FXML
 	Button btnCreateStaff;
 	@FXML
 	Button btnDeleteStaff;
 
 	@FXML
 	public void initialize() throws IOException {
+		/// Suchen ComboBox Inhalte:
+		cmbStaffSearch.getItems().removeAll(cmbStaffSearch.getItems());
+		cmbStaffSearch.getItems().addAll("Suche nach", "ID", "Vorname", "Nachname", "Fachgebiet");
+		cmbStaffSearch.getSelectionModel().select("Suche nach");
 		/// Sortieren ComboBox Inhalte:
 		cmbStaffSort.getItems().removeAll(cmbStaffSort.getItems());
 		cmbStaffSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend",
@@ -70,11 +79,68 @@ public class PersoController {
 	public void goToMainmenu(ActionEvent event) throws IOException // Diese Methode lädt den Hauptmenübildschirm in dem
 																	// aktuellen Fenster
 	{
+		if(LoginController.isAdmin==true) {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.show();
+		stage.show();}else {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
+	}
+
+	@FXML
+	public void staffSearch(ActionEvent evt) throws IOException {
+		pickSearch();
+	}
+
+	// Nach der Auswahl des gewünschten Suchparameters wird der
+	// Suchalgorithmus auf das Element angewandt
+	@FXML
+	public void pickSearch() throws IOException {
+		String[] docs = ReaderWriter.readToArray("Arzt.txt");
+		String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
+
+		ObservableList<String> doc = FXCollections.observableArrayList(docs);
+		ObservableList<String> nur = FXCollections.observableArrayList(nurses);
+		String search = txtSearchStaff.getText();
+		if (cmbStaffSearch.getValue().contains("ID")) {
+
+			String[] sortedDocs = Sortieren.sortIDAscending(docs);
+			String[] sortedNurs = Sortieren.sortIDAscending(nurses);
+
+			String searchIDD = application.Suchen.searchID(search, sortedDocs);
+			String searchIDN = application.Suchen.searchID(search, sortedNurs);
+
+			doc = FXCollections.observableArrayList(searchIDD);
+			nur = FXCollections.observableArrayList(searchIDN);
+			lvDocDat.setItems(doc);
+			lvNurseDat.setItems(nur);
+
+		} else if (cmbStaffSearch.getValue().contains("Vorname")) {
+			String[] searchDocSurname = application.Suchen.searchFirstName(search, docs);
+			String[] searchNurseSurname = application.Suchen.searchFirstName(search, nurses);
+			doc = FXCollections.observableArrayList(searchDocSurname);
+			nur = FXCollections.observableArrayList(searchNurseSurname);
+			lvDocDat.setItems(doc);
+			lvNurseDat.setItems(nur);
+		} else if (cmbStaffSearch.getValue().contains("Nachname")) {
+			String[] searchDocSurname = application.Suchen.searchLastName(search, docs);
+			String[] searchNurseSurname = application.Suchen.searchLastName(search, nurses);
+			doc = FXCollections.observableArrayList(searchDocSurname);
+			nur = FXCollections.observableArrayList(searchNurseSurname);
+			lvDocDat.setItems(doc);
+			lvNurseDat.setItems(nur);
+		} else if (cmbStaffSearch.getValue().contains("Fachgebiet")) {
+			String[] searchDocSurname = application.Suchen.searchSpecialField(search, docs);
+			doc = FXCollections.observableArrayList(searchDocSurname);
+			lvDocDat.setItems(doc);
+		}
+
 	}
 
 	// Nach der Auswahl des gewünschten Sortierparameters wird der
@@ -128,48 +194,6 @@ public class PersoController {
 			lvDocDat.setItems(docs1);
 		}
 
-	}
-
-	// Beim klick auf Button "Neues Personal erstellen" wird der zweite
-	// Personalbildschirm geladen
-	@FXML
-	public void goToStaffCreator(ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/Personaldaten02.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.setTitle("Neuen Patienten erstellen");
-		// stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
-		stage.show();
-	}
-
-	@FXML
-	public void loeschePerso(ActionEvent event) throws IOException {
-		int NurseIndex = lvNurseDat.getSelectionModel().getSelectedIndex();
-		String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
-		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
-		if (lvNurseDat.getSelectionModel().isSelected(NurseIndex)) {
-			// Lösche Pfleger
-			String deleteNurse = lvNurseDat.getSelectionModel().getSelectedItem();
-			String[] nurseDelete = deleteNurse.split(",");
-
-			System.out.println(deleteNurse);
-			application.ReaderWriter.deleteFromTxt(nurseDelete[0], "Pfleger.txt");
-
-			showStaffList(nurses, doctors);
-		} else {
-			int DoctorIndex = lvDocDat.getSelectionModel().getSelectedIndex();
-			if (lvDocDat.getSelectionModel().isSelected(DoctorIndex)) {
-				// Lösche Arzt
-				String deleteDoctor = lvDocDat.getSelectionModel().getSelectedItem();
-				String[] docDelete = deleteDoctor.split(",");
-
-				System.out.println(deleteDoctor);
-				application.ReaderWriter.deleteFromTxt(docDelete[0], "Arzt.txt");
-
-				showStaffList(nurses, doctors);
-			}
-		}
 	}
 
 }
