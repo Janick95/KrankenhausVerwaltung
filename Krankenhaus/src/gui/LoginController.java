@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
+import application.Benutzer;
 import application.Main;
 import application.ReaderWriter;
 import javafx.event.ActionEvent;
@@ -65,16 +66,20 @@ public class LoginController {
 
 		String[] u1 = users[0].split(",");
 		String[] u2 = users[1].split(",");
+		
+		Benutzer user1 = new Benutzer(u1[0], u1[1]);
+		Benutzer user2 = new Benutzer(u2[0], u2[1]);
+		
 		Alert msg = new Alert(AlertType.ERROR);
 		if (validateData() == true) {
-			if (userID.equals(userID)) {
-				if (u1[0].equals(userID) == false) {
+			if (user1.getID().equals(userID)) {
+				if (user1.getID().equals(userID) == false) {
 					System.out.println("Diese Login-ID gibt es nicht!");
 					System.out.println("Erste Schleife");
 					msg.setTitle("Fehlerhafte Login-Id");
 					msg.setContentText("Diese Login-Id gibt es nicht: " + txtLoginId.getText());
 					msg.showAndWait();
-				} else if (u1[1].equals(userPw) == false) {
+				} else if (user1.getPassword().equals(userPw) == false) {
 					System.out.println("Diese Passwort gibt es nicht!");
 					System.out.println("Zweite Schleife");
 					msg.setTitle("Fehlerhaftes Passwort");
@@ -82,15 +87,15 @@ public class LoginController {
 					msg.showAndWait();
 				}
 			} else {
-				if (userID.equals(userPw)) {
-					if (u2[0].equals(userID) == false) {
+				if (user2.getID().equals(userPw)) {
+					if (user2.getID().equals(userID) == false) {
 						System.out.println("Diese Login-ID gibt es nicht!");
 						System.out.println("Dritte Schleife");
 
 						msg.setTitle("Fehlerhafte Login-Id");
 						msg.setContentText("Diese Login-Id gibt es nicht: " + txtLoginId.getText());
 						msg.showAndWait();
-					} else if (u2[1].equals(userPw) == false) {
+					} else if (user2.getPassword().equals(userPw) == false) {
 						System.out.println("Dieses Passwort gibt es nicht!");
 						System.out.println("Vierte Schleife");
 						msg.setTitle("Fehlerhaftes Passwort");

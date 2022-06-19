@@ -2,20 +2,31 @@ package application;
 
 public class Benutzer {
 
-	private static String Email;
-	private static String password;
-	public static String getEmail() {
-		return Email;
+	private String id;
+	private String password;
+	
+	//Konstruktor
+	public Benutzer(String id, String password){
+		this.id = id;
+		this.password = password;
 	}
-	public static void setEmail(String email) {
-		Email = email;
+	
+	//Getter und Setter
+	public String getID() {
+		return id;
 	}
-	public static String getPassword() {
+
+	public void setID(String id) {
+		this.id = id;
+	}
+
+	public String getPassword() {
 		return password;
 	}
-	public static void setPassword(String password) {
-		Benutzer.password = password;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-
+	
 }
