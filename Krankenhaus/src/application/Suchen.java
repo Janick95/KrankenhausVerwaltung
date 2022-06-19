@@ -69,8 +69,7 @@ public class Suchen {
 
 	// SuchAlgorythmen
 	// Sucht nach einzelnen Begriffen und Zahlen und bricht ab, sobald diese
-	// gefunden
-	// wurden
+	// gefunden wurden
 	public static int binarySearch(String[] array, int l, int r, String k, int index) {
 
 		int m = -1;

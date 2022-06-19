@@ -68,7 +68,6 @@ public class Sortieren {
 		int index = 3;
 		boolean number = true;
 		mergeSort(array, 0, array.length - 1, index, number);
-		System.out.println("in AgeAs geschrieben");
 		for (int x = 0; x < array.length; x++) {
 			System.out.println(array[x]);
 		}
