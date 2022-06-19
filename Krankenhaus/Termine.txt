@@ -1,8 +1,8 @@
-5215,Martin,Schmidt,1047,Jessika,Michi,Corona,Datum
-5536,
-5782,
-5355,
-5440,
-5793,
-5028,
-5261,
+5215,Sina,Adenauer,1047,Jessika,Michi,Knochenbruch,01,07,2022
+5536,Sven,Beese,1732,Nathalie,Bülow,Herzprobleme,05,07,2022
+5782,Sven,Beese,1138,Susanne,Johann,Herzprobleme,09,07,2022
+5355,Robin,Grohmann,1732,Nathalie,Bülow,Herzprobleme,02,07,2022
+5440,Robin,Grohmann,1758,Wolfgang,Hammerich,Herzprobleme,09,07,2022
+5793,Peter,Kurz,1980,Marcel,Lothar,Krebs,01,07,2022
+5028,Ursula,Hübscher,1047,Jessika,Michi,Krebs,03,07,2022
+5261,Ilja,Baumer,1088,Ulrich,Kunigunde,Knochenbruch,05,07,2022
