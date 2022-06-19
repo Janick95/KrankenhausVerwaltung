@@ -69,6 +69,7 @@ public class PVController {
 		cmbPatientenSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Vorname-aufsteigend",
 				"Vorname-absteigend", "Alter-aufsteigend", "Alter-absteigend");
 		cmbPatientenSort.getSelectionModel().select("Sortieren nach");*/
+		
 		zeigePatientenListe();
 	}
 
