@@ -1,9 +1,6 @@
 package gui;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import application.Benutzer;
 import application.Main;
 import application.ReaderWriter;
