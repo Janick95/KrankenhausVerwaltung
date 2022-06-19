@@ -20,7 +20,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSearchPatient" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Patienten suchen...">
+      <TextField fx:id="txtSearchPatient" layoutX="388.0" layoutY="400.0" minWidth="956.0" prefHeight="35.0" prefWidth="950.0" promptText="Patienten suchen...">
          <font>
             <Font size="18.0" />
          </font>
@@ -37,5 +37,11 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Button fx:id="btnSearch" layoutX="1500.0" layoutY="400.0" mnemonicParsing="false" onAction="#patientSearch" prefHeight="39.0" prefWidth="90.0" text="Search">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cmbPatientSearch" layoutX="1360.0" layoutY="400.0" onAction="#pickSearch" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
    </children>
 </Pane>
