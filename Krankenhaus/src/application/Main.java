@@ -46,11 +46,15 @@ public class Main extends Application {
 		
 		
 		//Test/Beispiel Sortieren
-		/*String[] patients = ReaderWriter.readToArray("Patienten.txt");
-		String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
+		/*String[] patients = ReaderWriter.readToArray("Patienten.txt");*/
+		//String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
 		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
 		String[] rooms = ReaderWriter.readToArray("Räume.txt");
-		String[] meetings = ReaderWriter.readToArray("Termine.txt");*/
+		String[] meetings = ReaderWriter.readToArray("Termine.txt");
+
+		/*String[] rooms = ReaderWriter.readToArray("Räume.txt");
+		String[] meetings = ReaderWriter.readToArray("Termine.txt");
+>>>>>>> branch 'main' of https://github.com/Janick95/KrankenhausVerwaltung.git
 		
 		
 		/*String[] sortedPatients1 = Sortieren.sortIDAscending(patients);
@@ -61,14 +65,14 @@ public class Main extends Application {
 		String[] sortedPatients6 = Sortieren.sortAgeDescending(patients);
 		String[] sortedPatients7 = Sortieren.sortReasonForStayAscending(patients);
 		String[] sortedPatients8 = Sortieren.sortReasonForStayDescending(patients);
-		
-		String[] sortedNurses1 = Sortieren.sortIDAscending(nurses);
-		String[] sortedNurses2 = Sortieren.sortIDDescending(nurses);
+		*/
+		//String[] sortedNurses1 = Sortieren.sortIDAscending(nurses);
+		/*String[] sortedNurses2 = Sortieren.sortIDDescending(nurses);
 		String[] sortedNurses3 = Sortieren.sortNameAscending(nurses);
 		String[] sortedNurses4 = Sortieren.sortNameDescending(nurses);
-		
+		*/
 		String[] sortedDoctors1 = Sortieren.sortIDAscending(doctors);
-		String[] sortedDoctors2 = Sortieren.sortIDDescending(doctors);
+		/*String[] sortedDoctors2 = Sortieren.sortIDDescending(doctors);
 		String[] sortedDoctors3 = Sortieren.sortNameAscending(doctors);
 		String[] sortedDoctors4 = Sortieren.sortNameDescending(doctors);
 		String[] sortedDoctors5 = Sortieren.sortSpecialFieldAscending(doctors);
@@ -119,13 +123,13 @@ public class Main extends Application {
 			System.out.println(sortedPatients8[i]);
 		}
 		System.out.println("");
+		*/
 		
-		
-		for(int i = 0; i < sortedNurses1.length; i++) {
+		/*for(int i = 0; i < sortedNurses1.length; i++) {
 			System.out.println(sortedNurses1[i]);
 		}
-		System.out.println("");
-		for(int i = 0; i < sortedNurses2.length; i++) {
+		System.out.println("");*/
+		/*for(int i = 0; i < sortedNurses2.length; i++) {
 			System.out.println(sortedNurses2[i]);
 		}
 		System.out.println("");
@@ -137,13 +141,13 @@ public class Main extends Application {
 			System.out.println(sortedNurses4[i]);
 		}
 		System.out.println("");
-		
+		*/
 		
 		for(int i = 0; i < sortedDoctors1.length; i++) {
 			System.out.println(sortedDoctors1[i]);
 		}
 		System.out.println("");
-		for(int i = 0; i < sortedDoctors2.length; i++) {
+		/*for(int i = 0; i < sortedDoctors2.length; i++) {
 			System.out.println(sortedDoctors2[i]);
 		}
 		System.out.println("");
@@ -192,13 +196,27 @@ public class Main extends Application {
 		
 
 		//Test/Beispiel Suchen
-		
+
+		//String[] patients = ReaderWriter.readToArray("Patienten.txt");
+
 		/*String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
 		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
 		String[] rooms = ReaderWriter.readToArray("Räume.txt");
 		String[] meetings = ReaderWriter.readToArray("Termine.txt");*/
 
+
 		//System.out.println(sortedDocs);
+
+		
+		//String[] sortedPatients1 = Sortieren.sortIDAscending(patients);
+		/*String[] sortedNurses1 = Sortieren.sortIDAscending(nurses);
+		String[] sortedDoctors1 = Sortieren.sortIDAscending(doctors);
+		String[] sortedRooms1 = Sortieren.sortIDAscending(rooms);
+		String[] sortedMeetings1 = Sortieren.sortIDAscending(meetings);*/
+		
+		//String searchedPatients1 = Suchen.searchID("3512", sortedPatients1);
+		//System.out.println(searchedPatients1);
+
 		/*String[] searchedPatients2 = Suchen.searchFirstName("Robin", patients);
 		String[] searchedPatients3 = Suchen.searchLastName("Schmidt", patients);
 		String[] searchedPatients4 = Suchen.searchReasonForStay("Herzprobleme", patients);
