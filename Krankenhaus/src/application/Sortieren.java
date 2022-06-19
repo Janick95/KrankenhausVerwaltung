@@ -310,8 +310,12 @@ public class Sortieren {
 			i = l;
 			j = r - 1;
 			pivot = array[r];
+			System.out.println(i);
+			System.out.println(j);
 			
 			while(i <= j) {
+				System.out.println(i);
+				System.out.println(j);
 				while(check(array, pivot, i, "<", index, number)) {
 					i++;
 				}
@@ -321,6 +325,7 @@ public class Sortieren {
 				if(i >= j) {
 					partition(array, l, i, r, index, number);
 				}else {
+					System.out.println("tausch");
 					note = array[i];
 					array[i] = array[j];
 					array[j] = note;
@@ -330,7 +335,6 @@ public class Sortieren {
 	}
 	
 	public static void partition (String[] array, int l, int i, int r, int index, boolean number) {
-		
 		String note;
 		if(i < array.length) {
 			note = array[i];
