@@ -97,12 +97,13 @@ public class PVController {
 	
 	@FXML
 	public void patientSearch(ActionEvent evt)throws IOException {
+		pickSearch();
 	}
 
 	// Nach der Auswahl des gewünschten Sortierparameters wird der
 		// Sortieralgorithmus auf das Element angewandt
 		@FXML
-		public void pickSearch(ActionEvent event) throws IOException {
+		public void pickSearch() throws IOException {
 			String[] patients1 = ReaderWriter.readToArray("Patienten.txt");
 			ObservableList<String> pat = FXCollections.observableArrayList(patients1);
 			String search = txtSearchPatient.getText();

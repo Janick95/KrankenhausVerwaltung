@@ -42,6 +42,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ComboBox fx:id="cmbPatientSearch" layoutX="1360.0" layoutY="400.0" onAction="#pickSearch" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
+      <ComboBox fx:id="cmbPatientSearch" layoutX="1360.0" layoutY="400.0" prefHeight="40.0" prefWidth="134.0" promptText="Suchen nach" />
    </children>
 </Pane>

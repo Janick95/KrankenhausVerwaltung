@@ -7,7 +7,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-import application.Benutzer;
 import application.Main;
 import application.ReaderWriter;
 import javafx.event.ActionEvent;
