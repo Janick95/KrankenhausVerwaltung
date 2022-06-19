@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PersoController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
+      <Button fx:id="btnMainmenu" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
@@ -20,20 +20,20 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSuche" layoutX="500.0" layoutY="400.0" minWidth="1000.0">
+      <TextField fx:id="txtSearchStaff" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Suche Personal...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbPersonalSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <ListView fx:id="lvAerzteDat" layoutX="147.0" layoutY="494.0" prefHeight="233.0" prefWidth="1600.0" />
-      <ListView fx:id="lvPflegerDat" layoutX="147.0" layoutY="770.0" prefHeight="233.0" prefWidth="1600.0" />
-      <Button fx:id="btnPersoErstellen" layoutX="1290.0" layoutY="1025.0" mnemonicParsing="false" onAction="#goToPersonalErstellen" prefHeight="39.0" prefWidth="219.0" text="Neues Personal erstellen">
+      <ComboBox fx:id="cmbStaffSort" layoutX="1600.0" layoutY="400.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <ListView fx:id="lvDocDat" layoutX="147.0" layoutY="494.0" prefHeight="233.0" prefWidth="1600.0" />
+      <ListView fx:id="lvNurseDat" layoutX="147.0" layoutY="770.0" prefHeight="233.0" prefWidth="1600.0" />
+      <Button fx:id="btnCreateStaff" layoutX="1290.0" layoutY="1025.0" mnemonicParsing="false" onAction="#goToStaffCreator" prefHeight="39.0" prefWidth="219.0" text="Neues Personal erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnLoeschPerso" layoutX="1590.0" layoutY="1025.0" mnemonicParsing="false" onAction="#loeschePerso" prefHeight="39.0" prefWidth="157.0" text="Lösche Personal">
+      <Button fx:id="btnDeleteStaff" layoutX="1590.0" layoutY="1025.0" mnemonicParsing="false" onAction="#loeschePerso" prefHeight="39.0" prefWidth="157.0" text="Lösche Personal">
          <font>
             <Font size="18.0" />
          </font>

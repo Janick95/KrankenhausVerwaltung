@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+3251,Martin,Schmidt,65,Corona,verheiratet,Dr.Platzhalter,RaumID,TerminID
+3782,Sina,Adenauer,28,Knochenbruch,ledig,Dr.Platzhalter
+3591,Sven,Beese,35,Herzprobleme,ledig,Dr.Platzhalter
+3657,Hannes,Steinhöfer,52,Krebs,geschieden,Dr.Platzhalter
+3100,Carmen,Jung,43,verheiratet,Herzprobleme,Dr.Platzhalter
+3409,Isabelle,André,32,Knieverletzung,verheiratet,Dr.Platzhalter
+3512,Xenia,Reuters,38,Corona,ledig,Dr.Platzhalter
+3824,Nora,Reinfelder,40,Corona,ledig,Dr.Platzhalter
+3234,Robin,Grohmann,23,Herzprobleme,verheiratet,Dr.Platzhalter
+3533,Nathalie,Kempke,25,Blinddarm,geschieden,Dr.Platzhalter
+3089,Ingo,Hartung,58,Corona,verheiratet,Dr.Platzhalter
+3426,Peter,Kurz,78,Krebs,verheiratet,62,Dr.Platzhalter
+3701,Ursula,Hübscher,86,Krebs,verwitwet,Dr.Platzhalter
+3258,Ilja,Baumer,33,Knochenbruch,verheiratet,Dr.Platzhalter
+=======
 3251,Martin,Schmidt,65,Corona,verheiratet,Dr.Platzhalter
 3782,Sina,Adenauer,28,Knochenbruch,ledig,Dr.Platzhalter
 3591,Sven,Beese,35,Herzprobleme,ledig,Dr.Platzhalter
@@ -12,4 +28,5 @@
 3426,Peter,Kurz,78,Krebs,verheiratet,62,Dr.Platzhalter
 3701,Ursula,Hübscher,86,Krebs,verwitwet,Dr.Platzhalter
 3258,Ilja,Baumer,33,Knochenbruch,verheiratet,Dr.Platzhalter
+>>>>>>> branch 'main' of https://github.com/Janick95/KrankenhausVerwaltung.git
 3759,Jasper,Erichsen,62,Corona,ledig,Dr.Platzhalter

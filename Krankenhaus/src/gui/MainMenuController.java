@@ -20,23 +20,23 @@ public class MainMenuController extends LoginController {
 
 	// Zugriff auf die Buttons
 	@FXML
-	public Button btnRegistrierung02;
+	private Button btnRegister02;
 	@FXML
-	private Button btnOpTermine01;
+	private Button btnOpData01;
 	@FXML
-	private Button btnOpTermine02;
+	private Button btnOpData02;
 	@FXML
-	private Button btnPatDaten01;
+	private Button btnPatData01;
 	@FXML
-	private Button btnPatDaten02;
+	private Button btnPatData02;
 	@FXML
-	private Button btnRaumbelegung01;
+	private Button btnRoomData01;
 	@FXML
-	private Button btnRaumbelegung02;
+	private Button btnRoomData02;
 	@FXML
-	private Button btnPersonaldaten01;
+	private Button btnStaffData01;
 	@FXML
-	private Button btnPersonaldaten02;
+	private Button btnStaffData02;
 	@FXML
 	private Button btnLogout01;
 	@FXML
@@ -44,7 +44,7 @@ public class MainMenuController extends LoginController {
 
 	// Button Events
 
-	public void goToPatientendaten(ActionEvent event) throws IOException // Diese Methode lädt den Patientendatenbildschirm in dem aktuellen Fenster
+	public void goToPatientdata(ActionEvent event) throws IOException // Diese Methode lädt den Patientendatenbildschirm in dem aktuellen Fenster
 																			
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Patientendaten01.fxml"));
@@ -56,7 +56,7 @@ public class MainMenuController extends LoginController {
 		stage.show();
 	}
 
-	public void goToOperationsTermine(ActionEvent event) throws IOException // Diese Methode lädt den Operations-Terminbildschirm in dem aktuellen Fenster
+	public void goToOperationData(ActionEvent event) throws IOException // Diese Methode lädt den Operations-Terminbildschirm in dem aktuellen Fenster
 																			
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Operationstermine.fxml"));
@@ -68,7 +68,7 @@ public class MainMenuController extends LoginController {
 		stage.show();
 	}
 
-	public void goToRaumbelegung(ActionEvent event) throws IOException // Diese Methode lädt den Raumbelegungsbildschirm in dem aktuellen Fenster
+	public void goToRoomData(ActionEvent event) throws IOException // Diese Methode lädt den Raumbelegungsbildschirm in dem aktuellen Fenster
 																		
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Raumbelegung.fxml"));
@@ -80,7 +80,7 @@ public class MainMenuController extends LoginController {
 		stage.show();
 	}
 
-	public void goToPersonaldaten(ActionEvent event) throws IOException // Diese Methode lädt den Personaldatenbildschirm in dem aktuellen Fenster
+	public void goToStaffdata(ActionEvent event) throws IOException // Diese Methode lädt den Personaldatenbildschirm in dem aktuellen Fenster
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Personaldaten01.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -91,7 +91,7 @@ public class MainMenuController extends LoginController {
 		stage.show();
 	}
 
-	public void goToRegistrierung(ActionEvent event) throws IOException // Diese Methode lädt den Registrierungsbildschirm in dem aktuellen Fenster
+	public void goToRegistration(ActionEvent event) throws IOException // Diese Methode lädt den Registrierungsbildschirm in dem aktuellen Fenster
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Registrierung.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

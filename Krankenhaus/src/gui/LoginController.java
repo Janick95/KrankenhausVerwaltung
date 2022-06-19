@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 import application.Benutzer;
 import application.Main;
+import application.ReaderWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +32,6 @@ public class LoginController {
 	private Stage stage;
 	private Scene scene;
 
-	
 	// Zugriff auf FXML Elemente
 	@FXML
 	ImageView imgLogo;
@@ -39,90 +39,81 @@ public class LoginController {
 	@FXML
 	TextField txtLoginId;
 	@FXML
-	TextField txtNeuLoginId;
-	@FXML 
+	TextField txtNewLoginId;
+	@FXML
 	PasswordField pfPasswort;
 	@FXML
-	PasswordField pfNeuPassw;
-	
+	PasswordField pfNewPassw;
+
 	@FXML
 	Label lblPasswReset;
 
 	@FXML
 	Button btnAnmelden;
-	
+
 	@FXML
 	Button btnResetOk;
-	
+
 	// Button Event
 	@FXML
-	public void handleLoginAction(ActionEvent event) throws IOException // This method loads a new scene in a current window
+	public void handleLoginAction(ActionEvent event) throws IOException // This method loads a new scene in a current
+																		// window
 	{
-		// Pfad zur Text Datei
-		Path path = Paths.get("Benutzer.txt");
+		String[] users = ReaderWriter.readToArray("Benutzer.txt");
 
-		// Zähle Zeilen der Text Datei
-		long count = Files.lines(path).count();
+		String userID = txtLoginId.getText().trim();
+		String userPw = pfPasswort.getText().trim();
 
-		// Zeilen auslesen
-		for (int i = 0; i < count; i++) {
-			String line = Files.readAllLines(path).get(i);
-			if (!line.trim().equals("")) {
-				// Betreffendes Datei Format Email, Passwort
-				String[] benutzer = line.split(",");
+		String[] u1 = users[0].split(",");
+		String[] u2 = users[1].split(",");
+		Alert msg = new Alert(AlertType.ERROR);
+		if (validateData() == true) {
+			if (userID.equals(userID)) {
+				if (u1[0].equals(userID) == false) {
+					System.out.println("Diese Login-ID gibt es nicht!");
+					System.out.println("Erste Schleife");
+					msg.setTitle("Fehlerhafte Login-Id");
+					msg.setContentText("Diese Login-Id gibt es nicht: " + txtLoginId.getText());
+					msg.showAndWait();
+				} else if (u1[1].equals(userPw) == false) {
+					System.out.println("Diese Passwort gibt es nicht!");
+					System.out.println("Zweite Schleife");
+					msg.setTitle("Fehlerhaftes Passwort");
+					msg.setContentText("Das Passwort gibt es nicht");
+					msg.showAndWait();
+				}
+			} else {
+				if (userID.equals(userPw)) {
+					if (u2[0].equals(userID) == false) {
+						System.out.println("Diese Login-ID gibt es nicht!");
+						System.out.println("Dritte Schleife");
 
-				String email = benutzer[0];
-				String password = benutzer[1];
-
-				// User vorhanden
-				if (email.trim().equals(txtLoginId.getText())) {
-					// Passwort Überprüfung
-					if (password.trim().equals(pfPasswort.getText())) {
-						Alert msg = new Alert(AlertType.CONFIRMATION);
-						msg.setTitle(txtLoginId.getText());
-						msg.setContentText("Email und Passwort vorhanden");
+						msg.setTitle("Fehlerhafte Login-Id");
+						msg.setContentText("Diese Login-Id gibt es nicht: " + txtLoginId.getText());
 						msg.showAndWait();
-
-						// Werte speichern
-						Benutzer.setEmail(email);
-						Benutzer.setPassword(password);
-
-						// Fenster öffnen
-						checkAdmin();
-						System.out.println(benutzer[0] +" ," + benutzer[1]);
-						openWindow();
-
-						break; // User ID und Passwort stimmen, Schleife geschlossen
+					} else if (u2[1].equals(userPw) == false) {
+						System.out.println("Dieses Passwort gibt es nicht!");
+						System.out.println("Vierte Schleife");
+						msg.setTitle("Fehlerhaftes Passwort");
+						msg.setContentText("Falsches Passwort ");
+						msg.showAndWait();
 					}
 				}
 			}
-			
-		}
-		if(validateData()) {
-			if (Benutzer.getEmail() == null) {
-				System.out.println("Diese Email gibt es nicht!");
+			checkAdmin();
+			// Fenster öffnen
+			openWindow();
 
-				Alert msg = new Alert(AlertType.ERROR);
-				msg.setTitle(txtLoginId.getText());
-				msg.setContentText("Diese Email gibt es nicht: " + txtLoginId.getText());
-				msg.showAndWait();
-			} else if (Benutzer.getPassword() == null) {
-				System.out.println("Dieses Passwort gibt es nicht!");
-				Alert msg = new Alert(AlertType.ERROR);
-				msg.setTitle(pfPasswort.getText());
-				msg.setContentText("Falsches Passwort " + pfPasswort.getText());
-				msg.showAndWait();
-			}
 		}
+
 	}
-
 
 	// Hier evtl nur gucken ob man den einen Button nur ausblendet
 	@FXML
 	public boolean checkAdmin() {
-		Alert msg = new Alert(AlertType.ERROR);
+		Alert msg = new Alert(AlertType.CONFIRMATION);
 		boolean result;
-		if (Benutzer.getEmail().contains("Admin")) {
+		if (txtLoginId.getText().contains("Admin")) {
 			System.out.println("Dieser Benutzer ist ein Admin");
 			result = true;
 		} else {
@@ -136,7 +127,7 @@ public class LoginController {
 		System.out.println("Benutzer eingeloggt");
 		if (checkAdmin() == false) {
 			try {
-				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen02.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen01.fxml"));
 				Main.stage.setScene(new Scene(root));
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -150,31 +141,25 @@ public class LoginController {
 			}
 		}
 	}
+
 	@FXML
 	private boolean validateData() {
 		Alert msg = new Alert(AlertType.ERROR);
 		boolean result = true;
-		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z"+ "A-Z]{2,7}$";
-		Pattern pat = Pattern.compile(emailRegex);
 		if (txtLoginId.getText().equals("")) {
-			msg.setContentText("Bitte füllen Sie das E-Mail Feld aus!");
+			msg.setContentText("Bitte füllen Sie das Login-ID Feld aus!");
 			msg.showAndWait();
 			result = false;
-		} else {
-			if (pfPasswort.getText().equals("")) {
-				msg.setContentText("Bitte füllen Sie das Passwort Feld aus!");
-				msg.showAndWait();
-				result = false;
-			} else {
-				if (!pat.matcher(txtLoginId.getText()).matches()) {
-					msg.setContentText("Sie haben eine ungültige E-Mail Adresse angegeben!");
-					msg.showAndWait();
-					result = false;
-				}
-			}
-		}
+		} else if (pfPasswort.getText().equals("")) {
+			msg.setContentText("Bitte füllen Sie das Passwort Feld aus!");
+			msg.showAndWait();
+			result = false;
+		} else if (pfPasswort.getText().length() < 8)
+			msg.setContentText("Ihr Passwort muss aus min. 8 Zeichen bestehen!");
+		msg.showAndWait();
 		return result;
 	}
+
 	@FXML
 	public void passwReset(MouseEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/PasswReset.fxml"));
@@ -182,27 +167,32 @@ public class LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Passwort Reset");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		// stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
+
 	@FXML
-	public void resetPassw (ActionEvent event) throws IOException {
+	public void resetPassw(ActionEvent event) throws IOException {
 		String[] user = new String[2];
 
-		String loginId = txtNeuLoginId.getText();
-		String passw = pfNeuPassw.getText();
-		
-		user [0] = loginId;
-		user [1] = passw;
+		String loginId = txtNewLoginId.getText();
+		String passw = pfNewPassw.getText();
 
-		application.ReaderWriter.writeStringIntoTxt(Arrays.toString(user).split(","), "Benutzer.txt");
-		
+		user[0] = loginId;
+		user[1] = passw;
+
+		String newuser = loginId + ", " + passw;
+
+		application.ReaderWriter.deleteFromTxt(loginId, "Benutzer.txt");
+
+		application.ReaderWriter.writeStringIntoTxt(newuser, "Benutzer.txt");
+
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/AnmeldeScreen.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Herzlich Willkommen im River Krankenhaus");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		// stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 }

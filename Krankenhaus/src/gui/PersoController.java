@@ -28,60 +28,46 @@ public class PersoController {
 
 	// PersonalBildschirm
 	@FXML
-	Button btnHauptmenü;	
+	Button btnMainmenu;
 	@FXML
-	ListView<String> lvPflegerDat = new ListView<String>();
+	TextField txtSearchStaff;
 	@FXML
-	ListView<String> lvAerzteDat = new ListView<String>();
+	ListView<String> lvNurseDat = new ListView<String>();
+	@FXML
+	ListView<String> lvDocDat = new ListView<String>();
 
-	// Zugriff auf FXML Elemente des zweiten Personal-Bildschirms
 	@FXML
-	TextField txtPersoVorname;
+	ComboBox<String> cmbStaffSort;
 	@FXML
-	TextField txtPersoNachname;
+	Button btnCreateStaff;
 	@FXML
-	TextField txtPersoRang;
-	@FXML
-	TextField txtPersoSchule;
-	@FXML
-	TextField txtPersoAbteilung;
-	@FXML
-	ComboBox<String> cmbPersonalSort;
-	@FXML
-	Button btnPersoErstellen;
-	@FXML
-	Button btnLoeschPerso;
+	Button btnDeleteStaff;
+
 	@FXML
 	public void initialize() throws IOException {
-		//comboBoxValues();
-		  zeigePersonalListe();
-	}
-	
-	public void comboBoxValues() {
-		// Sortieren ComboBox Inhalte:
-		  cmbPersonalSort.getItems().removeAll(cmbPersonalSort.getItems());
-		  cmbPersonalSort.getItems().addAll("Sortieren nach", "ID-aufsteigend",
-		  "ID-absteigend", "Vorname-aufsteigend", "Vorname-absteigend",
-		  "Alter-aufsteigend", "Alter-absteigend");
-		  cmbPersonalSort.getSelectionModel().select("Sortieren nach");
+		/// Sortieren ComboBox Inhalte:
+		cmbStaffSort.getItems().removeAll(cmbStaffSort.getItems());
+		cmbStaffSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend",
+				"Name-absteigend", "Spezialität-aufsteigend", "Spezialität-absteigend");
+		cmbStaffSort.getSelectionModel().select("Sortieren nach");
+		String[] nurse = ReaderWriter.readToArray("Pfleger.txt"); // Lädt den Inhalt der übergebenen Text Datei durch
+		String[] doctor = ReaderWriter.readToArray("Arzt.txt");
+		showStaffList(nurse, doctor);
 	}
 
 	@FXML
-	public void zeigePersonalListe() throws IOException {
-		String[] pfleger = ReaderWriter.readToArray("Pfleger.txt"); // Lädt den Inhalt der übergebenen Text Datei durch
-		String[] aerzte = ReaderWriter.readToArray("Arzt.txt"); // die Methode readToArray der ReaderWriter Klasse
-																// in ein neues String Array
+	public void showStaffList(String[] nurse, String[] doctor) throws IOException {
 
-		ObservableList<String> pflegerList = FXCollections.observableArrayList(pfleger);
-		ObservableList<String> aerzteList = FXCollections.observableArrayList(aerzte);
+		ObservableList<String> nurseList = FXCollections.observableArrayList(nurse);
+		ObservableList<String> doctorList = FXCollections.observableArrayList(doctor);
 
-		lvPflegerDat.setItems(pflegerList);
-		lvAerzteDat.setItems(aerzteList);
+		lvNurseDat.setItems(nurseList);
+		lvDocDat.setItems(doctorList);
 	}
 
 	// Events
 	@FXML
-	public void goToHauptmenue(ActionEvent event) throws IOException // Diese Methode lädt den Hauptmenübildschirm in dem
+	public void goToMainmenu(ActionEvent event) throws IOException // Diese Methode lädt den Hauptmenübildschirm in dem
 																	// aktuellen Fenster
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
@@ -90,132 +76,100 @@ public class PersoController {
 		stage.setScene(scene);
 		stage.show();
 	}
-	
+
+	// Nach der Auswahl des gewünschten Sortierparameters wird der
+	// Sortieralgorithmus auf das Element angewandt
+	@FXML
+	public void pickSort(ActionEvent event) throws IOException {
+		String[] nurse1 = ReaderWriter.readToArray("Pfleger.txt");
+		String[] doctor1 = ReaderWriter.readToArray("Arzt.txt");
+		ObservableList<String> nurses1 = FXCollections.observableArrayList(nurse1);
+		ObservableList<String> docs1 = FXCollections.observableArrayList(doctor1);
+		lvNurseDat.getItems();
+		lvDocDat.getItems();
+		if (cmbStaffSort.getValue().contains("ID-aufsteigend")) {
+			String[] sortedIDN = application.Sortieren.sortIDAscending(nurse1);
+			String[] sortedIDD = application.Sortieren.sortIDAscending(doctor1);
+			nurses1 = FXCollections.observableArrayList(sortedIDN);
+			docs1 = FXCollections.observableArrayList(sortedIDD);
+			lvNurseDat.setItems(nurses1);
+			lvDocDat.setItems(docs1);
+
+		} else if (cmbStaffSort.getValue().contains("ID-absteigend")) {
+			String[] sortedIDN = application.Sortieren.sortIDDescending(nurse1);
+			String[] sortedIDD = application.Sortieren.sortIDDescending(doctor1);
+			nurses1 = FXCollections.observableArrayList(sortedIDN);
+			docs1 = FXCollections.observableArrayList(sortedIDD);
+			lvNurseDat.setItems(nurses1);
+			lvDocDat.setItems(docs1);
+		} else if (cmbStaffSort.getValue().contains("Name-aufsteigend")) {
+			String[] sortedNameN = application.Sortieren.sortNameAscending(nurse1);
+			String[] sortedNameD = application.Sortieren.sortNameAscending(doctor1);
+			nurses1 = FXCollections.observableArrayList(sortedNameN);
+			docs1 = FXCollections.observableArrayList(sortedNameD);
+			lvNurseDat.setItems(nurses1);
+			lvDocDat.setItems(docs1);
+		} else if (cmbStaffSort.getValue().contains("Name-absteigend")) {
+			String[] sortedNameN = application.Sortieren.sortNameDescending(nurse1);
+			String[] sortedNameD = application.Sortieren.sortNameDescending(doctor1);
+			nurses1 = FXCollections.observableArrayList(sortedNameN);
+			docs1 = FXCollections.observableArrayList(sortedNameD);
+			lvNurseDat.setItems(nurses1);
+			lvDocDat.setItems(docs1);
+
+		} else if (cmbStaffSort.getValue().contains("Spezialität-aufsteigend"))// Nur für Ärzte
+		{
+			String[] sortedSpecial = application.Sortieren.sortSpecialFieldAscending(doctor1);
+			docs1 = FXCollections.observableArrayList(sortedSpecial);
+			lvDocDat.setItems(docs1);
+		} else if (cmbStaffSort.getValue().contains("Spezialität-absteigend")) {
+			String[] sortedSpecial = application.Sortieren.sortSpecialFieldDescending(doctor1);
+			docs1 = FXCollections.observableArrayList(sortedSpecial);
+			lvDocDat.setItems(docs1);
+		}
+
+	}
+
 	// Beim klick auf Button "Neues Personal erstellen" wird der zweite
 	// Personalbildschirm geladen
 	@FXML
-	public void goToPersonalErstellen(ActionEvent event) throws IOException {
+	public void goToStaffCreator(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/Personaldaten02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
-		stage.setTitle("Neues Personal erstellen");
+		stage.setTitle("Neuen Patienten erstellen");
 		// stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
-	// Nach der Auswahl des gewünschten Sortierparameters wird der
-		// Sortieralgorithmus auf das Element angewandt
-		@FXML
-		public String[] pickSort(ActionEvent event) throws IOException {
-			String[] pfleger1 = ReaderWriter.readToArray("Pfleger.txt"); 
-			String[] aerzte1 = ReaderWriter.readToArray("Arzt.txt");
-			ObservableList<String> pflege1 = FXCollections.observableArrayList(pfleger1);
-			ObservableList<String> arzt1 = FXCollections.observableArrayList(aerzte1);
-			
-			for (int i = 0; i < pflege1.size(); i++) {
-				String[] pflegerdaten = pfleger1[i].split(",");
-				String[] aerztedaten = aerzte1[i].split(",");
-
-				if (cmbPersonalSort.getValue().contains("ID-aufsteigend")) {
-					// application.Sortieren.sortIDAscending(pflegerdaten[0]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("ID-absteigend")) {
-					// application.Sortieren.sortIDDescending(pflegerdaten[0]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("Vorname-aufsteigend")) {
-					// application.Sortieren.sortNameAscending(pflegerdaten[1]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("Vorname-absteigend")) {
-					// application.Sortieren.sortNameDescending(pflegerdaten[1]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("Nachname-aufsteigend")) {
-					// application.Sortieren.sortNameAscending(pflegerdaten[2]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("Nachname-absteigend")) {
-					// application.Sortieren.sortNameDescending(pflegerdaten[2]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("Alter-aufsteigend")) {
-					// application.Sortieren.sortAgeAscending(pflegerdaten[3]);
-					// return pflegerdaten;
-				} else if (cmbPersonalSort.getValue().contains("Alter-absteigend")) {
-					// application.Sortieren.sortAgeDescending(pflegerdaten[3]);
-					// return pflegerdaten;
-				}
-
-			}
-			return pfleger1;
-		}
-	
-	
-	// Methode um neues Personal zu erstellen
-	@FXML
-	public void personalErstellen(ActionEvent event) throws IOException {
-		if (txtPersoRang.getText().equals("Arzt")) {
-			String[] arzt = new String[6];
-			int lower = 1000;
-			int upper = 1999;
-			String id = String.valueOf((int) (Math.random() * (upper - lower))) + lower;
-
-			String vorname = txtPersoVorname.getText();
-			String nachname = txtPersoNachname.getText();
-			String rang = txtPersoRang.getText();
-			String schule = txtPersoSchule.getText();
-			String abteilung = txtPersoAbteilung.getText();
-
-			arzt[0] = id;
-			arzt[1] = vorname;
-			arzt[2] = nachname;
-			arzt[3] = rang;
-			arzt[4] = schule;
-			arzt[5] = abteilung;
-			for (int i = 0; i < arzt.length; i++) {
-				arzt[i].trim();
-				arzt[i].toString().split(",");
-
-			}				
-			Alert mesg = new Alert(AlertType.CONFIRMATION);
-			mesg.setContentText("Arzt hinzugefügt");
-			mesg.showAndWait();
-			application.ReaderWriter.writeStringIntoTxt(Arrays.toString(arzt).split(","), "Arzt.txt");
-		} else if (txtPersoRang.getText().equals("Pfleger")) {
-			String[] pfleger = new String[6];
-			int lower = 2000;
-			int upper = 2999;
-
-			String id = String.valueOf((int) (Math.random() * (upper - lower) + lower));
-			String vorname = txtPersoVorname.getText();
-			String nachname = txtPersoNachname.getText();
-			String rang = txtPersoRang.getText();
-			String schule = txtPersoSchule.getText();
-			String abteilung = txtPersoAbteilung.getText();
-
-			pfleger[0] = id;
-			pfleger[1] = vorname;
-			pfleger[2] = nachname;
-			pfleger[3] = rang;
-			pfleger[4] = schule;
-			pfleger[5] = abteilung;
-
-			for (int i = 0; i < pfleger.length; i++) {
-				pfleger[i].trim();
-				pfleger[i].toString().split(",");
-			}
-			application.ReaderWriter.writeStringIntoTxt(Arrays.toString(pfleger), "Pfleger.txt");
-
-			Alert mesg = new Alert(AlertType.CONFIRMATION);
-			mesg.setContentText("Pfleger hinzugefügt");
-			mesg.showAndWait();
-		}
-	}
 	@FXML
 	public void loeschePerso(ActionEvent event) throws IOException {
-		//deletePat = lvPatDat01.getSelectionModel().getSelectedItem();
-		//application.ReaderWriter.deleteFromTxt(deletePat.toString(), "Patienten.txt"); lvPflegerDat lvAerzteDat
-		String deletePfleger = lvPflegerDat.getSelectionModel().getSelectedItem();
-		System.out.println(deletePfleger);
-		
-		application.ReaderWriter.deleteFromTxt(deletePfleger, "Pfleger.txt");
+		int NurseIndex = lvNurseDat.getSelectionModel().getSelectedIndex();
+		String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
+		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
+		if (lvNurseDat.getSelectionModel().isSelected(NurseIndex)) {
+			// Lösche Pfleger
+			String deleteNurse = lvNurseDat.getSelectionModel().getSelectedItem();
+			String[] nurseDelete = deleteNurse.split(",");
+
+			System.out.println(deleteNurse);
+			application.ReaderWriter.deleteFromTxt(nurseDelete[0], "Pfleger.txt");
+
+			showStaffList(nurses, doctors);
+		} else {
+			int DoctorIndex = lvDocDat.getSelectionModel().getSelectedIndex();
+			if (lvDocDat.getSelectionModel().isSelected(DoctorIndex)) {
+				// Lösche Arzt
+				String deleteDoctor = lvDocDat.getSelectionModel().getSelectedItem();
+				String[] docDelete = deleteDoctor.split(",");
+
+				System.out.println(deleteDoctor);
+				application.ReaderWriter.deleteFromTxt(docDelete[0], "Arzt.txt");
+
+				showStaffList(nurses, doctors);
+			}
+		}
 	}
 
 }

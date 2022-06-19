@@ -1,12 +1,8 @@
 package gui;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.util.Arrays;
-import java.util.regex.Pattern;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +18,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.shape.Path;
 
 public class RegistrierungController {
 
@@ -31,31 +26,31 @@ public class RegistrierungController {
 	// Buttons
 	private Button btnHauptmenüR;
 	@FXML
-	private Button btnRegistrierenR;
+	private Button btnRegistrationR;
 
 	// Textfelder
 	@FXML
-	private TextField txtVornameR;
+	private TextField txtSurnameR;
 	@FXML
-	private TextField txtNachnameR;
+	private TextField txtNameR;
 	@FXML
-	private TextField txtRangR;
+	private TextField txtRankR;
 	@FXML
-	private TextField txtSchuleR;
+	private TextField txtSchoolR;
 	@FXML
-	private TextField txtAbteilungR;
+	private TextField txtDepartmentR;
 	@FXML
 	private TextField txtTitelR;
 	@FXML
 	private TextField txtEmailR;
 	@FXML
-	private TextField txtHerkunftR;
+	private TextField txtOriginR;
 	@FXML
-	private TextField txtSprachenR;
+	private TextField txtLanguagesR;
 	@FXML
-	private TextField txtAusbildungR;
+	private TextField txtEducationR;
 	@FXML
-	private TextField txtSpezialitätR;
+	private TextField txtSpecialityR;
 	@FXML
 	private TextField txtLoginR;
 
@@ -73,9 +68,9 @@ public class RegistrierungController {
 	@FXML
 	private ComboBox<String> cmbPrefixR;
 	@FXML
-	private ComboBox<String> cmbGeschlechtR;
+	private ComboBox<String> cmbGenderR;
 	@FXML
-	private ComboBox<String> cmbAbgeschlossenR;
+	private ComboBox<String> cmbSchoolFinishedR;
 
 	// Variablen um neue Scene zu erzeugen
 	private Stage stage;
@@ -91,14 +86,14 @@ public class RegistrierungController {
 		cmbPrefixR.getSelectionModel().select("Frau");
 
 		// Geschlecht ComboBox Inhalte:
-		cmbGeschlechtR.getItems().removeAll(cmbGeschlechtR.getItems());
-		cmbGeschlechtR.getItems().addAll("Männlich", "Weiblich", "Anders");
-		cmbGeschlechtR.getSelectionModel().select("Weiblich");
+		cmbGenderR.getItems().removeAll(cmbGenderR.getItems());
+		cmbGenderR.getItems().addAll("Männlich", "Weiblich", "Anders");
+		cmbGenderR.getSelectionModel().select("Weiblich");
 
 		// Abschluss ComboBox Inhalte:
-		cmbAbgeschlossenR.getItems().removeAll(cmbAbgeschlossenR.getItems());
-		cmbAbgeschlossenR.getItems().addAll("2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022");
-		cmbAbgeschlossenR.getSelectionModel().select("2020");
+		cmbSchoolFinishedR.getItems().removeAll(cmbSchoolFinishedR.getItems());
+		cmbSchoolFinishedR.getItems().addAll("2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022");
+		cmbSchoolFinishedR.getSelectionModel().select("2020");
 
 	}
 
@@ -106,87 +101,75 @@ public class RegistrierungController {
 			// hineinschreiben Directory Chooser OpenFile Dialog
 	private void handleButtonRegistrationAction(ActionEvent event) throws IOException {
 		if (validateData()) {
-			if (txtRangR.getText().equals("Pfleger")) {
- /*
-						 * (PrintWriter out = new PrintWriter(new BufferedWriter(new
-						 * FileWriter("Pfleger.txt", true)))) { out.println(cmbPrefixR.getValue() + ","
-						 * + txtVornameR.getText() + "," + txtNachnameR.getText() + "," +
-						 * txtRangR.getText() + "," + txtSchuleR.getText() + "," +
-						 * txtAbteilungR.getText() + "," + txtTitelR.getText() + "," +
-						 * txtEmailR.getText() + "," + cmbGeschlechtR.getValue() + "," +
-						 * txtHerkunftR.getText() + "," + txtSprachenR.getText() + "," +
-						 * rbtnAktivR.isSelected() + "," + rbtnInaktivR.isSelected() + "," +
-						 * txtAusbildungR.getText() + "," + txtSpezialitätR.getText() + "," +
-						 * cmbAbgeschlossenR.getValue());
-						 */
-					String[] pfleger = new String[6];
-					int lower = 2000;
-					int upper = 2999;
-					
-					String id = String.valueOf((int) (Math.random() * (upper - lower)+ lower));
-					String vorname = txtVornameR.getText();
-					String nachname = txtNachnameR.getText();
-					String rang = txtRangR.getText();
-					String schule = txtSchuleR.getText();
-					String email = txtEmailR.getText();
+			if (txtRankR.getText().equals("Pfleger")) {
 
-					pfleger[0] = id;
-					pfleger[1] = vorname;
-					pfleger[2] = nachname;
-					pfleger[3] = rang;
-					pfleger[4] = schule;
-					pfleger[5] = email;
-					
-					for(int i = 0; i<pfleger.length; i++) {
-						pfleger[i].trim();
-					pfleger[i].toString().split(",");
-					}	
-					System.out.println(Arrays.toString(pfleger));
-					//File pflegertxt = new File("Pfleger.txt");
-		
-					application.ReaderWriter.writeStringIntoTxt(Arrays.toString(pfleger), "Pfleger.txt");
+				String[] pfleger = new String[6];
+				String[] user = new String[2];
+				int lower = 2000;
+				int upper = 2999;
 
-					Alert mesg = new Alert(AlertType.CONFIRMATION);
-					mesg.setContentText("Pfleger hinzugefügt");
-					mesg.showAndWait();
+				String id = String.valueOf((int) (Math.random() * (upper - lower) + lower));
+				String surName = txtSurnameR.getText();
+				String name = txtNameR.getText();
+				String rank = txtRankR.getText();
+				String school = txtSchoolR.getText();
+				String email = txtEmailR.getText();
+
+				String userid = txtLoginR.getText();
+				String userpw = pfPasswortR.getText();
+
+				pfleger[0] = id;
+				pfleger[1] = surName;
+				pfleger[2] = name;
+				pfleger[3] = rank;
+				pfleger[4] = school;
+				pfleger[5] = email;
+
+				user[0] = userid;
+				user[1] = userpw;
+
+				String newNurse = id + "," + surName + "," + name + "," + rank + "," + school + "," + email;
+				String newUser = userid + "," + userpw;
+				application.ReaderWriter.writeStringIntoTxt(newNurse, "Pfleger.txt");
+				application.ReaderWriter.writeStringIntoTxt(newUser, "Benutzer.txt");
+				Alert mesg = new Alert(AlertType.CONFIRMATION);
+				mesg.setContentText("Pfleger hinzugefügt");
+				mesg.showAndWait();
 
 			} else {
-				if (txtRangR.getText().equals("Arzt")) {
-					/*try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Arzt.txt", true)))) {
-						out.println(cmbPrefixR.getValue() + "," + txtVornameR.getText() + "," + txtNachnameR.getText()
-								+ "," + txtRangR.getText() + "," + txtSchuleR.getText() + "," + txtAbteilungR.getText()
-								+ "," + txtTitelR.getText() + "," + txtEmailR.getText() + ","
-								+ cmbGeschlechtR.getValue() + "," + txtHerkunftR.getText() + ","
-								+ txtSprachenR.getText() + "," + rbtnAktivR.isSelected() + ","
-								+ rbtnInaktivR.isSelected() + "," + txtAusbildungR.getText() + ","
-								+ txtSpezialitätR.getText() + "," + cmbAbgeschlossenR.getValue());*/
-					String[] arzt = new String[6];
+				if (txtRankR.getText().equals("Arzt")) {
+					String[] doctor = new String[6];
+					String[] user = new String[2];
 					int lower = 1000;
 					int upper = 1999;
-					String id = String.valueOf((int) (Math.random() * (upper - lower))) + lower;
-					
-					String vorname = txtVornameR.getText();
-					String nachname = txtNachnameR.getText();
-					String rang = txtRangR.getText();
-					String schule = txtSchuleR.getText();
+					String id = String.valueOf((int) (Math.random() * (upper - lower) + lower));
+					String surName = txtSurnameR.getText();
+					String name = txtNameR.getText();
+					String rank = txtRankR.getText();
+					String school = txtSchoolR.getText();
 					String email = txtEmailR.getText();
 
-					arzt[0] = id;
-					arzt[1] = vorname;
-					arzt[2] = nachname;
-					arzt[3] = rang;
-					arzt[4] = schule;
-					arzt[5] = email;
-					for(int i = 0; i<arzt.length; i++) {
-					arzt[i].toString().split(",");
-					}
-					//File pflegertxt = new File("Pfleger.txt");
-										
-					application.ReaderWriter.writeStringIntoTxt(arzt, "Arzt.txt");
-					
-						Alert mesg = new Alert(AlertType.CONFIRMATION);
-						mesg.setContentText("Arzt hinzugefügt");
-						mesg.showAndWait();
+					String userid = txtLoginR.getText();
+					String userpw = pfPasswortR.getText();
+
+					doctor[0] = id;
+					doctor[1] = surName;
+					doctor[2] = name;
+					doctor[3] = rank;
+					doctor[4] = school;
+					doctor[5] = email;
+
+					user[0] = userid;
+					user[1] = userpw;
+
+					String newDoctor = id + "," + surName + "," + name + "," + rank + "," + school + "," + email;
+					String newUser = userid + "," + userpw;
+
+					application.ReaderWriter.writeStringIntoTxt(newDoctor, "Arzt.txt");
+					application.ReaderWriter.writeStringIntoTxt(newUser, "Benutzer.txt");
+					Alert mesg = new Alert(AlertType.CONFIRMATION);
+					mesg.setContentText("Arzt hinzugefügt");
+					mesg.showAndWait();
 
 				}
 			}
@@ -197,33 +180,27 @@ public class RegistrierungController {
 	private boolean validateData() {
 		Alert msg = new Alert(AlertType.ERROR);
 		boolean result = true;
-		/*
-		 * String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" +
-		 * "(?:[a-zA-Z0-9-]+\\.)+[a-z"+ "A-Z]{2,7}$"; Pattern pat =
-		 * Pattern.compile(emailRegex);
-		 */
-
-		if (txtVornameR.getText().equals("")) {
+		if (txtSurnameR.getText().equals("")) {
 			msg.setContentText("Bitte füllen Sie das Vornamen Feld aus!");
 			msg.showAndWait();
 			result = false;
 		} else {
-			if (txtNachnameR.getText().equals("")) {
+			if (txtNameR.getText().equals("")) {
 				msg.setContentText("Bitte füllen Sie das Nachnamen Feld aus!");
 				msg.showAndWait();
 				result = false;
 			} else {
-				if (txtRangR.getText().equals("")) {
+				if (txtRankR.getText().equals("")) {
 					msg.setContentText("Bitte füllen Sie das Rang Feld aus!");
 					msg.showAndWait();
 					result = false;
 				} else {
-					if (txtSchuleR.getText().equals("")) {
+					if (txtSchoolR.getText().equals("")) {
 						msg.setContentText("Bitte füllen Sie das Schule Feld aus!");
 						msg.showAndWait();
 						result = false;
 					} else {
-						if (txtAbteilungR.getText().equals("")) {
+						if (txtDepartmentR.getText().equals("")) {
 							msg.setContentText("Bitte füllen Sie das Abteilung Feld aus!");
 							msg.showAndWait();
 							result = false;
@@ -233,17 +210,17 @@ public class RegistrierungController {
 								msg.showAndWait();
 								result = false;
 							} else {
-								if (txtHerkunftR.getText().equals("")) {
+								if (txtOriginR.getText().equals("")) {
 									msg.setContentText("Bitte füllen Sie das Herkunfts Feld aus!");
 									msg.showAndWait();
 									result = false;
 								} else {
-									if (txtSprachenR.getText().equals("")) {
+									if (txtLanguagesR.getText().equals("")) {
 										msg.setContentText("Bitte füllen Sie das Sprachen Feld aus!");
 										msg.showAndWait();
 										result = false;
 									} else {
-										if (txtSpezialitätR.getText().equals("")) {
+										if (txtSpecialityR.getText().equals("")) {
 											msg.setContentText("Bitte füllen Sie das Spezialitäts Feld aus!");
 											msg.showAndWait();
 											result = false;
@@ -272,7 +249,8 @@ public class RegistrierungController {
 	}
 
 	@FXML
-	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current window
+	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current
+																		// window
 	{
 		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
