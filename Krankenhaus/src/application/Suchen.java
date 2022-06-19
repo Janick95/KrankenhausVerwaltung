@@ -2,15 +2,13 @@ package application;
 
 public class Suchen {
 
-	// Methoden
-
-	// SuchAlgorythmen
+	// Suchmethoden
 	//Patienten, Arzt, Pfleger, Räume, Termine
 	public static String searchID(String searchTerm, String[] array) {
 
 		int index = 0;
-		int position = binarySearch(array, 0, array.length - 1, searchTerm, index);
-		String searched = array[position];
+		int searchedIndex = binarySearch(array, 0, array.length - 1, searchTerm, index);
+		String searched = array[searchedIndex];
 
 		return searched;
 	}
@@ -19,34 +17,22 @@ public class Suchen {
 	public static String[] searchFirstName(String searchTerm, String[] array) {
 
 		int index = 1;
-		String[] searchedElements = linearSearch(array, searchTerm, index);
-
-		return searchedElements;
+		String[] searched = linearSearch(array, searchTerm, index);
+		return searched;
 	}
 	
 	//Patienten, Arzt, Pfleger
 	public static String[] searchLastName(String searchTerm, String[] array) {
 
 		int index = 2;
-		String[] searchedElements = linearSearch(array, searchTerm, index);
-
-		return searchedElements;
-	}
-
-	//Räume
-	public static String searchRoomNumber(String searchTerm, String[] array) {
-
-		int index = 0;
-		int position = binarySearch(array, 0, array.length - 1, searchTerm, index);
-		String searched = array[position];
-
+		String[] searched = linearSearch(array, searchTerm, index);
 		return searched;
 	}
 
 	//Arzt
 	public static String[] searchSpecialField(String searchTerm, String[] array) {
 
-		int index = 4;
+		int index = 3;
 		String[] searchedElements = linearSearch(array, searchTerm, index);
 
 		return searchedElements;
@@ -74,7 +60,11 @@ public class Suchen {
 
 	public static String[] searchOperationDate(String searchTerm, String[] array) {
 
-		return array;
+		int index = 7;
+		int index2 = 8;
+		int index3 = 9;
+		String[] searchedElements = linearSearch(array, searchTerm, index, index2, index3);
+		return searchedElements;
 	}
 
 	// SuchAlgorythmen
@@ -155,7 +145,7 @@ public class Suchen {
 			
 			int value = beds - patients;
 			
-			if (value == 0) {
+			if (value != 0) {
 				found[count] = array[i];
 				count++;
 			}
@@ -175,13 +165,48 @@ public class Suchen {
 		}
 		return searched;
 	}
-	
-	
-	/*
-	 * public static int exponentialSearch(String[] array, int n, int k, int index)
-	 * { int i; if(k < array[1] || k > array[n]) { return 0; }else { i = 1; }
-	 * while(k > array[i] && i < n) { i = i + i; } if(i > n) { i = n; } return
-	 * binarySearch(array, i/2, i, k, index, number); }
-	 */
 
+	public static String[] linearSearch(String[] array, String searchTerm, int index1, int index2, int index3) {
+		String[] found = new String[array.length];
+		String[] words = searchTerm.split(",");
+		int[] search = new int[words.length];
+		for(int i = 0; i < words.length; i++) {
+		search[i] = Integer.parseInt(words[i]);
+		}
+		
+		int count = 0;
+		int hit = 0;
+		int j = 0;
+
+		for (int i = 0; i < array.length; i++) {
+
+			String[] entry = array[i].split(",");
+			int year = Integer.parseInt(entry[index3]);
+			int month = Integer.parseInt(entry[index2]);
+			int day = Integer.parseInt(entry[index1]);
+			
+			if (year == search[2]) {
+				if(month == search[1]) {
+					if(day == search[0]) {
+						found[count] = array[i];
+						count++;
+					}
+				}
+			}
+		}
+		for (int i = 0; i < found.length; i++) {
+			if (found[i] != null) {
+				hit++;
+			}
+		}
+		String[] searched = new String[hit];
+
+		for (int i = 0; i < found.length; i++) {
+			if (found[i] != null) {
+				searched[j] = found[i];
+				j++;
+			}
+		}
+		return searched;
+	}
 }

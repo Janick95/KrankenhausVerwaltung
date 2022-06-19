@@ -192,15 +192,99 @@ public class Main extends Application {
 		
 
 		//Test/Beispiel Suchen
-		/*String[] patienten = ReaderWriter.readToArray("Patienten.txt");
+		/*String[] patients = ReaderWriter.readToArray("Patienten.txt");
+		String[] nurses = ReaderWriter.readToArray("Pfleger.txt");
+		String[] doctors = ReaderWriter.readToArray("Arzt.txt");
+		String[] rooms = ReaderWriter.readToArray("Räume.txt");
+		String[] meetings = ReaderWriter.readToArray("Termine.txt");
 		
-		String[] sorted = Sortieren.sortIDAscending(patienten);
+		String[] sortedPatients1 = Sortieren.sortIDAscending(patients);
+		String[] sortedNurses1 = Sortieren.sortIDAscending(nurses);
+		String[] sortedDoctors1 = Sortieren.sortIDAscending(doctors);
+		String[] sortedRooms1 = Sortieren.sortIDAscending(rooms);
+		String[] sortedMeetings1 = Sortieren.sortIDAscending(meetings);
 		
-		String[] searched = Suchen.searchReasonForStay("Corona", sorted);
+		String searchedPatients1 = Suchen.searchID("3512", sortedPatients1);
+		String[] searchedPatients2 = Suchen.searchFirstName("Robin", patients);
+		String[] searchedPatients3 = Suchen.searchLastName("Schmidt", patients);
+		String[] searchedPatients4 = Suchen.searchReasonForStay("Herzprobleme", patients);
 		
-		for(int i = 0; i < searched.length; i++) {
-		System.out.println(searched[i]);
-		}*/
+		String searchedNurses1 = Suchen.searchID("2730", sortedNurses1);
+		String[] searchedNurses2 = Suchen.searchFirstName("Sibylle", nurses);
+		String[] searchedNurses3 = Suchen.searchLastName("Meyer", nurses);
+		String[] searchedNurses4 = Suchen.searchLastName("Travnik", nurses);
+		
+		String searchedDoctors1 = Suchen.searchID("1611", sortedDoctors1);
+		String[] searchedDoctors2 = Suchen.searchFirstName("Julia", doctors);
+		String[] searchedDoctors3 = Suchen.searchLastName("Falk", doctors);
+		String[] searchedDoctors4 = Suchen.searchSpecialField("Anästhesie", doctors);
+		
+		String searchedRooms1 = Suchen.searchID("4434",sortedRooms1);
+		String[] searchedRooms2 = Suchen.searchFreeRooms(rooms);
+		
+		String searchedMeetings1 = Suchen.searchID("5028",sortedMeetings1);
+		String[] searchedMeetings2 = Suchen.searchOperationDate("01,07,2022",meetings);
+		
+		System.out.println("Patienten");
+		System.out.println(searchedPatients1);
+		System.out.println();
+		for(int i = 0; i < searchedPatients2.length; i++) {
+		System.out.println(searchedPatients2[i]);
+		}
+		System.out.println();
+		for(int i = 0; i < searchedPatients3.length; i++) {
+		System.out.println(searchedPatients3[i]);
+		}
+		System.out.println();
+		for(int i = 0; i < searchedPatients4.length; i++) {
+		System.out.println(searchedPatients4[i]);
+		}
+		System.out.println();
+		System.out.println("Pfleger");
+		System.out.println(searchedNurses1);
+		System.out.println();
+		for(int i = 0; i < searchedNurses2.length; i++) {
+		System.out.println(searchedNurses2[i]);
+		}
+		System.out.println();
+		for(int i = 0; i < searchedNurses3.length; i++) {
+		System.out.println(searchedNurses3[i]);
+		}
+		System.out.println();
+		for(int i = 0; i < searchedNurses4.length; i++) {
+		System.out.println(searchedNurses4[i]);
+		}
+		System.out.println();
+		System.out.println("Ärzte");
+		System.out.println(searchedDoctors1);
+		System.out.println();
+		for(int i = 0; i < searchedDoctors2.length; i++) {
+			System.out.println(searchedDoctors2[i]);
+		}
+		System.out.println();
+		for(int i = 0; i < searchedDoctors3.length; i++) {
+			System.out.println(searchedDoctors3[i]);
+		}
+		System.out.println();
+		for(int i = 0; i < searchedDoctors4.length; i++) {
+			System.out.println(searchedDoctors4[i]);
+		}
+		System.out.println();
+		System.out.println("Räume");
+		System.out.println(searchedRooms1);
+		System.out.println();
+		for(int i = 0; i < searchedRooms2.length; i++) {
+			System.out.println(searchedRooms2[i]);
+		}
+		System.out.println();
+		System.out.println("Termine");
+		System.out.println(searchedMeetings1);
+		System.out.println();
+		for(int i = 0; i < searchedMeetings2.length; i++) {
+			System.out.println(searchedMeetings2[i]);
+		}
+		System.out.println();
+		*/
 		
 		launch(args);
 	}
