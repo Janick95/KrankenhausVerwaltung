@@ -1,12 +1,9 @@
 package gui;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
+import java.net.URL;
+import java.util.ResourceBundle;
 import application.Benutzer;
 import application.Main;
 import application.ReaderWriter;
@@ -22,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -35,7 +33,7 @@ public class LoginController {
 
 	// Zugriff auf FXML Elemente
 	@FXML
-	ImageView imgLogo;
+	ImageView imgVlogo;
 
 	@FXML
 	TextField txtLoginId;
@@ -54,11 +52,13 @@ public class LoginController {
 
 	@FXML
 	Button btnResetOk;
-
+	
+	
+	
 	// Button Event
 	@FXML
-	public void handleLoginAction(ActionEvent event) throws IOException // This method loads a new scene in a current
-																		// window
+	//Login Prozess
+	public void handleLoginAction(ActionEvent event) throws IOException
 	{
 		String[] users = ReaderWriter.readToArray("Benutzer.txt");
 
@@ -75,14 +75,10 @@ public class LoginController {
 		if (validateData() == true) {
 			if (user1.getID().equals(userID)) {
 				if (user1.getID().equals(userID) == false) {
-					System.out.println("Diese Login-ID gibt es nicht!");
-					System.out.println("Erste Schleife");
 					msg.setTitle("Fehlerhafte Login-Id");
 					msg.setContentText("Diese Login-Id gibt es nicht: " + txtLoginId.getText());
 					msg.showAndWait();
 				} else if (user1.getPassword().equals(userPw) == false) {
-					System.out.println("Diese Passwort gibt es nicht!");
-					System.out.println("Zweite Schleife");
 					msg.setTitle("Fehlerhaftes Passwort");
 					msg.setContentText("Das Passwort gibt es nicht");
 					msg.showAndWait();
@@ -90,15 +86,10 @@ public class LoginController {
 			} else {
 				if (user2.getID().equals(userPw)) {
 					if (user2.getID().equals(userID) == false) {
-						System.out.println("Diese Login-ID gibt es nicht!");
-						System.out.println("Dritte Schleife");
-
 						msg.setTitle("Fehlerhafte Login-Id");
 						msg.setContentText("Diese Login-Id gibt es nicht: " + txtLoginId.getText());
 						msg.showAndWait();
 					} else if (user2.getPassword().equals(userPw) == false) {
-						System.out.println("Dieses Passwort gibt es nicht!");
-						System.out.println("Vierte Schleife");
 						msg.setTitle("Fehlerhaftes Passwort");
 						msg.setContentText("Falsches Passwort ");
 						msg.showAndWait();
@@ -117,10 +108,11 @@ public class LoginController {
 	@FXML
 	public boolean checkAdmin() {
 		Alert msg = new Alert(AlertType.CONFIRMATION);
-
 		if (txtLoginId.getText().contains("Admin")) {
 			isAdmin = true;
+			msg.setTitle("Ist Admin");
 			msg.setContentText("Dieser Benutzer ist ein Admin");
+			msg.showAndWait();
 		} else {
 			isAdmin = false;
 		}
@@ -129,7 +121,6 @@ public class LoginController {
 
 	@FXML
 	private void openWindow() {
-		System.out.println("Benutzer eingeloggt");
 		if (isAdmin==false) {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("HauptmenuScreen01.fxml"));
@@ -149,19 +140,21 @@ public class LoginController {
 
 	@FXML
 	private boolean validateData() {
-		Alert msg = new Alert(AlertType.ERROR);
 		boolean result = true;
 		if (txtLoginId.getText().equals("")) {
+			Alert msg = new Alert(AlertType.ERROR);
 			msg.setContentText("Bitte füllen Sie das Login-ID Feld aus!");
 			msg.showAndWait();
 			result = false;
 		} else if (pfPasswort.getText().equals("")) {
+			Alert msg = new Alert(AlertType.ERROR);
 			msg.setContentText("Bitte füllen Sie das Passwort Feld aus!");
 			msg.showAndWait();
 			result = false;
-		} else if (pfPasswort.getText().length() < 8)
+		} else if (pfPasswort.getText().length() < 8) {
+			Alert msg = new Alert(AlertType.ERROR);
 			msg.setContentText("Ihr Passwort muss aus min. 8 Zeichen bestehen!");
-		msg.showAndWait();
+		msg.showAndWait();}
 		return result;
 	}
 
@@ -172,7 +165,7 @@ public class LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Passwort Reset");
-		// stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
@@ -197,7 +190,7 @@ public class LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Herzlich Willkommen im River Krankenhaus");
-		// stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 }

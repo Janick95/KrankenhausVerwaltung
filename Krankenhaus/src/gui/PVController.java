@@ -1,12 +1,6 @@
 package gui;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import application.Patient;
-import application.Pfleger;
 import application.ReaderWriter;
 import application.Sortieren;
 import javafx.collections.FXCollections;
@@ -17,14 +11,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class PVController {
@@ -60,7 +50,7 @@ public class PVController {
 				"Name-absteigend", "Alter-aufsteigend", "Alter-absteigend", "Aufenthaltsgrund-aufsteigend",
 				"Aufenthaltsgrund-absteigend");
 		cmbPatientSort.getSelectionModel().select("Sortieren nach");
-		
+
 		// Suchen ComboBox Inhalte:
 		cmbPatientSearch.getItems().removeAll(cmbPatientSort.getItems());
 		cmbPatientSearch.getItems().addAll("Suchen nach", "ID", "Vorname", "Nachname", "Aufenthaltsgrund");
@@ -87,12 +77,13 @@ public class PVController {
 	public void goToMainmenu(ActionEvent event) throws IOException // Diese Methode lädt den Hauptmenübildschirm in dem
 																	// aktuellen Fenster
 	{
-		if(LoginController.isAdmin==true) {
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();}else {
+		if (LoginController.isAdmin == true) {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} else {
 			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
@@ -100,42 +91,41 @@ public class PVController {
 			stage.show();
 		}
 	}
-	
-	
+
 	@FXML
-	public void patientSearch(ActionEvent evt)throws IOException {
+	// Method um die Such Methode auf zu rufen
+	public void patientSearch(ActionEvent evt) throws IOException {
 		pickSearch();
 	}
 
 	// Nach der Auswahl des gewünschten Suchparameters wird der
-		// Suchalgorithmus auf das Element angewandt
-		@FXML
-		public void pickSearch() throws IOException {
-			String[] patients1 = ReaderWriter.readToArray("Patienten.txt");
-			ObservableList<String> pat = FXCollections.observableArrayList(patients1);
-			String search = txtSearchPatient.getText();
-			if (cmbPatientSearch.getValue().contains("ID")) {
-				String[] sortedPatients1 = Sortieren.sortIDAscending(patients1);
-				String searchID = application.Suchen.searchID(search, sortedPatients1);
-				pat = FXCollections.observableArrayList(searchID);
-				lvPatDat01.setItems(pat);
-			} else if (cmbPatientSearch.getValue().contains("Vorname")) {
-				String[] searchSurname = application.Suchen.searchFirstName(search, patients1);
-				pat = FXCollections.observableArrayList(searchSurname);
-				lvPatDat01.setItems(pat);
-			} else if (cmbPatientSearch.getValue().contains("Nachname")) {
-				String[] searchName = application.Suchen.searchLastName(search, patients1);
-				pat = FXCollections.observableArrayList(searchName);
-				lvPatDat01.setItems(pat);
-			} else if (cmbPatientSearch.getValue().contains("Aufenthaltsgrund")) {
-				String[] searchReason = application.Suchen.searchReasonForStay(search, patients1);
-				pat = FXCollections.observableArrayList(searchReason);
-				lvPatDat01.setItems(pat);
-			}
-
+	// Suchalgorithmus auf das Element angewandt
+	@FXML
+	public void pickSearch() throws IOException {
+		String[] patients1 = ReaderWriter.readToArray("Patienten.txt");
+		ObservableList<String> pat = FXCollections.observableArrayList(patients1);
+		String search = txtSearchPatient.getText();
+		if (cmbPatientSearch.getValue().contains("ID")) {
+			String[] sortedPatients1 = Sortieren.sortIDAscending(patients1);
+			String searchID = application.Suchen.searchID(search, sortedPatients1);
+			pat = FXCollections.observableArrayList(searchID);
+			lvPatDat01.setItems(pat);
+		} else if (cmbPatientSearch.getValue().contains("Vorname")) {
+			String[] searchSurname = application.Suchen.searchFirstName(search, patients1);
+			pat = FXCollections.observableArrayList(searchSurname);
+			lvPatDat01.setItems(pat);
+		} else if (cmbPatientSearch.getValue().contains("Nachname")) {
+			String[] searchName = application.Suchen.searchLastName(search, patients1);
+			pat = FXCollections.observableArrayList(searchName);
+			lvPatDat01.setItems(pat);
+		} else if (cmbPatientSearch.getValue().contains("Aufenthaltsgrund")) {
+			String[] searchReason = application.Suchen.searchReasonForStay(search, patients1);
+			pat = FXCollections.observableArrayList(searchReason);
+			lvPatDat01.setItems(pat);
 		}
-	
-	
+
+	}
+
 	// Nach der Auswahl des gewünschten Sortierparameters wird der
 	// Sortieralgorithmus auf das Element angewandt
 	@FXML
@@ -194,12 +184,12 @@ public class PVController {
 	}
 
 	@FXML
+	// Methode um einen Patienten in der Liste aus zu wählen und diesen zu löschen
 	public void deletePat(ActionEvent event) throws IOException {
 
 		String deletePat = lvPatDat01.getSelectionModel().getSelectedItem();
 		String[] patDelete = deletePat.split(",");
 
-		System.out.println(deletePat);
 		application.ReaderWriter.deleteFromTxt(patDelete[0], "Patienten.txt");
 
 		String[] patients = ReaderWriter.readToArray("Patienten.txt");

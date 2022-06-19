@@ -1,7 +1,6 @@
 package gui;
 
 import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,7 +51,7 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Patienten Daten");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
@@ -64,7 +63,7 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Operationstermine");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
@@ -76,7 +75,7 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Raumbelgung");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
@@ -87,7 +86,7 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Personal Daten");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
@@ -98,7 +97,7 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Registrierung");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 
@@ -109,7 +108,7 @@ public class MainMenuController extends LoginController {
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.setTitle("Willkommen im River Krankenhaus");
-		//stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
+		stage.getIcons().add(new Image("/img/Logo_KrankenhausVerwaltung.png"));
 		stage.show();
 	}
 }

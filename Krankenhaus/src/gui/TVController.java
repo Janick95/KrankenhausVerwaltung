@@ -60,7 +60,7 @@ public class TVController {
 	ComboBox<String> cmbOpSearch;
 	@FXML
 	Button btnOpSearch;
-	
+
 	@FXML
 	public void initialize() throws IOException {
 		// Sortieren ComboBox Inhalte:
@@ -69,29 +69,33 @@ public class TVController {
 		cmbOpSearch.getSelectionModel().select("Suchen nach");
 		// Sortieren ComboBox Inhalte:
 		cmbOpDateSort.getItems().removeAll(cmbOpDateSort.getItems());
-		cmbOpDateSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend", "Name-absteigend", "age-aufsteigend", "age-absteigend", "Aufenthaltsreason-aufsteigend", "Aufenthaltsreason-absteigend");
+		cmbOpDateSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend",
+				"Name-absteigend", "age-aufsteigend", "age-absteigend", "Aufenthaltsreason-aufsteigend",
+				"Aufenthaltsreason-absteigend");
 		cmbOpDateSort.getSelectionModel().select("Sortieren nach");
 		String[] dates = ReaderWriter.readToArray("Termine.txt");
 		showOpList(dates);
 	}
-	
+
 	@FXML
 	public void showOpList(String[] dates) throws IOException {
 
 		ObservableList<String> date = FXCollections.observableArrayList(dates);
 		lvOpT.setItems(date);
-		
-		}
+
+	}
+
 	// Events
 	@FXML
 	public void goToMainmenu(ActionEvent event) throws IOException // This method loads a new scene in a current window
 	{
-		if(LoginController.isAdmin==true) {
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();}else {
+		if (LoginController.isAdmin == true) {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} else {
 			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
@@ -99,43 +103,43 @@ public class TVController {
 			stage.show();
 		}
 	}
+
 	@FXML
-	public void opSearch(ActionEvent evt)throws IOException {
+	public void opSearch(ActionEvent evt) throws IOException {
 		pickSearch();
 	}
 
 	// Nach der Auswahl des gewünschten Suchparameters wird der
-		// Suchalgorithmus auf das Element angewandt
-		@FXML
-		public void pickSearch() throws IOException {
-			String[] ops1 = ReaderWriter.readToArray("Termine.txt");
-			ObservableList<String> opTs = FXCollections.observableArrayList(ops1);
-			String search = txtSearchOpDate.getText();
-			if (cmbOpSearch.getValue().contains("ID")) {
-				String[] sortedOpId1 = Sortieren.sortIDAscending(ops1);
-				String searchID = application.Suchen.searchID(search, sortedOpId1);
-				opTs = FXCollections.observableArrayList(searchID);
-				lvOpT.setItems(opTs);
-			} else if (cmbOpSearch.getValue().contains("Op-Datum")) {
-				String[] searchOpDate = application.Suchen.searchOperationDate(search, ops1);
-				opTs = FXCollections.observableArrayList(searchOpDate);
-				lvOpT.setItems(opTs);
-			}
-
+	// Suchalgorithmus auf das Element angewandt
+	@FXML
+	public void pickSearch() throws IOException {
+		String[] ops1 = ReaderWriter.readToArray("Termine.txt");
+		ObservableList<String> opTs = FXCollections.observableArrayList(ops1);
+		String search = txtSearchOpDate.getText();
+		if (cmbOpSearch.getValue().contains("ID")) {
+			String[] sortedOpId1 = Sortieren.sortIDAscending(ops1);
+			String searchID = application.Suchen.searchID(search, sortedOpId1);
+			opTs = FXCollections.observableArrayList(searchID);
+			lvOpT.setItems(opTs);
+		} else if (cmbOpSearch.getValue().contains("Op-Datum")) {
+			String[] searchOpDate = application.Suchen.searchOperationDate(search, ops1);
+			opTs = FXCollections.observableArrayList(searchOpDate);
+			lvOpT.setItems(opTs);
 		}
-	
+
+	}
+
 	@FXML
 	public void erstelleTermin(ActionEvent event) throws IOException {
 		String[] opD = new String[8];
 
-		
 		String idDate = txtOpId.getText();
 
 		String patSurname = txtPatSur.getText();
 		String patName = txtPatName.getText();
-		
+
 		String idDoc = txtDocId.getText();
-		
+
 		String docSurname = txtDocSur.getText();
 		String docName = txtDocName.getText();
 		String opReason = txtOpReason.getText();
@@ -149,10 +153,10 @@ public class TVController {
 		opD[5] = docName;
 		opD[6] = opReason;
 		opD[7] = opDate;
-		
-		
-		String newDate = idDate+","+patSurname+","+patName+","+idDoc+","+docSurname+","+docName+","+opReason+","+opDate;
-		
+
+		String newDate = idDate + "," + patSurname + "," + patName + "," + idDoc + "," + docSurname + "," + docName
+				+ "," + opReason + "," + opDate;
+
 		for (int i = 0; i < opD.length; i++) {
 			opD[i].trim();
 		}
@@ -161,54 +165,54 @@ public class TVController {
 		mesg.showAndWait();
 		application.ReaderWriter.writeStringIntoTxt(newDate, "Termine.txt");
 		lvOpT.getItems();
-		
-	}
-	
-	// Nach der Auswahl des gewünschten Sortierparameters wird der
-		// Sortieralgorithmus auf das Element angewandt
-		@FXML
-		public void pickSort(ActionEvent event) throws IOException {
-			String[] dates1 = ReaderWriter.readToArray("Termine.txt");
-			ObservableList<String> date = FXCollections.observableArrayList(dates1);
-			lvOpT.getItems();
-				if (cmbOpDateSort.getValue().contains("ID-aufsteigend")) {
-					String[] sortedID = application.Sortieren.sortIDAscending(dates1);
-					date = FXCollections.observableArrayList(sortedID);
-					lvOpT.setItems(date);
-				} else if (cmbOpDateSort.getValue().contains("ID-absteigend")) {
-					String[] sortedID = application.Sortieren.sortIDDescending(dates1);
-					date = FXCollections.observableArrayList(sortedID);
-					lvOpT.setItems(date);
-				} else if (cmbOpDateSort.getValue().contains("Name-aufsteigend")) {
-					String[] sortedName = application.Sortieren.sortNameAscending(dates1);
-					date = FXCollections.observableArrayList(sortedName);
-					lvOpT.setItems(date);
-				} else if (cmbOpDateSort.getValue().contains("Name-absteigend")) {
-					String[] sortedName = application.Sortieren.sortNameAscending(dates1);
-					date = FXCollections.observableArrayList(sortedName);
-					lvOpT.setItems(date);
-				}	else if (cmbOpDateSort.getValue().contains("OpTyp-aufsteigend")) {
-					String[] sortedType = application.Sortieren.sortReasonForStayAscending(dates1);
-					date = FXCollections.observableArrayList(sortedType);
-					lvOpT.setItems(date);
-				} else if (cmbOpDateSort.getValue().contains("OpTyp-absteigend")) {
-					String[] sortedType = application.Sortieren.sortReasonForStayDescending(dates1);
-					date = FXCollections.observableArrayList(sortedType);
-					lvOpT.setItems(date);	}	
-				}
 
-	
+	}
+
+	// Nach der Auswahl des gewünschten Sortierparameters wird der
+	// Sortieralgorithmus auf das Element angewandt
 	@FXML
-	public void loescheTermin(ActionEvent event) throws IOException {	
-		
+	public void pickSort(ActionEvent event) throws IOException {
+		String[] dates1 = ReaderWriter.readToArray("Termine.txt");
+		ObservableList<String> date = FXCollections.observableArrayList(dates1);
+		lvOpT.getItems();
+		if (cmbOpDateSort.getValue().contains("ID-aufsteigend")) {
+			String[] sortedID = application.Sortieren.sortIDAscending(dates1);
+			date = FXCollections.observableArrayList(sortedID);
+			lvOpT.setItems(date);
+		} else if (cmbOpDateSort.getValue().contains("ID-absteigend")) {
+			String[] sortedID = application.Sortieren.sortIDDescending(dates1);
+			date = FXCollections.observableArrayList(sortedID);
+			lvOpT.setItems(date);
+		} else if (cmbOpDateSort.getValue().contains("Name-aufsteigend")) {
+			String[] sortedName = application.Sortieren.sortNameAscending(dates1);
+			date = FXCollections.observableArrayList(sortedName);
+			lvOpT.setItems(date);
+		} else if (cmbOpDateSort.getValue().contains("Name-absteigend")) {
+			String[] sortedName = application.Sortieren.sortNameAscending(dates1);
+			date = FXCollections.observableArrayList(sortedName);
+			lvOpT.setItems(date);
+		} else if (cmbOpDateSort.getValue().contains("OpTyp-aufsteigend")) {
+			String[] sortedType = application.Sortieren.sortReasonForStayAscending(dates1);
+			date = FXCollections.observableArrayList(sortedType);
+			lvOpT.setItems(date);
+		} else if (cmbOpDateSort.getValue().contains("OpTyp-absteigend")) {
+			String[] sortedType = application.Sortieren.sortReasonForStayDescending(dates1);
+			date = FXCollections.observableArrayList(sortedType);
+			lvOpT.setItems(date);
+		}
+	}
+
+	@FXML
+	// Methode um einen Termin zu löschen
+	public void loescheTermin(ActionEvent event) throws IOException {
+
 		String deleteDate = lvOpT.getSelectionModel().getSelectedItem();
 		String[] dateDelete = deleteDate.split(",");
-	
-		System.out.println(deleteDate);
+
 		application.ReaderWriter.deleteFromTxt(dateDelete[0], "Termine.txt");
-		
+
 		String[] patients = ReaderWriter.readToArray("Termine.txt");
 		showOpList(patients);
-		
+
 	}
 }

@@ -4,14 +4,14 @@ public class Benutzer {
 
 	private String id;
 	private String password;
-	
-	//Konstruktor
-	public Benutzer(String id, String password){
+
+	// Konstruktor
+	public Benutzer(String id, String password) {
 		this.id = id;
 		this.password = password;
 	}
-	
-	//Getter und Setter
+
+	// Getter und Setter
 	public String getID() {
 		return id;
 	}
@@ -28,5 +28,4 @@ public class Benutzer {
 		this.password = password;
 	}
 
-	
 }

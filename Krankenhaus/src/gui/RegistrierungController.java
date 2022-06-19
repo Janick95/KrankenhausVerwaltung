@@ -1,9 +1,6 @@
 package gui;
 
 import java.io.IOException;
-
-import java.util.Arrays;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,10 +94,12 @@ public class RegistrierungController {
 
 	}
 
-	@FXML // Aktuell erstellt er immer ein neues txt File =====> soll in bestehendes File
-			// hineinschreiben Directory Chooser OpenFile Dialog
+	@FXML
+	// Methode um entweder einen neuen Arzt oder Pfleger zu erstellen, abhängig von
+	// der Eingabe des Nutzers
 	private void handleButtonRegistrationAction(ActionEvent event) throws IOException {
 		if (validateData()) {
+			// Ein neuer Pfleger wird angelegt
 			if (txtRankR.getText().equals("Pfleger")) {
 
 				String[] pfleger = new String[6];
@@ -137,6 +136,7 @@ public class RegistrierungController {
 				mesg.showAndWait();
 
 			} else {
+				// Ein neuer Arzt wird angelegt
 				if (txtRankR.getText().equals("Arzt")) {
 					String[] doctor = new String[6];
 					String[] user = new String[2];
@@ -249,15 +249,15 @@ public class RegistrierungController {
 	}
 
 	@FXML
-	public void goToHauptmenue(ActionEvent event) throws IOException // This method loads a new scene in a current
-																		// window
-	{
-		if(LoginController.isAdmin==true) {
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();}else {
+	// Methode um zum Hauptmenü zurück zu führen
+	public void goToHauptmenue(ActionEvent event) throws IOException {
+		if (LoginController.isAdmin == true) {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} else {
 			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			scene = new Scene(root);

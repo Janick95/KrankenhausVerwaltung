@@ -1,8 +1,6 @@
 package gui;
 
 import java.io.IOException;
-import java.util.Arrays;
-
 import application.ReaderWriter;
 import application.Sortieren;
 import javafx.collections.FXCollections;
@@ -13,11 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
@@ -59,12 +55,13 @@ public class PersoController {
 		cmbStaffSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend",
 				"Name-absteigend", "Spezialität-aufsteigend", "Spezialität-absteigend");
 		cmbStaffSort.getSelectionModel().select("Sortieren nach");
-		String[] nurse = ReaderWriter.readToArray("Pfleger.txt"); // Lädt den Inhalt der übergebenen Text Datei durch
+		String[] nurse = ReaderWriter.readToArray("Pfleger.txt"); // Lädt den Inhalt der übergebenen Text Datei
 		String[] doctor = ReaderWriter.readToArray("Arzt.txt");
 		showStaffList(nurse, doctor);
 	}
 
-	@FXML
+
+	// Methode um Ärzte-Listen und Pfleger-Listen anzeigen zu lassen
 	public void showStaffList(String[] nurse, String[] doctor) throws IOException {
 
 		ObservableList<String> nurseList = FXCollections.observableArrayList(nurse);
@@ -76,15 +73,17 @@ public class PersoController {
 
 	// Events
 	@FXML
+	// Methode um zum Hauptmenü zu gelangen
 	public void goToMainmenu(ActionEvent event) throws IOException // Diese Methode lädt den Hauptmenübildschirm in dem
 																	// aktuellen Fenster
 	{
-		if(LoginController.isAdmin==true) {
-		Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();}else {
+		if (LoginController.isAdmin == true) {
+			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen02.fxml"));
+			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} else {
 			Parent root = FXMLLoader.load(getClass().getResource("/gui/HauptmenuScreen01.fxml"));
 			stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			scene = new Scene(root);
@@ -94,6 +93,7 @@ public class PersoController {
 	}
 
 	@FXML
+	// Methode um die Suchfunktion auf zu rufen
 	public void staffSearch(ActionEvent evt) throws IOException {
 		pickSearch();
 	}
