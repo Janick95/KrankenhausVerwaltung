@@ -2,8 +2,6 @@ package application;
 
 public class Sortieren {
 
-	// Methoden
-
 	// Sortiermethoden
 
 	// Patienten, Pfleger, Ärzte, Räume, Termine
@@ -106,8 +104,6 @@ public class Sortieren {
 		return reversed;
 	}
 
-	////////////////
-	// Eventuell zusätzlich/ nicht im Pflichtenheft
 	// Termine
 	public static String[] sortOperationDateAscending(String[] array) {
 
@@ -116,7 +112,6 @@ public class Sortieren {
 		mergeSort(array, 0, array.length - 1, index, number);
 		return array;
 	}
-	////////////////
 
 	// SortierAlgorythmen
 	public static void mergeSort(String[] array, int l, int r, int index, boolean number) {
@@ -335,6 +330,7 @@ public class Sortieren {
 		}
 	}
 
+	// Tauscht den Wert bei i mit dem Pivot
 	public static void partition(String[] array, int l, int i, int r, int index, boolean number) {
 		String note;
 		if (i < array.length) {
@@ -347,6 +343,7 @@ public class Sortieren {
 		quickSort(array, i + 1, r, index, number);
 	}
 
+	// Überprüft ob ein Element kleiner bzw. größer als der Pivot ist
 	public static boolean check(String[] array, String pivot, int counter, String sign, int index, boolean number) {
 		boolean check = false;
 		if (counter >= array.length) {
@@ -408,7 +405,7 @@ public class Sortieren {
 		return check;
 	}
 
-	// kehrt das Array um
+	// Kehrt das Array um
 	public static String[] reverse(String[] array) {
 		String[] reversed = new String[array.length];
 		int count = array.length;

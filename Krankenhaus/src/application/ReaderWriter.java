@@ -53,7 +53,7 @@ public class ReaderWriter {
 		bufferedReader.close();
 	}
 
-	// die Methode nimmt alle Einträge einer Zeile im Textdokument als Array
+	// Die Methode nimmt alle Einträge einer Zeile im Textdokument als Array
 	// entgegen, fügt sie zu einem String zusammen und schreibt diesen in das
 	// Textdokument
 	public static void writeStringIntoTxt(String[] text, String file) throws IOException {

@@ -47,7 +47,6 @@ public class Suchen {
 		return searchedElements;
 	}
 
-	// Eventuell zusätzlich/ nicht im Pflichtenheft
 	// Räume
 	public static String[] searchFreeRooms(String[] array) {
 
@@ -58,6 +57,7 @@ public class Suchen {
 		return searchedElements;
 	}
 
+	// Termine
 	public static String[] searchOperationDate(String searchTerm, String[] array) {
 
 		int index = 7;
@@ -68,7 +68,8 @@ public class Suchen {
 	}
 
 	// SuchAlgorythmen
-	// Sucht nach einzelnen Begriffen und Zahlen und bricht ab sobald diese gefunden
+	// Sucht nach einzelnen Begriffen und Zahlen und bricht ab, sobald diese
+	// gefunden
 	// wurden
 	public static int binarySearch(String[] array, int l, int r, String k, int index) {
 
@@ -130,6 +131,7 @@ public class Suchen {
 		return searched;
 	}
 
+	// Überschriebene Variante um Räume mit leeren Betten zu finden
 	public static String[] linearSearch(String[] array, int index, int index2) {
 		String[] found = new String[array.length];
 		int count = 0;
@@ -165,6 +167,7 @@ public class Suchen {
 		return searched;
 	}
 
+	//
 	public static String[] linearSearch(String[] array, String searchTerm, int index1, int index2, int index3) {
 		String[] found = new String[array.length];
 		String[] words = searchTerm.split(",");
