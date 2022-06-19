@@ -48,12 +48,15 @@ public class PVController {
 
 	@FXML
 	public void initialize() throws IOException {
+
 		// Sortieren ComboBox Inhalte:
 			cmbPatientSort.getItems().removeAll(cmbPatientSort.getItems());
 		cmbPatientSort.getItems().addAll("Sortieren nach", "ID-aufsteigend", "ID-absteigend", "Name-aufsteigend", "Name-absteigend", "Alter-aufsteigend", "Alter-absteigend", "Aufenthaltsgrund-aufsteigend", "Aufenthaltsgrund-absteigend");
 		cmbPatientSort.getSelectionModel().select("Sortieren nach");
 		String[] patients = ReaderWriter.readToArray("Patienten.txt");
 		showPatientList(patients);
+
+
 	}
 
 	// Methode um die Patientendaten aus der Text Datei in die ListView einzufügen
