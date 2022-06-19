@@ -96,8 +96,7 @@ public class Suchen {
 	}
 
 	// Sucht mehrere Elemente aus einem array. Da das Array dafür sowieso komplett
-	// durchlaufen werden muss, ist auch ein linearsearch von der Laufzeit her gut
-	// geeignet. Auch eine vorherige Sortierung ist nicht nötig
+	// durchlaufen werden muss, ist auch ein linearsearch geeignet. Auch eine vorherige Sortierung ist nicht nötig
 	public static String[] linearSearch(String[] array, String k, int index) {
 		String[] found = new String[array.length];
 		int count = 0;
