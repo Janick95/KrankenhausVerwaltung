@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
    <children>
-      <Button fx:id="btnHauptmenü" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
+      <Button fx:id="btnMainmenu" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
@@ -20,19 +20,19 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="btnSuche" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Patienten suchen...">
+      <TextField fx:id="txtSearchPatient" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Patienten suchen...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbPatientenSort" layoutX="1600.0" layoutY="400.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <ComboBox fx:id="cmbPatientSort" layoutX="1600.0" layoutY="400.0" onAction="#pickSort" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
       <ListView fx:id="lvPatDat01" layoutX="150.0" layoutY="490.0" prefHeight="500.0" prefWidth="1600.0" />
-      <Button fx:id="btnPatErstellen" layoutX="1266.0" layoutY="1026.0" mnemonicParsing="false" onAction="#patientenlErstellen" prefHeight="39.0" prefWidth="234.0" text="Neuen Patienten erstellen">
+      <Button fx:id="btnCreatePat" layoutX="1266.0" layoutY="1026.0" mnemonicParsing="false" onAction="#patientCreator" prefHeight="39.0" prefWidth="234.0" text="Neuen Patienten erstellen">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnPatDelete" layoutX="1600.0" layoutY="1026.0" mnemonicParsing="false" onAction="#loeschePat" prefHeight="25.0" prefWidth="150.0" text="Löschen">
+      <Button fx:id="btnPatDelete" layoutX="1600.0" layoutY="1026.0" mnemonicParsing="false" onAction="#deletePat" prefHeight="25.0" prefWidth="150.0" text="Löschen">
          <font>
             <Font size="18.0" />
          </font>

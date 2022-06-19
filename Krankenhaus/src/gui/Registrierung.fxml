@@ -128,22 +128,22 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtVornameR" layoutX="900.0" layoutY="260.0" minWidth="550.0">
+      <TextField fx:id="txtSurnameR" layoutX="900.0" layoutY="260.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtNachnameR" layoutX="900.0" layoutY="300.0" minWidth="550.0">
+      <TextField fx:id="txtNameR" layoutX="900.0" layoutY="300.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtRangR" layoutX="900.0" layoutY="340.0" minWidth="550.0">
+      <TextField fx:id="txtRankR" layoutX="900.0" layoutY="340.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSchuleR" layoutX="900.0" layoutY="380.0" minWidth="550.0">
+      <TextField fx:id="txtSchoolR" layoutX="900.0" layoutY="380.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -153,7 +153,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAbteilungR" layoutX="900.0" layoutY="460.0" minWidth="550.0">
+      <TextField fx:id="txtDepartmentR" layoutX="900.0" layoutY="460.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -168,12 +168,12 @@
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtHerkunftR" layoutX="900.0" layoutY="620.0" minWidth="550.0">
+      <TextField fx:id="txtOriginR" layoutX="900.0" layoutY="620.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSprachenR" layoutX="900.0" layoutY="660.0" minWidth="550.0">
+      <TextField fx:id="txtLanguagesR" layoutX="900.0" layoutY="660.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -188,12 +188,12 @@
             <Font size="18.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="txtAusbildungR" layoutX="900.0" layoutY="780.0" minWidth="550.0">
+      <TextField fx:id="txtEducationR" layoutX="900.0" layoutY="780.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSpezialitätR" layoutX="900.0" layoutY="820.0" minWidth="550.0">
+      <TextField fx:id="txtSpecialityR" layoutX="900.0" layoutY="820.0" minWidth="550.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -208,13 +208,13 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <ComboBox fx:id="cmbAbgeschlossenR" layoutX="900.0" layoutY="860.0" prefHeight="40.0" prefWidth="150.0" promptText="2022" />
-      <Button fx:id="btnRegistrierenR" layoutX="900.0" layoutY="1030.0" mnemonicParsing="false" onAction="#handleButtonRegistrationAction" text="Registrieren">
+      <ComboBox fx:id="cmbSchoolFinishedR" layoutX="900.0" layoutY="860.0" prefHeight="40.0" prefWidth="150.0" promptText="2022" />
+      <Button fx:id="btnRegistrationR" layoutX="900.0" layoutY="1030.0" mnemonicParsing="false" onAction="#handleButtonRegistrationAction" text="Registrieren">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <ComboBox fx:id="cmbPrefixR" layoutX="900.0" layoutY="220.0" prefHeight="40.0" prefWidth="150.0" promptText="Frau" />
-      <ComboBox fx:id="cmbGeschlechtR" layoutX="900.0" layoutY="580.0" prefHeight="40.0" prefWidth="150.0" promptText="Weiblich" />
+      <ComboBox fx:id="cmbGenderR" layoutX="900.0" layoutY="580.0" prefHeight="40.0" prefWidth="150.0" promptText="Weiblich" />
    </children>
 </Pane>

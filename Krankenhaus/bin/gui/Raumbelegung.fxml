@@ -20,13 +20,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtRaumSuche" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Raum suchen...">
+      <TextField fx:id="txtSearchRoom" layoutX="500.0" layoutY="400.0" minWidth="1000.0" promptText="Raum suchen...">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <ComboBox fx:id="cmbRaumSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
-      <ListView fx:id="lvRaum" layoutX="150.0" layoutY="460.0" prefHeight="204.0" prefWidth="1600.0" />
+      <ComboBox fx:id="cmbRoomSort" layoutX="1600.0" layoutY="400.0" prefHeight="40.0" prefWidth="150.0" promptText="Sortieren nach" />
+      <ListView fx:id="lvRooms" layoutX="150.0" layoutY="460.0" prefHeight="204.0" prefWidth="1600.0" />
       <Button fx:id="btnLoescheRaum" layoutX="1138.0" layoutY="908.0" mnemonicParsing="false" onAction="#loescheRaum" text="Raum löschen">
          <font>
             <Font size="18.0" />

@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.PVController02">
    <children>
-      <Button fx:id="btnHauptmenü02" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToHauptmenue" text="Hauptmenü">
+      <Button fx:id="btnMainmenu02" layoutX="150.0" layoutY="80.0" mnemonicParsing="false" onAction="#goToMainmenu" text="Hauptmenü">
          <font>
             <Font size="18.0" />
          </font>
@@ -43,22 +43,22 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNachname02" layoutX="900.0" layoutY="600.0" minWidth="900.0">
+      <TextField fx:id="txtName02" layoutX="900.0" layoutY="600.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtVorname02" layoutX="900.0" layoutY="560.0" minWidth="900.0">
+      <TextField fx:id="txtSurname02" layoutX="900.0" layoutY="560.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAlter02" layoutX="900.0" layoutY="640.0" minWidth="900.0">
+      <TextField fx:id="txtAge02" layoutX="900.0" layoutY="640.0" minWidth="900.0">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAufenthalt02" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtReasonForStay" layoutX="900.0" layoutY="680.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>
@@ -68,7 +68,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btnErstellen02" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" onAction="#goToPatListe" text="Erstellen">
+      <Button fx:id="btnCreate02" layoutX="1520.0" layoutY="960.0" minWidth="150.0" mnemonicParsing="false" onAction="#goToPatList" text="Erstellen">
          <font>
             <Font size="18.0" />
          </font>
@@ -78,7 +78,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtDoktor02" accessibleRole="DATE_PICKER" layoutX="900.0" layoutY="772.0" minWidth="900.0" prefWidth="149.0">
+      <TextField fx:id="txtDoctor02" accessibleRole="DATE_PICKER" layoutX="900.0" layoutY="772.0" minWidth="900.0" prefWidth="149.0">
          <font>
             <Font size="16.0" />
          </font>

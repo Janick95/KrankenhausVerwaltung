@@ -13,19 +13,19 @@
             <Image url="@../../../owo/hehe.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnOpTermine02" layoutX="759.0" layoutY="326.0" mnemonicParsing="false" onAction="#goToOperationsTermine" prefHeight="250.0" prefWidth="399.0" text="Operationstermine">
+      <Button fx:id="btnOpData02" layoutX="759.0" layoutY="326.0" mnemonicParsing="false" onAction="#goToOperationData" prefHeight="250.0" prefWidth="399.0" text="Operationstermine">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="btnPatDaten02" layoutX="320.0" layoutY="325.0" mnemonicParsing="false" onAction="#goToPatientendaten" prefHeight="250.0" prefWidth="399.0" text="Patientendaten">
+      <Button fx:id="btnPatData02" layoutX="320.0" layoutY="325.0" mnemonicParsing="false" onAction="#goToPatientdata" prefHeight="250.0" prefWidth="399.0" text="Patientendaten">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="btnRaumbelegung02" layoutX="1204.0" layoutY="326.0" mnemonicParsing="false" onAction="#goToRaumbelegung" prefHeight="250.0" prefWidth="399.0" text="Raumbelegung">
+      <Button fx:id="btnRoomData02" layoutX="1204.0" layoutY="326.0" mnemonicParsing="false" onAction="#goToRoomData" prefHeight="250.0" prefWidth="399.0" text="Raumbelegung">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="btnPersonaldaten02" layoutX="759.0" layoutY="621.0" mnemonicParsing="false" onAction="#goToPersonaldaten" prefHeight="250.0" prefWidth="399.0" text="Personaldaten">
+      <Button fx:id="btnStaffData02" layoutX="759.0" layoutY="621.0" mnemonicParsing="false" onAction="#goToStaffdata" prefHeight="250.0" prefWidth="399.0" text="Personaldaten">
          <font>
             <Font size="18.0" />
          </font></Button>
@@ -33,7 +33,7 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="btnRegistrierung02" layoutX="759.0" layoutY="62.0" mnemonicParsing="false" onAction="#goToRegistrierung" prefHeight="250.0" prefWidth="399.0" text="Registrierung">
+      <Button fx:id="btnRegister02" layoutX="759.0" layoutY="62.0" mnemonicParsing="false" onAction="#goToRegistration" prefHeight="250.0" prefWidth="399.0" text="Registrierung">
          <font>
             <Font size="18.0" />
          </font>
